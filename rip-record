@@ -1,0 +1,190 @@
+#!/usr/bin/env python3 
+
+# import modules
+import sys, re, getopt, os.path, mimetypes
+from urllib.parse import unquote
+
+#=================================================#
+# sys       = system access to open files
+# re        = regular expressions
+# getopt    = check script arguments and options
+# os.path   = check if first argument is a file
+# mimetypes = check if file is a text file
+# unquote   = decode urls
+#=================================================#
+
+#=================================================#
+# script usage function
+#=================================================#
+
+def usage():
+    usage = """
+-h --help display help
+-i 'video url'
+-t '00:00:00'
+
+rip-record -i <video-url> -t <00:00:00>
+    """
+    print(usage)
+
+#=================================================#
+# checkurl function - check if first arg is text file
+#=================================================#
+
+# pass argv[1] which is the first argument with the url -
+# to the checkurl function
+# use os.path.isfile to check if the the first arg -
+# is a file, then use mimetypes to check if its a text file
+# if it is a text file, read the contents -
+# and set the variable url to equal the contents of the text file
+# if its not a text file - url variable is 
+# the function just prints the url at the moment
+# should return the url
+
+
+def checkurl(url):
+    if os.path.isfile(url):
+        if mimetypes.guess_type(url)[0] == 'text/plain':
+            file = open(url, 'r') 
+            url = file.read() 
+            file.close()          
+            print(url)
+    else:
+        print(url)
+
+#=================================================#
+# validation functions
+#=================================================#
+
+# functions to validate the url which comes after -i
+# and the duration which comes after -t
+
+# the url should start with http|https|rtmp|rtmpe://
+# the duration should match 00:00:00 format
+# 0-9 followed by : 0-9 followed by : 0-9 followed by :
+
+# these are the bash regular expressions which should work with python
+# the function should validate the url and duration with regulat expressions
+# and if the user input doesnt match the regexs display script usage and exit
+
+# the url_validated should be in the checkurl function
+
+def url_validated(url):
+    url_validated = re.search('^(http|https|rtmp|rtmpe)://*', url)
+
+def duration_validated(duration):
+    duration_validated = re.search('^[0-9]{2}:[0-9]{2}:[0-9]{2}$', duration)
+
+#=================================================#
+# main function
+#=================================================#
+
+def main(argv):
+
+#=================================================#
+# check number of arguments passed to script
+#=================================================#
+
+# check number of arguments passed to script
+# if script is run with no arguments display script usage and exit
+# if script is run with more than 4 arguments passed to the script
+# display script usage and exit
+
+    if len(argv) == 0:  # no arguments passed to script
+        print("No arguments passed to script")
+        usage()    # display script usage
+        sys.exit() # exit
+    elif len(argv) > 4: # too many arguments passed to script
+        print("Too many arguments passed to script")
+        usage()    # display script usage
+        sys.exit() # exit
+
+#=================================================#
+# try options
+#=================================================#
+
+# options
+# h = help
+# i: = url, the : means i requires an argument which would be the url
+# t: = time, the : means t requires an argument which would be the time in 00:00:00 format
+
+    try:
+        opts, args = getopt.getopt(argv, "hi:t:", ["help", "url", "time"])
+    except getopt.GetoptError as err: 
+        print(err)  # will print something like "option -x not recognized"
+        usage()     # display script usage
+        sys.exit(2) # exit
+        
+# variables 
+    time = '-t'
+    duration = ''
+       
+#=================================================#
+# check options and arguments
+#=================================================#
+
+# valid options
+# rip-record -h 
+# rip-record --help
+# rip-record -i (url on command line|or text file)
+# rip-record -i (url on command line|or text file) -t 00:00:00
+
+# invalid options
+# rip-record                = script run with no arguments
+# rip-record -i             = script run with -i option but no url or text file
+# rip-record -i url -t      = script run with -i option with url and -t option without a duration
+# rip-record -i -t 00:00:00 = script run with -i option with no url and -t option without a duration
+# rip-record -t             = script run with just the -t option
+# rip-record -t 00:00:00    = script run with just the -t option and a duration
+
+    for opt, arg in opts:
+        if opt in ("-h", "--help"):
+            # -h or --help = display help
+            usage()    # display script usage
+            sys.exit() # exit
+
+        elif opt == ("-i") and len(argv) == 2:
+            # -i and url or text file - argv length 2, valid options and args
+
+            checkurl(argv[1]) # checkurl function
+
+        elif opt == ("-t") and len(argv) == 2:
+            # -t option on its own - invalid
+            print("the -t option must be used after the -i option")
+            usage()    # display script usage
+            sys.exit() # exit
+
+        elif opt in ("-i", "-t") and len(argv) == 4:
+            if "-t" in opts[0]:
+                # -t option used before -i option - invalid
+                print("the -t option must be used after the -i option")
+                usage()    # display script usage
+                sys.exit() # exit
+            else:
+                # -i url followed by -t 00:00:00 = valid
+                
+                
+                checkurl(argv[1]) # checkurl function
+                print(argv[3])
+        else:
+            assert False, "unhandled option"
+
+
+#=================================================#
+# decode url and split
+#=================================================#
+
+# decoded = unquote(unquote(url))
+
+# decoded_url = decoded.split('&')
+# url_list = [v.split('=', 1) for v in decoded_url if '=' in v]
+# print(url_list)
+
+#=================================================#
+# slice off script name from arguments
+#=================================================#
+
+# slice off script name from argument passed to main
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
