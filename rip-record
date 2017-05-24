@@ -47,6 +47,13 @@ rip-record -i <video-url> -t <00:00:00>
 
 
 def checkurl(url):
+    ''' check first argument passed to script
+    
+    check if first argument passed to script, 
+    is a text file and if so open it and read the contents,
+    and set the variable url to equal the contents of the text file.
+    if the first argument isnt a text file its on the command line
+    '''
     if os.path.isfile(url):
         if mimetypes.guess_type(url)[0] == 'text/plain':
             file = open(url, 'r') 
