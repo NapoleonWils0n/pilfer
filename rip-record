@@ -164,7 +164,6 @@ def main(argv):
 
         elif opt == ("-i") and len(argv) == 2:
             # -i and url or text file - argv length 2, valid options and args
-
             checkurl(argv[1]) # checkurl function
 
         elif opt == ("-t") and len(argv) == 2:
@@ -181,8 +180,9 @@ def main(argv):
                 sys.exit() # exit
             else:
                 # -i url followed by -t 00:00:00 = valid
-                
                 checkurl(argv[1]) # checkurl function
+                duration_validated(argv[3])
+                
         else:
             assert False, "unhandled option"
 
