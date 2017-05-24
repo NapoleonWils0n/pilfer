@@ -188,9 +188,8 @@ def main(argv):
             else:
                 # -i url followed by -t 00:00:00 = valid
                 
-                
                 checkurl(argv[1]) # checkurl function
-                print(argv[3])
+                url_validated(argv[1])
         else:
             assert False, "unhandled option"
 
@@ -198,6 +197,8 @@ def main(argv):
 #=================================================#
 # decode url and split
 #=================================================#
+
+print("congratulations you can type")
 
 # decoded = unquote(unquote(url))
 
