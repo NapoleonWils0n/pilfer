@@ -18,6 +18,10 @@ from urllib.parse import unquote
 #=================================================#
 
 def usage():
+    '''script usage
+    
+    display script usage when the -h or --help option is used
+    '''
     usage = """
 -h --help display help
 -i 'video url'
