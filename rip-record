@@ -91,7 +91,10 @@ def duration_validated(duration):
 #=================================================#
 
 def main(argv):
-
+    ''' main function
+    
+    check number of arguments passed to script
+    '''
 #=================================================#
 # check number of arguments passed to script
 #=================================================#
