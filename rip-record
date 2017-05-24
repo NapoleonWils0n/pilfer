@@ -59,9 +59,6 @@ def checkurl(url):
             file = open(url, 'r') 
             url = file.read() 
             file.close()          
-            print(url)
-    else:
-        print(url)
 
 #=================================================#
 # validation functions
@@ -81,10 +78,23 @@ def checkurl(url):
 # the url_validated should be in the checkurl function
 
 def url_validated(url):
-    url_validated = re.search('^(http|https|rtmp|rtmpe)://*', url)
+    ''' validate user input for first argument
+
+    use regular expressions to check if first argument is a url
+    '''
+    if not re.search('^(http|https|rtmp|rtmpe)://*', url):
+        usage()    # display script usage
+        sys.exit() # exit
 
 def duration_validated(duration):
-    duration_validated = re.search('^[0-9]{2}:[0-9]{2}:[0-9]{2}$', duration)
+    ''' validate user input for second argument
+
+    user regular expressions to check duration matches 00:00:00 format
+    '''
+    if not re.search('^[0-9]{2}:[0-9]{2}:[0-9]{2}$', duration):
+        usage()    # display script usage
+        sys.exit() # exit
+
 
 #=================================================#
 # main function
@@ -161,6 +171,7 @@ def main(argv):
             # -i and url or text file - argv length 2, valid options and args
 
             checkurl(argv[1]) # checkurl function
+            url_validated(argv[1])
 
         elif opt == ("-t") and len(argv) == 2:
             # -t option on its own - invalid
