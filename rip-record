@@ -53,12 +53,18 @@ def checkurl(url):
     is a text file and if so open it and read the contents,
     and set the variable url to equal the contents of the text file.
     if the first argument isnt a text file its on the command line
+    
+    then check if the string is a url
     '''
     if os.path.isfile(url):
         if mimetypes.guess_type(url)[0] == 'text/plain':
             file = open(url, 'r') 
             url = file.read() 
             file.close()          
+    if not re.search('^(http|https|rtmp|rtmpe)://*', url):
+        usage()    # display script usage
+        sys.exit() # exit
+
 
 #=================================================#
 # validation functions
@@ -74,17 +80,6 @@ def checkurl(url):
 # these are the bash regular expressions which should work with python
 # the function should validate the url and duration with regulat expressions
 # and if the user input doesnt match the regexs display script usage and exit
-
-# the url_validated should be in the checkurl function
-
-def url_validated(url):
-    ''' validate user input for first argument
-
-    use regular expressions to check if first argument is a url
-    '''
-    if not re.search('^(http|https|rtmp|rtmpe)://*', url):
-        usage()    # display script usage
-        sys.exit() # exit
 
 def duration_validated(duration):
     ''' validate user input for second argument
@@ -171,7 +166,6 @@ def main(argv):
             # -i and url or text file - argv length 2, valid options and args
 
             checkurl(argv[1]) # checkurl function
-            url_validated(argv[1])
 
         elif opt == ("-t") and len(argv) == 2:
             # -t option on its own - invalid
@@ -189,7 +183,6 @@ def main(argv):
                 # -i url followed by -t 00:00:00 = valid
                 
                 checkurl(argv[1]) # checkurl function
-                url_validated(argv[1])
         else:
             assert False, "unhandled option"
 
@@ -198,7 +191,6 @@ def main(argv):
 # decode url and split
 #=================================================#
 
-print("congratulations you can type")
 
 # decoded = unquote(unquote(url))
 
@@ -214,3 +206,9 @@ print("congratulations you can type")
 
 if __name__ == "__main__":
     main(sys.argv[1:])
+
+#=================================================#
+# valid input
+#=================================================#
+
+print("valid input")
