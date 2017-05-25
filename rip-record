@@ -31,6 +31,7 @@ rip-record -i <video-url> -t <00:00:00>
     """
     print(usage)
 
+
 #=================================================#
 # checkurl function - check if first arg is text file
 #=================================================#
@@ -56,15 +57,19 @@ def checkurl(url):
     
     then check if the string is a url
     '''
+    global url_valid
     if os.path.isfile(url):
         if mimetypes.guess_type(url)[0] == 'text/plain':
             file = open(url, 'r') 
             url = file.read() 
             file.close()          
+            url_valid = url
+            return url_valid
     if not re.search('^(http|https|rtmp|rtmpe)://*', url):
         usage()    # display script usage
         sys.exit() # exit
-
+    url_valid = url
+    return url_valid
 
 #=================================================#
 # validation functions
@@ -86,9 +91,12 @@ def duration_validated(duration):
 
     user regular expressions to check duration matches 00:00:00 format
     '''
+    global time
     if not re.search('^[0-9]{2}:[0-9]{2}:[0-9]{2}$', duration):
         usage()    # display script usage
         sys.exit() # exit
+    time = duration
+    return time
 
 
 #=================================================#
@@ -133,11 +141,7 @@ def main(argv):
         print(err)  # will print something like "option -x not recognized"
         usage()     # display script usage
         sys.exit(2) # exit
-        
-# variables 
-    time = '-t'
-    duration = ''
-       
+      
 #=================================================#
 # check options and arguments
 #=================================================#
@@ -161,17 +165,14 @@ def main(argv):
             # -h or --help = display help
             usage()    # display script usage
             sys.exit() # exit
-
         elif opt == ("-i") and len(argv) == 2:
             # -i and url or text file - argv length 2, valid options and args
             checkurl(argv[1]) # checkurl function
-
         elif opt == ("-t") and len(argv) == 2:
             # -t option on its own - invalid
             print("the -t option must be used after the -i option")
             usage()    # display script usage
             sys.exit() # exit
-
         elif opt in ("-i", "-t") and len(argv) == 4:
             if "-t" in opts[0]:
                 # -t option used before -i option - invalid
@@ -182,7 +183,6 @@ def main(argv):
                 # -i url followed by -t 00:00:00 = valid
                 checkurl(argv[1]) # checkurl function
                 duration_validated(argv[3])
-                
         else:
             assert False, "unhandled option"
 
@@ -212,3 +212,9 @@ if __name__ == "__main__":
 #=================================================#
 
 print("valid input")
+
+if 'url_valid' in globals():
+    print(url_valid)
+
+if 'time' in globals():
+    print(time)
