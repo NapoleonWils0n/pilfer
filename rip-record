@@ -57,7 +57,6 @@ def checkurl(url):
     
     then check if the string is a url
     '''
-    global url_valid
     if os.path.isfile(url):
         if mimetypes.guess_type(url)[0] == 'text/plain':
             file = open(url, 'r') 
@@ -91,7 +90,6 @@ def duration_validated(duration):
 
     user regular expressions to check duration matches 00:00:00 format
     '''
-    global time
     if not re.search('^[0-9]{2}:[0-9]{2}:[0-9]{2}$', duration):
         usage()    # display script usage
         sys.exit() # exit
@@ -146,20 +144,6 @@ def main(argv):
 # check options and arguments
 #=================================================#
 
-# valid options
-# rip-record -h 
-# rip-record --help
-# rip-record -i (url on command line|or text file)
-# rip-record -i (url on command line|or text file) -t 00:00:00
-
-# invalid options
-# rip-record                = script run with no arguments
-# rip-record -i             = script run with -i option but no url or text file
-# rip-record -i url -t      = script run with -i option with url and -t option without a duration
-# rip-record -i -t 00:00:00 = script run with -i option with no url and -t option without a duration
-# rip-record -t             = script run with just the -t option
-# rip-record -t 00:00:00    = script run with just the -t option and a duration
-
     for opt, arg in opts:
         if opt in ("-h", "--help"):
             # -h or --help = display help
@@ -187,37 +171,34 @@ def main(argv):
             assert False, "unhandled option"
 
 
-#=================================================#
-# slice off script name from arguments
-#=================================================#
+        print("valid input")
+        print(checkurl(argv[1]))
+        print(duration_validated(argv[3]))
 
-# slice off script name from argument passed to main
-
-if __name__ == "__main__":
-    main(sys.argv[1:])
-
-#=================================================#
-# valid input
-#=================================================#
-
-print("valid input")
-
-if 'url_valid' in globals():
-    print(url_valid)
-
-if 'time' in globals():
-    print(time)
-    
 #=================================================#
 # decode url and split
 #=================================================#
 
 
-decoded = unquote(unquote(url_valid))
-decoded_url = decoded.split('|')
+#decoded = unquote(unquote(url_valid))
+#decoded_url = decoded.split('|')
+#
+#print(decoded_url)
 
-print(decoded_url)
+#if '|' in url_valid:
+#    print("matched |")
 
-url_list = [v.split('=', 1) for v in decoded_url if '=' in v]
-print(url_list)
+#    re.search('^(http|https|rtmp|rtmpe)://*', url)
+    
+#url_list = [v.split('=', 1) for v in decoded_url if '=' in v]
+#print(url_list)
 
+
+#=================================================#
+# slice off script name from arguments
+#=================================================#
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
+
+   
