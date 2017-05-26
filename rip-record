@@ -172,8 +172,8 @@ def main(argv):
 
 
         print("valid input")
-        print(checkurl(argv[1]))
-        print(duration_validated(argv[3]))
+#        print(checkurl(argv[1]))
+#        print(duration_validated(argv[3]))
 
 #=================================================#
 # decode url and split
