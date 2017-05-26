@@ -62,12 +62,10 @@ def checkurl(url):
             file = open(url, 'r') 
             url = file.read() 
             file.close()          
-#            url_valid = url
             return url
     if not re.search('^(http|https|rtmp|rtmpe)://*', url):
         usage()    # display script usage
         sys.exit() # exit
-#    url_valid = url
     return url
 
 #=================================================#
@@ -93,7 +91,6 @@ def duration_validated(duration):
     if not re.search('^[0-9]{2}:[0-9]{2}:[0-9]{2}$', duration):
         usage()    # display script usage
         sys.exit() # exit
-#    time = duration
     return duration
 
 
