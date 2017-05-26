@@ -62,13 +62,13 @@ def checkurl(url):
             file = open(url, 'r') 
             url = file.read() 
             file.close()          
-            url_valid = url
-            return url_valid
+#            url_valid = url
+            return url
     if not re.search('^(http|https|rtmp|rtmpe)://*', url):
         usage()    # display script usage
         sys.exit() # exit
-    url_valid = url
-    return url_valid
+#    url_valid = url
+    return url
 
 #=================================================#
 # validation functions
@@ -93,8 +93,8 @@ def duration_validated(duration):
     if not re.search('^[0-9]{2}:[0-9]{2}:[0-9]{2}$', duration):
         usage()    # display script usage
         sys.exit() # exit
-    time = duration
-    return time
+#    time = duration
+    return duration
 
 
 #=================================================#
@@ -171,16 +171,18 @@ def main(argv):
             assert False, "unhandled option"
 
 
-        print("valid input")
-#        print(checkurl(argv[1]))
-#        print(duration_validated(argv[3]))
 
 #=================================================#
 # decode url and split
 #=================================================#
 
 
-#decoded = unquote(unquote(url_valid))
+        decoded = unquote(unquote(checkurl(argv[1])))
+        print(decoded)
+
+#        print(checkurl(argv[1]))
+#        print(duration_validated(argv[3]))
+
 #decoded_url = decoded.split('|')
 #
 #print(decoded_url)
