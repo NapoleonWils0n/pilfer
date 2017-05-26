@@ -188,17 +188,6 @@ def main(argv):
 
 
 #=================================================#
-# decode url and split
-#=================================================#
-
-
-# decoded = unquote(unquote(url))
-
-# decoded_url = decoded.split('&')
-# url_list = [v.split('=', 1) for v in decoded_url if '=' in v]
-# print(url_list)
-
-#=================================================#
 # slice off script name from arguments
 #=================================================#
 
@@ -218,3 +207,17 @@ if 'url_valid' in globals():
 
 if 'time' in globals():
     print(time)
+    
+#=================================================#
+# decode url and split
+#=================================================#
+
+
+decoded = unquote(unquote(url_valid))
+decoded_url = decoded.split('|')
+
+print(decoded_url)
+
+url_list = [v.split('=', 1) for v in decoded_url if '=' in v]
+print(url_list)
+
