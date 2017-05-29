@@ -63,7 +63,8 @@ def checkurl(url):
             url = file.read() 
             file.close()          
             return url
-    if not re.search('^(http|https|rtmp|rtmpe)://*', url):
+    x = re.compile(r'^(http|https|rtmp|rtmpe)://[a-zA-Z0-9./]+[./]+[a-zA-Z]+[a-zA-Z0-9]+.*$')
+    if not x.match(url):
         usage()    # display script usage
         sys.exit() # exit
     return url
@@ -88,7 +89,8 @@ def duration_validated(duration):
 
     user regular expressions to check duration matches 00:00:00 format
     '''
-    if not re.search('^[0-9]{2}:[0-9]{2}:[0-9]{2}$', duration):
+    y = re.compile('^[0-9]{2}:[0-9]{2}:[0-9]{2}$')
+    if not y.match(duration):
         usage()    # display script usage
         sys.exit() # exit
     return duration
@@ -144,22 +146,22 @@ def main(argv):
     for opt, arg in opts:
         if opt in ("-h", "--help"):
             # -h or --help = display help
-            usage()    # display script usage
-            sys.exit() # exit
+            usage()
+            sys.exit()
         elif opt == ("-i") and len(argv) == 2:
             # -i and url or text file - argv length 2, valid options and args
             checkurl(argv[1]) # checkurl function
         elif opt == ("-t") and len(argv) == 2:
             # -t option on its own - invalid
             print("the -t option must be used after the -i option")
-            usage()    # display script usage
-            sys.exit() # exit
+            usage()
+            sys.exit()
         elif opt in ("-i", "-t") and len(argv) == 4:
             if "-t" in opts[0]:
                 # -t option used before -i option - invalid
                 print("the -t option must be used after the -i option")
-                usage()    # display script usage
-                sys.exit() # exit
+                usage()
+                sys.exit()
             else:
                 # -i url followed by -t 00:00:00 = valid
                 checkurl(argv[1]) # checkurl function
@@ -173,16 +175,25 @@ def main(argv):
 # decode url and split
 #=================================================#
 
+        if len(argv) == 2:
+            url_decoded = unquote(unquote(checkurl(argv[1])))
+            print("2 args")
+        elif len(argv) == 4:
+            url_decoded = unquote(unquote(checkurl(argv[1])))
+            time = duration_validated(argv[3])
+            print("4 args")
 
-        decoded = unquote(unquote(checkurl(argv[1])))
-        print(decoded)
 
-#        print(checkurl(argv[1]))
-#        print(duration_validated(argv[3]))
+        #slash = re.search('(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]*\.(m3u8|mkv|mp4|avi|flv)[|]', url_decoded)
+#        slash = re.match('(http|https)://[a-zA-Z0-9:0-9./]*[|]$', url_decoded)
+#        qmark = re.search('(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]*\.(m3u8|mkv|mp4|avi|flv)?([a-zA-Z0-9?&=%*_-]*[^|])', url_decoded)
 
-#decoded_url = decoded.split('|')
+#        if slash:
+#            print("match |")
+#        else:
+#            print("no match")
 #
-#print(decoded_url)
+#        url_split = url_decoded.split('|')
 
 #if '|' in url_valid:
 #    print("matched |")
