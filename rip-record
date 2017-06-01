@@ -184,8 +184,8 @@ def main(argv):
             print("4 args")
 
 
-        slash = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[|].*$')
-        qmark = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[?]+([a-zA-Z0-9?&=%*_-]*[^|])+.*')
+        slash = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[|]+.*$')
+        qmark = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[?]+([a-zA-Z0-9?&=%*_-]*[^|])+.*$')
 
         if slash.match(url_decoded):
             print("match |")
