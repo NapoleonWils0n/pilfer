@@ -193,11 +193,8 @@ def main(argv):
             print("match ?")
         else:
             print("no match")
-#
+            
 #        url_split = url_decoded.split('|')
-
-#if '|' in url_valid:
-#    print("matched |")
 
 #url_list = [v.split('=', 1) for v in decoded_url if '=' in v]
 #print(url_list)
