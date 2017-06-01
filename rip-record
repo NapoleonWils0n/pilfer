@@ -184,22 +184,21 @@ def main(argv):
             print("4 args")
 
 
-        #slash = re.search('(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]*\.(m3u8|mkv|mp4|avi|flv)[|]', url_decoded)
-#        slash = re.match('(http|https)://[a-zA-Z0-9:0-9./]*[|]$', url_decoded)
-#        qmark = re.search('(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]*\.(m3u8|mkv|mp4|avi|flv)?([a-zA-Z0-9?&=%*_-]*[^|])', url_decoded)
+        slash = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[|].*$')
+        qmark = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[?]+([a-zA-Z0-9?&=%*_-]*[^|])+.*')
 
-#        if slash:
-#            print("match |")
-#        else:
-#            print("no match")
+        if slash.match(url_decoded):
+            print("match |")
+        elif qmark.match(url_decoded):
+            print("match ?")
+        else:
+            print("no match")
 #
 #        url_split = url_decoded.split('|')
 
 #if '|' in url_valid:
 #    print("matched |")
 
-#    re.search('^(http|https|rtmp|rtmpe)://*', url)
-    
 #url_list = [v.split('=', 1) for v in decoded_url if '=' in v]
 #print(url_list)
 
