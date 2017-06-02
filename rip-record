@@ -63,7 +63,7 @@ def checkurl(url):
             url = file.read() 
             file.close()          
             return url
-    x = re.compile(r'^(http|https|rtmp|rtmpe)://[a-zA-Z0-9./]+[./]+[a-zA-Z]+[a-zA-Z0-9]+.*$')
+    x = re.compile(r'^(http|https|rtmp|rtmpe)://[a-zA-Z0-9./]+[./]+[a-zA-Z]+/[a-zA-Z0-9]+.*$')
     if not x.match(url):
         usage()    # display script usage
         sys.exit() # exit
@@ -95,6 +95,43 @@ def duration_validated(duration):
         sys.exit() # exit
     return duration
 
+#=================================================#
+# check number of arguments passed to script
+#=================================================#
+
+def arg_length(arglen):
+    ''' check number of arguments
+
+    check if 0 or more than 4 arguments passed to script
+    '''
+    if len(arglen) == 0:  # no arguments passed to script
+        print("No arguments passed to script")
+        usage()    # display script usage
+        sys.exit() # exit
+    elif len(arglen) > 4: # too many arguments passed to script
+        print("Too many arguments passed to script")
+        usage()    # display script usage
+        sys.exit() # exit
+
+
+#=================================================#
+# split url
+#=================================================#
+
+def url_split(url_to_split):
+    ''' split url
+    
+    split url on slash or ampersand
+    '''
+    slash = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[|]+.*$')
+    qmark = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[?]+([a-zA-Z0-9?&=%*_-]*[^|])+.*$')
+    if slash.match(url_to_split):
+        print("match |")
+    elif qmark.match(url_to_split):
+        print("match ?")
+    else:
+        print("no match")
+         
 
 #=================================================#
 # main function
@@ -109,19 +146,11 @@ def main(argv):
 # check number of arguments passed to script
 #=================================================#
 
-# check number of arguments passed to script
 # if script is run with no arguments display script usage and exit
 # if script is run with more than 4 arguments passed to the script
 # display script usage and exit
 
-    if len(argv) == 0:  # no arguments passed to script
-        print("No arguments passed to script")
-        usage()    # display script usage
-        sys.exit() # exit
-    elif len(argv) > 4: # too many arguments passed to script
-        print("Too many arguments passed to script")
-        usage()    # display script usage
-        sys.exit() # exit
+    arg_length(argv)
 
 #=================================================#
 # try options
@@ -170,10 +199,10 @@ def main(argv):
             assert False, "unhandled option"
 
 
+#=================================================#
+# check arg length
+#=================================================#
 
-#=================================================#
-# decode url and split
-#=================================================#
 
         if len(argv) == 2:
             url_decoded = unquote(unquote(checkurl(argv[1])))
@@ -183,18 +212,15 @@ def main(argv):
             time = duration_validated(argv[3])
             print("4 args")
 
+#=================================================#
+# decode url and split
+#=================================================#
 
-        slash = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[|]+.*$')
-        qmark = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[?]+([a-zA-Z0-9?&=%*_-]*[^|])+.*$')
+        url_split(url_decoded)
 
-        if slash.match(url_decoded):
-            print("match |")
-        elif qmark.match(url_decoded):
-            print("match ?")
-        else:
-            print("no match")
-            
-#        url_split = url_decoded.split('|')
+           
+#        url_split = url_decoded.split(r'|')
+#        print(url_split)
 
 #url_list = [v.split('=', 1) for v in decoded_url if '=' in v]
 #print(url_list)
@@ -206,5 +232,3 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv[1:])
-
-   
