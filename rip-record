@@ -59,8 +59,8 @@ def checkurl(url):
     '''
     if os.path.isfile(url):
         if mimetypes.guess_type(url)[0] == 'text/plain':
-            file = open(url, 'r') 
-            url = file.read() 
+            with open(url, 'r') as file:
+                url = file.read()
             file.close()          
             return url
     x = re.compile(r'^(http|https|rtmp|rtmpe)://[a-zA-Z0-9./]+[./]+[a-zA-Z]+/[a-zA-Z0-9]+.*$')
