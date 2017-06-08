@@ -2,6 +2,7 @@
 
 # import modules
 import validate
+import regex
 import sys, re, getopt, os.path, mimetypes
 from urllib.parse import unquote
 
@@ -14,29 +15,13 @@ from urllib.parse import unquote
 # unquote   = decode urls
 #=================================================#
 
+# shortcuts for imported functions
+
 usage = validate.usage
 checkurl = validate.checkurl
-duration_validated = validate.duration_validated
-arg_length = validate.arg_length
-
-#=================================================#
-# split url
-#=================================================#
-
-def url_split(url_to_split):
-    ''' split url
-    
-    split url on slash or ampersand
-    '''
-    slash = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[|]+.*$')
-    qmark = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[?]+([a-zA-Z0-9?&=%*_-]*[^|])+.*$')
-    if slash.match(url_to_split):
-        print("match |")
-    elif qmark.match(url_to_split):
-        print("match ?")
-    else:
-        print("no match")
-         
+durationValidated = validate.durationValidated
+argLength = validate.argLength
+splitUrl = regex.splitUrl
 
 #=================================================#
 # main function
@@ -55,7 +40,7 @@ def main(argv):
 # if script is run with more than 4 arguments passed to the script
 # display script usage and exit
 
-    arg_length(argv)
+    argLength(argv)
 
 #=================================================#
 # check options and arguments
@@ -95,7 +80,7 @@ def main(argv):
             else:
                 # -i url followed by -t 00:00:00 = valid
                 checkurl(argv[1]) # checkurl function
-                duration_validated(argv[3])
+                durationValidated(argv[3])
         else:
             assert False, "unhandled option"
 
@@ -106,10 +91,10 @@ def main(argv):
 
 
         if len(argv) == 2:
-            url_decoded = unquote(unquote(checkurl(argv[1])))
+            urlDecoded = unquote(unquote(checkurl(argv[1])))
             print("2 args")
         elif len(argv) == 4:
-            url_decoded = unquote(unquote(checkurl(argv[1])))
+            urlDecoded = unquote(unquote(checkurl(argv[1])))
             time = duration_validated(argv[3])
             print("4 args")
 
@@ -117,14 +102,20 @@ def main(argv):
 # decode url and split
 #=================================================#
 
-        url_split(url_decoded)
+# pass the decoded url to the url_split function
+
+        x = splitUrl(urlDecoded)
+        print(x)
 
            
-#        url_split = url_decoded.split(r'|')
-#        print(url_split)
+#        url_split = x.split(r'&')
+        
 
-#url_list = [v.split('=', 1) for v in decoded_url if '=' in v]
-#print(url_list)
+#        url_list = [v.split('=', 1) for v in url_split if '=' in v]
+#        y = dict(url_list)
+#
+#        print(url_list)
+#        print(y)
 
 
 #=================================================#

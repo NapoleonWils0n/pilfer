@@ -82,7 +82,7 @@ def checkurl(url):
 # the function should validate the url and duration with regulat expressions
 # and if the user input doesnt match the regexs display script usage and exit
 
-def duration_validated(duration):
+def durationValidated(duration):
     ''' validate user input for second argument
 
     user regular expressions to check duration matches 00:00:00 format
@@ -97,7 +97,7 @@ def duration_validated(duration):
 # check number of arguments passed to script
 #=================================================#
 
-def arg_length(arglen):
+def argLength(arglen):
     ''' check number of arguments
 
     check if 0 or more than 4 arguments passed to script
