@@ -36,8 +36,7 @@ def main(argv):
 # check number of arguments passed to script
 #=================================================#
 
-# if script is run with no arguments display script usage and exit
-# if script is run with more than 4 arguments passed to the script
+# if script is run with no arguments or more than 4 arguments
 # display script usage and exit
 
     argLength(argv)
@@ -46,7 +45,6 @@ def main(argv):
 # check options and arguments
 #=================================================#
 
-# options
 # h = help
 # i: = url, the : means i requires an argument which would be the url
 # t: = time, the : means t requires an argument which would be the time in 00:00:00 format
@@ -86,9 +84,8 @@ def main(argv):
 
 
 #=================================================#
-# check arg length
+# check if 2 or 4 arguments are passed to the script
 #=================================================#
-
 
         if len(argv) == 2:
             urlDecoded = unquote(unquote(checkurl(argv[1])))
