@@ -11,7 +11,6 @@ def splitUrl(urldata):
     
     split url on slash or ampersand
     '''
-    slash = re.compile(r'|')
     amp = re.compile(r'(?=[&][a-zA-Z_]+=+[-a-zA-Z0-9.]?)')
     if '|' in urldata:
         print("match |")
