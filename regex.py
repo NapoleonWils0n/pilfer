@@ -19,6 +19,5 @@ def splitUrl(urldata):
         print("match &")
         return urldata
     else:
-        print("no | or &")
         return urldata
 
