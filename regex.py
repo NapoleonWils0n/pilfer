@@ -11,17 +11,13 @@ def splitUrl(urldata):
     
     split url on slash or ampersand
     '''
-    slash = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[|]+.*$')
-    ampersand = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+(?=[&][a-zA-Z_]+=+[-a-zA-Z0-9.]?).*$')
-    qmark = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[?]+([a-zA-Z0-9?&=%*_-]*[^|])+.*$')
-    if slash.match(urldata):
+    slash = re.compile(r'|')
+    amp = re.compile(r'(?=[&][a-zA-Z_]+=+[-a-zA-Z0-9.]?)')
+    if '|' in urldata:
         print("match |")
         return urldata
-    elif ampersand.match(urldata):
+    elif amp.match(urldata):
         print("match &")
-        return urldata
-    elif qmark.match(urldata):
-        print("match ?")
         return urldata
     else:
         print("no match")
