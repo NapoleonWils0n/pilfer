@@ -6,7 +6,7 @@ import re
 # split url
 #=================================================#
 
-def splitUrl(url_to_split):
+def splitUrl(urldata):
     ''' split url
     
     split url on slash or ampersand
@@ -14,12 +14,16 @@ def splitUrl(url_to_split):
     slash = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[|]+.*$')
     ampersand = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+(?=[&][a-zA-Z_]+=+[-a-zA-Z0-9.]?).*$')
     qmark = re.compile(r'^(http|https)://[a-zA-Z0-9:0-9./?=_,@&%-]+\.(m3u8|mkv|mp4|avi|flv)[?]+([a-zA-Z0-9?&=%*_-]*[^|])+.*$')
-    if slash.match(url_to_split):
+    if slash.match(urldata):
         print("match |")
-    elif ampersand.match(url_to_split):
+        return urldata
+    elif ampersand.match(urldata):
         print("match &")
-        return url_to_split
-    elif qmark.match(url_to_split):
+        return urldata
+    elif qmark.match(urldata):
         print("match ?")
+        return urldata
     else:
         print("no match")
+        return urldata
+

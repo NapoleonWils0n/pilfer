@@ -32,6 +32,7 @@ def main(argv):
     
     check number of arguments passed to script
     '''
+    
 #=================================================#
 # check number of arguments passed to script
 #=================================================#
@@ -89,11 +90,9 @@ def main(argv):
 
         if len(argv) == 2:
             urlDecoded = unquote(unquote(checkurl(argv[1])))
-            print("2 args")
         elif len(argv) == 4:
             urlDecoded = unquote(unquote(checkurl(argv[1])))
             time = duration_validated(argv[3])
-            print("4 args")
 
 #=================================================#
 # decode url and split
