@@ -15,7 +15,7 @@ def splitUrl(urldata):
     if '|' in urldata:
         print("match |")
         return urldata
-    elif amp.match(urldata):
+    elif amp.search(urldata):
         print("match &")
         return urldata
     else:
