@@ -17,8 +17,8 @@ def splitUrl(urldata):
     if '|' in urldata:
         print("match |")
         ud = urldata.split(r'|')
-        a = ud[0]
-        b = ud[1]
+        a = ud[0] # url before |
+        b = ud[1] # url after |
         print(a,"\n")
         print(b)
         #udsplit = [v.split('=', 1) for v in ud if '=' in v]
