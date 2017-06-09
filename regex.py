@@ -14,7 +14,7 @@ def splitUrl(urldata):
     localproxy = re.compile(r'^http://127.0.0.1[:0-9]?')
     amp = re.compile(r'(?=[&][a-zA-Z_]+=+[-a-zA-Z0-9.]?)')
     if '|' in urldata:
-        print("match |")
+        print("match |\n")
         ud = urldata.split(r'|')
         a = ud[0]
         b = ud[1]
@@ -28,9 +28,6 @@ def splitUrl(urldata):
         return urldata
     elif localproxy.search(urldata):
         print("localproxy")
-        return urldata
-    elif amp.search(urldata):
-        print("match &")
         return urldata
     else:
         return urldata
