@@ -15,6 +15,9 @@ def splitUrl(urldata):
     amp = re.compile(r'(?=[&][a-zA-Z_]+=+[-a-zA-Z0-9.]?)')
     if '|' in urldata:
         print("match |")
+        urldata = urldata.split(r'|')
+        #udsplit = [v.split('=', 1) for v in ud if '=' in v]
+        #urldata = dict(udsplit)
         return urldata
     elif localproxy.search(urldata):
         print("localproxy")
