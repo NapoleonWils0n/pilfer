@@ -27,7 +27,7 @@ def splitUrl(urldata):
     elif rtmp.match(urldata):
         print("rtmp")
         return urldata
-    elif localproxy.search(urldata):
+    elif localproxy.match(urldata):
         print("localproxy")
         return urldata
     else:
