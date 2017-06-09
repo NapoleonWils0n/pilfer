@@ -15,17 +15,14 @@ def splitUrl(urldata):
     rtmp = re.compile(r'^(rtmp|rtmpe)://')
     amp = re.compile(r'(?=[&][a-zA-Z_]+=+[-a-zA-Z0-9.]?)')
     if '|' in urldata:
-        print("match |\n")
+        print("match |")
         ud = urldata.split(r'|')
         a = ud[0]
         b = ud[1]
-        print("before slash:")
         print(a,"\n")
-        print("after slash:")
         print(b)
         #udsplit = [v.split('=', 1) for v in ud if '=' in v]
         #urldata = dict(udsplit)
-        print("full url:")
         return urldata
     elif rtmp.match(urldata):
         print("rtmp")
@@ -34,5 +31,6 @@ def splitUrl(urldata):
         print("localproxy")
         return urldata
     else:
+        print("full url")
         return urldata
 
