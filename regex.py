@@ -19,11 +19,11 @@ def splitUrl(urldata):
         ud = urldata.split(r'|')
         a = ud[0] # url before |
         b = ud[1] # url after |
-        print(a,"\n")
-        print(b)
         #udsplit = [v.split('=', 1) for v in ud if '=' in v]
         #urldata = dict(udsplit)
-        return urldata
+        splitParams(b)
+        #e = splitParams(b)
+        return a
     elif rtmp.match(urldata):
         print("rtmp")
         return urldata
@@ -34,3 +34,25 @@ def splitUrl(urldata):
         print("full url")
         return urldata
 
+def splitEquals(eq):
+    fsplit = dict([v.split('=', 1) for v in eq if '=' in v])
+    print(fsplit)
+    
+def splitParams(params):
+    useragent = re.compile(r'u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+')
+    cookie = re.compile(r'[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+')
+    f = cookie.findall(params)
+    splitEquals(f)
+
+#    if cookie.findall(params):
+#        f = cookie.findall(params)
+#        fsplit = [v.split('=', 1) for v in f if '=' in v]
+#        print(fsplit)
+ 
+#   if useragent.findall(params):
+#        c = useragent.findall(params)
+#        csplit = [v.split('=', 1) for v in c if '=' in v]
+#        d = dict(csplit)
+#        for k, v in d.items():
+#            print(k, v)
+        #return d['User-Agent']
