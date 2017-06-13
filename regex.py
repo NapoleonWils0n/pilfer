@@ -19,7 +19,8 @@ def splitUrl(urldata):
         ud = urldata.split(r'|')
         a = ud[0] # url before |
         b = ud[1] # url after |
-        splitParams(b)
+        print(userAgent(b))
+        print(cookie(b))
         return a
     elif rtmp.match(urldata):
         print("rtmp")
@@ -35,13 +36,12 @@ def splitEquals(eq):
     fsplit = dict([v.split('=', 1) for v in eq if '=' in v])
     print(fsplit)
     
-def splitParams(params):
-    useragent = re.compile(r'u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+')
-    cookie = re.compile(r'[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+')
-    
-    f = cookie.findall(params)
-    print(f)
-
+def userAgent(params):
+    return re.findall(r'u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+', params)
+   
+def cookie(params):
+    return re.findall(r'[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+', params) 
+           
 #    splitEquals(f)
 
 #    if cookie.findall(params):
