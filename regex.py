@@ -33,8 +33,7 @@ def splitUrl(urldata):
         return urldata
 
 def splitEquals(eq):
-    fsplit = dict([v.split('=', 1) for v in eq if '=' in v])
-    print(fsplit)
+    return dict([v.split('=', 1) for v in eq if '=' in v])
     
 def userAgent(params):
     return re.findall(r'u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+', params)
