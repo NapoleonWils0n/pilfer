@@ -19,6 +19,7 @@ def splitUrl(urldata):
         ud = urldata.split(r'|')
         a = ud[0] # url before |
         b = ud[1] # url after |
+        print(len(b))
         print(master(b))
 #        print(userAgent(b))
 #        print(cookie(b))
@@ -39,8 +40,9 @@ def splitEquals(eq):
 urlparams = ''
 
 def match_func(pattern, urlparams):
-    def match_rule(params):
-        return re.findall(pattern, params)
+    def match_rule(urlparams):
+        return re.findall(pattern, urlparams)
+#        return splitEquals(re.findall(pattern, urlparams))
     return match_rule
     
 patterns = \
