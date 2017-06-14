@@ -45,36 +45,21 @@ def match_func(pattern, urlparams):
 #        return splitEquals(re.findall(pattern, urlparams))
     return match_rule
     
-patterns = \
-    (
-        ('u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+'),
-        ('[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+')
-    )
+rules = []
+with open ('regex.txt', encoding='utf-8') as pattern_file:
+    for line in pattern_file:
+        pattern = line.split()
+        rules.append(match_func(pattern))
 
-rules = [match_func(pattern, urlparams) for (pattern) in patterns]
+#patterns = \
+#    (
+#        ('u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+'),
+#        ('[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+')
+#    )
+#
+#rules = [match_func(pattern, urlparams) for (pattern) in patterns]
 
 def master(urlparams):
     for match_func in rules:
         if match_func(urlparams):
             return match_func(urlparams)
-
-#def userAgent(params):
-#    return re.findall(r'u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+', params)
-#   
-#def cookie(params):
-#    return re.findall(r'[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+', params) 
-           
-#    splitEquals(f)
-
-#    if cookie.findall(params):
-#        f = cookie.findall(params)
-#        fsplit = [v.split('=', 1) for v in f if '=' in v]
-#        print(fsplit)
- 
-#   if useragent.findall(params):
-#        c = useragent.findall(params)
-#        csplit = [v.split('=', 1) for v in c if '=' in v]
-#        d = dict(csplit)
-#        for k, v in d.items():
-#            print(k, v)
-        #return d['User-Agent']
