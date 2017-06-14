@@ -19,9 +19,10 @@ def splitUrl(urldata):
         ud = urldata.split(r'|')
         a = ud[0] # url before |
         b = ud[1] # url after |
-        print(userAgent(b))
-        print(cookie(b))
-        return a
+        print(master(b))
+#        print(userAgent(b))
+#        print(cookie(b))
+        return (a, b)
     elif rtmp.match(urldata):
         print("rtmp")
         return urldata
@@ -35,16 +36,31 @@ def splitUrl(urldata):
 def splitEquals(eq):
     return dict([v.split('=', 1) for v in eq if '=' in v])
     
+urlparams = ''
+
 def match_func(pattern, urlparams):
-    def match_rule(urlparams):
-        return re.findall(pattern, urlparams)
+    def match_rule(params):
+        return re.findall(pattern, params)
     return match_rule
     
-def userAgent(params):
-    return re.findall(r'u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+', params)
-   
-def cookie(params):
-    return re.findall(r'[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+', params) 
+patterns = \
+    (
+        ('u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+'),
+        ('[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+')
+    )
+
+rules = [match_func(pattern, urlparams) for (pattern) in patterns]
+
+def master(urlparams):
+    for match_func in rules:
+        if match_func(urlparams):
+            return match_func(urlparams)
+
+#def userAgent(params):
+#    return re.findall(r'u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+', params)
+#   
+#def cookie(params):
+#    return re.findall(r'[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+', params) 
            
 #    splitEquals(f)
 
