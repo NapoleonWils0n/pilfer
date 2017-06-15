@@ -41,7 +41,9 @@ urlparams = ''
 
 def match_func(pattern, urlparams):
     def match_rule(params):
-        return re.findall(pattern, params)
+        p = re.findall(pattern, params)
+        print(splitEquals(p))
+        #return re.findall(pattern, params)
     return match_rule
     
 patterns = \
