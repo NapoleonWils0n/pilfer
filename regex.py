@@ -21,9 +21,7 @@ def splitUrl(urldata):
         b = ud[1] # url after |
         master(a)
         master(b)
-#        print(userAgent(b))
-#        print(cookie(b))
-#        return (a, b)
+        #return (a, b)
     elif rtmp.match(urldata):
         print("rtmp")
         return urldata
@@ -41,14 +39,13 @@ def splitEquals(eq):
 urlparams = ''
 
 def match_func(pattern, urlparams):
-    def match_rule(urlparams):
-        match = re.findall(pattern, urlparams)
+    def match_rule(params):
+        match = re.findall(pattern, params)
         if match:
             #return splitEquals(match)
             print(splitEquals(match))
         else:
-            print(urlparams)
-        #return re.findall(pattern, params)
+            print(params)
     return match_rule
     
 patterns = \
