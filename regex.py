@@ -19,7 +19,9 @@ def splitUrl(urldata):
         ud = urldata.split(r'|')
         a = ud[0] # url before |
         b = ud[1] # url after |
-        print(master(b))
+        c = master(b)
+        print(c)
+        #print(master(b))
     #    rec = record(a, b)
     #    print(rec)
     elif rtmp.match(urldata):
@@ -36,6 +38,7 @@ def splitUrl(urldata):
 def splitEquals(eq):
     return dict([v.split('=', 1) for v in eq if '=' in v])
 
+# record function
 def record(link, *args):
     arg2 = args[0:]
     strtuple = ' '.join(arg2)
@@ -49,12 +52,16 @@ def match_func(pattern, urlparams):
     def match_rule(params):
         match = re.findall(pattern, params)
         if match:
+            for i in match:
             #return splitEquals(match)
-            print(splitEquals(match))
+                return match
+            #print(match)
+            #print(splitEquals(match))
         else:
             print(params)
     return match_rule
     
+# regex dictionary
 patterns = {
            'user-agent': 'u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+',
            'cookie': '[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+'
