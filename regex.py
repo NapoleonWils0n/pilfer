@@ -52,13 +52,11 @@ def match_func(pattern, urlparams):
     def match_rule(params):
         match = re.findall(pattern, params)
         if match:
-            for i in match:
             #return splitEquals(match)
-                return match
             #print(match)
-            #print(splitEquals(match))
+            return match
         else:
-            print(params)
+            return params
     return match_rule
     
 # regex dictionary
@@ -72,4 +70,4 @@ rules = [match_func(pattern, urlparams) for (pattern) in patterns.values()]
 def master(urlparams):
     for match_func in rules:
         if match_func(urlparams):
-            return match_func(urlparams)
+             return match_func(urlparams)
