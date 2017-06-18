@@ -19,9 +19,9 @@ def splitUrl(urldata):
         ud = urldata.split(r'|')
         a = ud[0] # url before |
         b = ud[1] # url after |
-        master(a)
-        master(b)
-        #return (a, b)
+        print(master(b))
+    #    rec = record(a, b)
+    #    print(rec)
     elif rtmp.match(urldata):
         print("rtmp")
         return urldata
@@ -36,6 +36,13 @@ def splitUrl(urldata):
 def splitEquals(eq):
     return dict([v.split('=', 1) for v in eq if '=' in v])
 
+def record(link, *args):
+    arg2 = args[0:]
+    strtuple = ' '.join(arg2)
+    print(strtuple)
+            
+    print("ffmpeg -hide_banner -stats -v panic", strtuple, "-i", link, "-c:v copy -c:a copy $tflag $duration $recordingfile")
+
 urlparams = ''
 
 def match_func(pattern, urlparams):
@@ -48,13 +55,12 @@ def match_func(pattern, urlparams):
             print(params)
     return match_rule
     
-patterns = \
-    (
-        ('u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+'),
-        ('[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+')
-    )
+patterns = {
+           'user-agent': 'u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+',
+           'cookie': '[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+'
+           }
 
-rules = [match_func(pattern, urlparams) for (pattern) in patterns]
+rules = [match_func(pattern, urlparams) for (pattern) in patterns.values()]
 
 def master(urlparams):
     for match_func in rules:
