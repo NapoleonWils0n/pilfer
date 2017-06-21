@@ -62,6 +62,8 @@ def match_func(pattern, urlparams):
 # regex dictionary
 patterns = {
            'user-agent': 'u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+',
+           'referer': 'r?Referer=[a-zA-Z0-9/.()\s,:;%+_-]+',
+           'x-forward': 'X-Forwarded-For=[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}',
            'cookie': '[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+'
            }
 
