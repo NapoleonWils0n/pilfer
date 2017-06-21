@@ -19,7 +19,8 @@ def splitUrl(urldata):
         ud = urldata.split(r'|')
         a = ud[0] # url before |
         b = ud[1] # url after |
-        print(master(b))
+        c= master(b)
+        return a, c
     elif rtmp.match(urldata):
         print("rtmp")
         return urldata
@@ -34,23 +35,14 @@ def splitUrl(urldata):
 def splitEquals(eq):
     return dict([v.split('=', 1) for v in eq if '=' in v])
 
-# record function
-def record(link, *args):
-    arg2 = args[0:]
-    strtuple = ' '.join(arg2)
-    print(strtuple)
-            
-    print("ffmpeg -hide_banner -stats -v panic", strtuple, "-i", link, "-c:v copy -c:a copy $tflag $duration $recordingfile")
-
 urlparams = ''
 
 def match_func(pattern, urlparams):
     def match_rule(params):
         match = re.findall(pattern, params)
         if match:
-            return splitEquals(match)
-            #print(match)
-            #return match
+            #return splitEquals(match)
+            return match
         else:
             return params
     return match_rule
@@ -69,3 +61,11 @@ def master(urlparams):
     for match_func in rules:
         if match_func(urlparams):
              return match_func(urlparams)
+
+# record function
+def record(link, *args):
+    arg2 = args[0:]
+    strtuple = ' '.join(arg2)
+    print(strtuple)
+            
+    print("ffmpeg -hide_banner -stats -v panic", strtuple, "-i", link, "-c:v copy -c:a copy $tflag $duration $recordingfile")
