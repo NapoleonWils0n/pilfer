@@ -19,10 +19,9 @@ def splitUrl(urldata):
         udSplit = urldata.split(r'|')
         udSplitA = udSplit[0] # url before |
         udSplitB = udSplit[1] # url after |
-        if not master(udSplitA):
-            print("no")
-            urlDict = {'url': udSplitA}
-            print(urlDict)
+        master(udSplitA)
+        # urlDict = {'url': udSplitA}
+        # print(urlDict)
         c= master(udSplitB)
         d = splitEquals(c)
         return d
