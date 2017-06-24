@@ -19,12 +19,12 @@ def splitUrl(urldata):
         ud_split = urldata.split(r'|')
         ud_split_a = ud_split[0] # url before |
         ud_split_b = ud_split[1] # url after |
-        master(ud_split_a)
+        a = master(ud_split_a)
+        b = master(ud_split_b)
         # url_dict = {'url': ud_split_a}
         # print(url_dict)
-        c= master(ud_split_b)
-        d = split_equals(c)
-        return d
+        #d = split_equals(c)
+        return a, b
     elif rtmp.match(urldata):
         print("rtmp")
         return urldata
