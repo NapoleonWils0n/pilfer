@@ -23,6 +23,8 @@ def splitUrl(urldata):
             print("no")
             urlDict = {'url': udSplitA}
             print(urlDict)
+        else:
+            master(udSplitA)
         c= master(udSplitB)
         d = splitEquals(c)
         return d
