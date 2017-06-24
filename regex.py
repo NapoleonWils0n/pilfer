@@ -16,14 +16,14 @@ def splitUrl(urldata):
     amp = re.compile(r'(?=[&][a-zA-Z_]+=+[-a-zA-Z0-9.]?)')
     if '|' in urldata:
         print("match |")
-        udSplit = urldata.split(r'|')
-        udSplitA = udSplit[0] # url before |
-        udSplitB = udSplit[1] # url after |
-        master(udSplitA)
-        # urlDict = {'url': udSplitA}
-        # print(urlDict)
-        c= master(udSplitB)
-        d = splitEquals(c)
+        ud_split = urldata.split(r'|')
+        ud_split_a = ud_split[0] # url before |
+        ud_split_b = ud_split[1] # url after |
+        master(ud_split_a)
+        # url_dict = {'url': ud_split_a}
+        # print(url_dict)
+        c= master(ud_split_b)
+        d = split_equals(c)
         return d
     elif rtmp.match(urldata):
         print("rtmp")
@@ -37,7 +37,7 @@ def splitUrl(urldata):
         return urldata
 
 # split string on = and store in dict
-def splitEquals(*args):
+def split_equals(*args):
     return dict([v.split('=', 1) for v in args if '=' in v])
 
 urlparams = ''
