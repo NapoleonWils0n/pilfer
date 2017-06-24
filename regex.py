@@ -65,4 +65,3 @@ def master(urlparams):
     for match_func in rules:
         if match_func(urlparams):
              return match_func(urlparams)
-
