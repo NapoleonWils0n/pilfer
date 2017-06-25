@@ -43,12 +43,12 @@ def split_equals(*args):
 urlparams = ''
 
 def match_func(pattern, urlparams):
-    def match_rule(params):
-        match = re.findall(pattern, params)
+    def match_rule(urlparams):
+        match = re.findall(pattern, urlparams)
         if match:
             return match
         else:
-            return params
+            return urlparams
     return match_rule
     
 # regex dictionary
