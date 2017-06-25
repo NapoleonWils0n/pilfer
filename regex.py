@@ -42,13 +42,13 @@ def split_equals(*args):
 
 urlparams = ''
 
-def match_func(pattern, urlparams):
-    def match_rule(params):
-        match = re.findall(pattern, params)
+def match_func(pattern, *args):
+    def match_rule(args):
+        match = re.findall(pattern, args)
         if match:
             return match
         else:
-            return params
+            return args
     return match_rule
     
 # regex dictionary
@@ -61,7 +61,7 @@ patterns = {
 
 rules = [match_func(pattern, urlparams) for (pattern) in patterns.values()]
 
-def master(urlparams):
+def master(*args):
     for match_func in rules:
-        if match_func(urlparams):
-             return match_func(urlparams)
+        if match_func(*args):
+             return match_func(*args)
