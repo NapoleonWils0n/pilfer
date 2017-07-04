@@ -19,17 +19,17 @@ def splitUrl(urldata):
         ud_split = urldata.split(r'|')
         ud_split_a = ud_split[0] # url before |
         ud_split_b = ud_split[1] # url after |
-        a = master(ud_split_a)
+        #a = master(ud_split_a)
         b = master(ud_split_b)
-        # url_dict = {'url': ud_split_a}
-        # print(url_dict)
-        #d = split_equals(c)
-        return a, b
+        return b
+        #return ud_split_a, ud_split_b
     elif rtmp.match(urldata):
         print("rtmp")
+        urldata = {'url': urldata}
         return urldata
     elif localproxy.match(urldata):
         print("localproxy")
+        urldata = {'url': urldata}
         return urldata
     else:
         print("full url")
@@ -64,5 +64,5 @@ rules = [match_func(pattern, urlparams) for (pattern) in patterns.values()]
 def master(urlparams):
     for match_func in rules:
         if match_func(urlparams):
-             return match_func(urlparams)
+            return match_func(urlparams)
 
