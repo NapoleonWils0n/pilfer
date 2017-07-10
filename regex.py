@@ -48,16 +48,17 @@ patterns = {
            }
 
 urlparams = ''
+result = []
 
 def match_func(pattern, urlparams):
     def match_rule(urlparams):
         match = re.findall(pattern, urlparams)
-        result = []
-
         for m in re.finditer(pattern, urlparams):
-            result.append(match)
-            print(m)
-            #print(match)
+            print(m.group())
+            #n = match
+            #result.extend(n)
+            #x = result
+            #print(x)
         #if match:
         #    result.append(match)
         #    return result
