@@ -48,7 +48,6 @@ patterns = {
            }
 
 urlparams = ''
-result = []
 
 def match_func(pattern, urlparams):
     def match_rule(urlparams):
