@@ -19,10 +19,9 @@ def splitUrl(urldata):
         ud_split = urldata.split(r'|')
         ud_split_a = ud_split[0] # url before |
         ud_split_b = ud_split[1] # url after |
-        #a = master(ud_split_a)
-        b = master(ud_split_b)
-        return b
-        #return ud_split_a, ud_split_b
+
+        print(master(ud_split_b))
+        #return [ud_split_a, ud_split_b]
     elif rtmp.match(urldata):
         print("rtmp")
         urldata = {'url': urldata}
@@ -39,18 +38,7 @@ def splitUrl(urldata):
 # split string on = and store in dict
 def split_equals(*args):
     return dict([v.split('=', 1) for v in args if '=' in v])
-
-urlparams = ''
-
-def match_func(pattern, urlparams):
-    def match_rule(urlparams):
-        match = re.findall(pattern, urlparams)
-        if match:
-            return match
-        else:
-            return urlparams
-    return match_rule
-    
+   
 # regex dictionary
 patterns = {
            'user-agent': 'u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+',
@@ -59,10 +47,23 @@ patterns = {
            'cookie': '[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+'
            }
 
+urlparams = ''
+
+def match_func(pattern, urlparams):
+    def match_rule(urlparams):
+        match = re.findall(pattern, urlparams)
+        result = []
+        if match:
+            result.append(match)
+            return result
+        #    return match
+        #else:
+        #    return urlparams
+    return match_rule
+
 rules = [match_func(pattern, urlparams) for (pattern) in patterns.values()]
 
 def master(urlparams):
     for match_func in rules:
         if match_func(urlparams):
             return match_func(urlparams)
-
