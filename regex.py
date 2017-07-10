@@ -54,17 +54,9 @@ def match_func(pattern, urlparams):
     def match_rule(urlparams):
         match = re.findall(pattern, urlparams)
         for m in re.finditer(pattern, urlparams):
-            print(m.group())
-            #n = match
-            #result.extend(n)
-            #x = result
-            #print(x)
-        #if match:
-        #    result.append(match)
-        #    return result
-        #    return match
-        #else:
-        #    return urlparams
+            n = m.group()
+            print(n)
+
     return match_rule
 
 rules = [match_func(pattern, urlparams) for (pattern) in patterns.values()]
