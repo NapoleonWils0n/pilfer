@@ -53,9 +53,14 @@ def match_func(pattern, urlparams):
     def match_rule(urlparams):
         match = re.findall(pattern, urlparams)
         result = []
-        if match:
+
+        for m in re.finditer(pattern, urlparams):
             result.append(match)
-            return result
+            print(m)
+            #print(match)
+        #if match:
+        #    result.append(match)
+        #    return result
         #    return match
         #else:
         #    return urlparams
