@@ -51,8 +51,8 @@ urlparams = ''
 
 def match_func(pattern, urlparams):
     def match_rule(urlparams):
-        for m in re.finditer(pattern, urlparams):
-            n = m.group()
+        for match in re.finditer(pattern, urlparams):
+            n = match.group()
             print(n)
 
     return match_rule
