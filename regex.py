@@ -48,13 +48,14 @@ patterns = {
            }
 
 urlparams = ''
+result = []
 
 def match_func(pattern, urlparams):
     def match_rule(urlparams):
         for match in re.finditer(pattern, urlparams):
-            n = match.group()
-            print(n)
-
+             n = match.group()
+             result.append(n)
+             print(result)
     return match_rule
 
 rules = [match_func(pattern, urlparams) for (pattern) in patterns.values()]
