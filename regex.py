@@ -55,7 +55,8 @@ def match_func(pattern, urlparams):
         for match in re.finditer(pattern, urlparams):
              n = match.group()
              result.append(n)
-             print(result)
+             return result[0:]
+             #print(result)
     return match_rule
 
 rules = [match_func(pattern, urlparams) for (pattern) in patterns.values()]
