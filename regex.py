@@ -57,8 +57,10 @@ def match_func(pattern, urlparams):
             l = len(urlparams)
             s = match.start()
             e = match.end()
+            sp = match.span()
             g = match.group()
-            print(g)
+            x = range(s, e)
+            print(x)
             #return result
     return match_rule
 
