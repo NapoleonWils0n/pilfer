@@ -52,16 +52,13 @@ urlparams = ''
 def match_func(pattern, urlparams):
     def match_rule(urlparams):
         itererator = re.finditer(pattern, urlparams)
-        result = []
         for match in itererator:
             l = len(urlparams)
             s = match.start()
             e = match.end()
-            sp = match.span()
+            #sp = match.span()
             g = match.group()
-            x = range(s, e)
-            print(x)
-            #return result
+            return g
     return match_rule
 
 rules = [match_func(pattern, urlparams) for (pattern) in patterns.values()]
