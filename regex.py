@@ -13,13 +13,12 @@ def splitUrl(urldata):
     '''
     localproxy = re.compile(r'^http://127.0.0.1[:0-9]?')
     rtmp = re.compile(r'^(rtmp|rtmpe)://')
-    amp = re.compile(r'(?=[&][a-zA-Z_]+=+[-a-zA-Z0-9.]?)')
+    #amp = re.compile(r'(?=[&][a-zA-Z_]+=+[-a-zA-Z0-9.]?)')
     if '|' in urldata:
         print("match |")
         ud_split = urldata.split(r'|')
         ud_split_a = ud_split[0] # url before |
         ud_split_b = ud_split[1] # url after |
-
         print(master(ud_split_b))
         #return [ud_split_a, ud_split_b]
     elif rtmp.match(urldata):
@@ -38,8 +37,9 @@ def splitUrl(urldata):
 # split string on = and store in dict
 def split_equals(*args):
     return dict([v.split('=', 1) for v in args if '=' in v])
-   
-# regex dictionary
+
+urlparams = ''
+result = []
 patterns = {
            'user-agent': 'u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+',
            'referer': 'r?Referer=[a-zA-Z0-9/.()\s,:;%+_-]+',
@@ -47,21 +47,11 @@ patterns = {
            'cookie': '[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+'
            }
 
-urlparams = ''
-
 def match_func(pattern, urlparams):
     def match_rule(urlparams):
         itererator = re.finditer(pattern, urlparams)
         for match in itererator:
-            l = len(urlparams)
-            s = match.start()
-            e = match.end()
-            g = match.group()
-            sp = match.span()
-            while e < l:
-                if match:
-                    print(g)
-                    l -= e
+            return match.group()
     return match_rule
 
 rules = [match_func(pattern, urlparams) for (pattern) in patterns.values()]
@@ -69,4 +59,5 @@ rules = [match_func(pattern, urlparams) for (pattern) in patterns.values()]
 def master(urlparams):
     for match_func in rules:
         if match_func(urlparams):
-            return match_func(urlparams)
+            result.append(match_func(urlparams))
+    return result
