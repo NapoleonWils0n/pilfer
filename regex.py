@@ -38,8 +38,8 @@ def splitUrl(urldata):
 def split_equals(*args):
     return dict([v.split('=', 1) for v in args if '=' in v])
 
-urlparams = ''
 result = []
+urlparams = ''
 patterns = {
            'user-agent': 'u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+',
            'referer': 'r?Referer=[a-zA-Z0-9/.()\s,:;%+_-]+',
