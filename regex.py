@@ -40,6 +40,8 @@ def split_equals(*args):
 
 result = []
 urlparams = ''
+
+# regex patterns
 patterns = {
            'user-agent': 'u?User-a?Agent=[a-zA-Z0-9/.()\s,:;%+_-]+',
            'referer': 'r?Referer=[a-zA-Z0-9/.()\s,:;%+_-]+',
@@ -47,6 +49,14 @@ patterns = {
            'cookie': '[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+'
            }
 
+# master function calls match_func
+def master(urlparams):
+    for match_func in rules:
+        if match_func(urlparams):
+            result.append(match_func(urlparams))
+    return result
+
+# match regular expressions
 def match_func(pattern, urlparams):
     def match_rule(urlparams):
         itererator = re.finditer(pattern, urlparams)
@@ -54,10 +64,6 @@ def match_func(pattern, urlparams):
             return match.group()
     return match_rule
 
+# rules must go after match_func
 rules = [match_func(pattern, urlparams) for (pattern) in patterns.values()]
 
-def master(urlparams):
-    for match_func in rules:
-        if match_func(urlparams):
-            result.append(match_func(urlparams))
-    return result
