@@ -19,8 +19,8 @@ def splitUrl(urldata):
         ud_split = urldata.split(r'|')
         ud_split_a = ud_split[0] # url before |
         ud_split_b = ud_split[1] # url after |
-        print(master(ud_split_b))
-        #return [ud_split_a, ud_split_b]
+        urldata = [ud_split_a, ud_split_b] 
+        return urldata
     elif rtmp.match(urldata):
         print("rtmp")
         urldata = {'url': urldata}
@@ -66,4 +66,3 @@ def match_func(pattern, urlparams):
 
 # rules must go after match_func
 rules = [match_func(pattern, urlparams) for (pattern) in patterns.values()]
-
