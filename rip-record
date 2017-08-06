@@ -117,4 +117,5 @@ if __name__ == "__main__":
     main(sys.argv[1:])
 
     regex.hello()
-
+    x = regex.splitUrl(urlDecoded)
+    print(x)
