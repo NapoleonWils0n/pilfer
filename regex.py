@@ -34,10 +34,6 @@ def splitUrl(urldata):
         urldata = {'url': urldata}
         return urldata
 
-# split string on = and store in dict
-def split_equals(*args):
-    return dict([v.split('=', 1) for v in args if '=' in v])
-
 result = []
 urlparams = ''
 
@@ -66,3 +62,7 @@ def match_func(pattern, urlparams):
 
 # rules must go after match_func
 rules = [match_func(pattern, urlparams) for (pattern) in patterns.values()]
+
+# split string on = and store in dict
+def splitEquals(*args):
+    return dict([v.split('=', 1) for v in args if '=' in v])
