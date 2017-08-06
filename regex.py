@@ -66,3 +66,6 @@ rules = [match_func(pattern, urlparams) for (pattern) in patterns.values()]
 # split string on = and store in dict
 def splitEquals(*args):
     return dict([v.split('=', 1) for v in args if '=' in v])
+
+def hello():
+    print('hello')

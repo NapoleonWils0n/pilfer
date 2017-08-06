@@ -22,6 +22,7 @@ checkurl = validate.checkurl
 durationValidated = validate.durationValidated
 argLength = validate.argLength
 splitUrl = regex.splitUrl
+splitEquals = regex.splitEquals
 
 #=================================================#
 # main function
@@ -100,8 +101,8 @@ def main(argv):
 
 # pass the decoded url to the url_split function
 
-        x = splitUrl(urlDecoded)
-        print(x)
+        #x = splitUrl(urlDecoded)
+        #print(x)
            
 #        url_split = x.split(r'&')
 #        url_list = [v.split('=', 1) for v in url_split if '=' in v]
@@ -114,3 +115,6 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv[1:])
+
+    hello()
+
