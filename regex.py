@@ -23,15 +23,18 @@ def splitUrl(urldata):
         return urldata
     elif rtmp.match(urldata):
         print("rtmp")
-        urldata = {'url': urldata}
+        urldata = [urldata]
+        #urldata = {'url': urldata}
         return urldata
     elif localproxy.match(urldata):
         print("localproxy")
-        urldata = {'url': urldata}
+        urldata = [urldata]
+        #urldata = {'url': urldata}
         return urldata
     else:
         print("full url")
-        urldata = {'url': urldata}
+        urldata = [urldata]
+        #urldata = {'url': urldata}
         return urldata
 
 result = []
