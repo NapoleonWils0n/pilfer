@@ -87,21 +87,6 @@ def main(argv):
         else:
             assert False, "unhandled option"
 
-
-#=================================================#
-# decode url and split
-#=================================================#
-
-# pass the decoded url to the url_split function
-
-        #x = splitUrl(urlDecoded)
-        #print(x)
-           
-#        url_split = x.split(r'&')
-#        url_list = [v.split('=', 1) for v in url_split if '=' in v]
-#        y = dict(url_list)
-
-
 #=================================================#
 # slice off script name from arguments
 #=================================================#
