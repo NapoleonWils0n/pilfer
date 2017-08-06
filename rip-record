@@ -98,7 +98,7 @@ if __name__ == "__main__":
         urlDecoded = unquote(unquote(checkurl(argv[1])))
     elif len(argv) == 4:
         urlDecoded = unquote(unquote(checkurl(argv[1])))
-        time = duration_validated(argv[3])
+        time = durationValidated(argv[3])
     
     x = splitUrl(urlDecoded)
     print(x)
