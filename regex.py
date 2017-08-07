@@ -6,6 +6,10 @@ import re
 # split url
 #=================================================#
 
+result = []
+urlparams = ''
+urlist = []
+
 def splitUrl(urldata):
     ''' split url
     
@@ -20,25 +24,21 @@ def splitUrl(urldata):
         ud_split_a = ud_split[0] # url before |
         ud_split_b = ud_split[1] # url after |
         urldata = [ud_split_a, ud_split_b] 
-        return urldata
+        urlist.append(urldata)
+        return urlist
     elif rtmp.match(urldata):
         print("rtmp")
-        urldata = [urldata]
-        #urldata = {'url': urldata}
-        return urldata
+        urlist.append(urldata)
+        return urlist
     elif localproxy.match(urldata):
         print("localproxy")
-        urldata = [urldata]
-        #urldata = {'url': urldata}
-        return urldata
+        urlist.append(urldata)
+        return urlist
     else:
         print("full url")
-        urldata = [urldata]
-        #urldata = {'url': urldata}
-        return urldata
+        urlist.append(urldata)
+        return urlist
 
-result = []
-urlparams = ''
 
 # regex patterns
 patterns = {
