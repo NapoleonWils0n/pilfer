@@ -21,7 +21,7 @@ def splitUrl(urldata):
     if '|' in urldata:
         print("match |")
         ud_split = urldata.split(r'|')
-        urlist = ud_split
+        urlist.append(ud_split)
         return urlist
     elif rtmp.match(urldata):
         print("rtmp")
