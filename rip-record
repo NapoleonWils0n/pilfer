@@ -100,7 +100,14 @@ if __name__ == "__main__":
         urlDecoded = unquote(unquote(checkurl(argv[1])))
         time = durationValidated(argv[3])
     
-    x = splitUrl(urlDecoded)
-    print(x)
+    splitDecoded = splitUrl(urlDecoded)
+    listlength = len(regex.urlist)
 
-    print(len(regex.urlist))
+    data = {}
+    dataUrl = regex.urlist[0]
+    
+    if listlength == 1:
+        data = {'url': dataUrl}
+        print(data)
+    else:
+        print('more than 1')
