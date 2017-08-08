@@ -19,7 +19,6 @@ from urllib.parse import unquote
 argv = sys.argv[1:]
 
 # shortcuts for imported functions
-
 usage = validate.usage
 checkurl = validate.checkurl
 durationValidated = validate.durationValidated
