@@ -103,6 +103,7 @@ if __name__ == "__main__":
     splitDecoded = splitUrl(urlDecoded)
     listlength = len(regex.urlist)
 
+    # dictionary for url
     data = {}
     # 1st item in list is the url
     dataUrl = regex.urlist[0]
