@@ -32,17 +32,17 @@ def splitUrl(urldata):
         ud_split_a = ud_split[0] # url before |
         ud_split_b = ud_split[1] # url after |
         data = splitEquals(master(ud_split_b))
-        data['url'] = ud_split_a
+        data['Url'] = ud_split_a
         return data
     elif rtmp.match(urldata):
-        data = {'url': urldata}
+        data = {'Url': urldata}
         return data
   #  elif localproxy.match(urldata):
   #      print("localproxy")
-  #      data = {'url': urldata}
+  #      data = {'Url': urldata}
   #      return data
     else:
-        data = {'url': urldata}
+        data = {'Url': urldata}
         return data
 
 

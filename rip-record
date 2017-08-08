@@ -101,7 +101,10 @@ if __name__ == "__main__":
         time = durationValidated(argv[3])
     
     splitDecoded = splitUrl(urlDecoded)
-    print(splitDecoded)
+#    print(splitDecoded['Url'])
+#    print(splitDecoded['User-Agent'])
+#    print(splitDecoded['Cookie'])
+
 
 
 
