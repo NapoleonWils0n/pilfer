@@ -104,10 +104,13 @@ if __name__ == "__main__":
     listlength = len(regex.urlist)
 
     data = {}
+    # 1st item in list is the url
     dataUrl = regex.urlist[0]
+    # the entire list
+    dataWhole = regex.urlist[0:]
     
     if listlength == 1:
         data = {'url': dataUrl}
         print(data)
     else:
-        print('more than 1')
+        print(dataWhole)
