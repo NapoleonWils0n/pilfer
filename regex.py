@@ -10,11 +10,12 @@ import re
 result = []
 urlparams = ''
 
-# dictionary for split url
-data = {}
-
 # split string on = and store in dict
 def splitEquals(tosplit):
+    ''' split equals
+
+    split url on equals
+    '''
     data = dict([v.split('=', 1) for v in tosplit if '=' in v])
     return data
 
@@ -56,6 +57,10 @@ patterns = {
 
 # master function calls match_func
 def master(urlparams):
+    ''' master function
+    
+    master function to split url 
+    '''
     for match_func in rules:
         if match_func(urlparams):
             result.append(match_func(urlparams))
@@ -63,6 +68,10 @@ def master(urlparams):
 
 # match regular expressions
 def match_func(pattern, urlparams):
+    ''' match function
+
+    match function to match regular expressions
+    '''
     def match_rule(urlparams):
         itererator = re.finditer(pattern, urlparams)
         for match in itererator:
