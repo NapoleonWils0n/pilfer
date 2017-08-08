@@ -102,11 +102,3 @@ if __name__ == "__main__":
     
     splitDecoded = splitUrl(urlDecoded)
     print(splitDecoded)
-
-
-
-
-
-
-
-
