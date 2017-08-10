@@ -108,3 +108,4 @@ if __name__ == "__main__":
     # url dictionary keys lowercased
     urlDict = dict((k.lower() if isinstance(k, str) else k, v.lower() if isinstance(v, str) else v) for k,v in theUrl.items())
     
+    print(urlDict)
