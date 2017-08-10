@@ -99,8 +99,12 @@ if __name__ == "__main__":
         urlDecoded = unquote(unquote(checkurl(argv[1])))
         time = durationValidated(argv[3])
     
+    # the url stored in a dictionary
     theUrl = splitUrl(urlDecoded)
-    print(theUrl)
+    
+   # the entire url dictionary
+   # print(theUrl)
 
-    for k, v in theUrl.items():
-        print(k, v)
+    # url dictionary keys lowercased
+    urlDict = dict((k.lower() if isinstance(k, str) else k, v.lower() if isinstance(v, str) else v) for k,v in theUrl.items())
+    
