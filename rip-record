@@ -102,12 +102,10 @@ if __name__ == "__main__":
     # the url stored in a dictionary
     theUrl = splitUrl(urlDecoded)
     
-   # the entire url dictionary
-   # print(theUrl)
-
-    # url dictionary keys lowercased
+    # url dictionary keys lowercased for searching
     urlDict = dict((k.lower() if isinstance(k, str) else k, v.lower() if isinstance(v, str) else v) for k,v in theUrl.items())
     
+    # the entire url dictionary
     print(urlDict)
 
     if 'url' in urlDict:
