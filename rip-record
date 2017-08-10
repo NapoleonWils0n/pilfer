@@ -114,12 +114,13 @@ if __name__ == "__main__":
 
     if 'user-agent' in urlDict:
         ua = urlDict['user-agent']
-        useragent = "-user-agent {}".format(ua)
+        useragent = "-user-agent {0}".format(ua)
         print(useragent)
 
     if 'x-forward-for' in urlDict:
         xf = urlDict['x-forward-for'] 
-        xforward = "-headers 'X-Forwarded-For: '{}''$'\r\n'".format(xf)
+        xforward = "-headers 'X-Forwarded-For: '{0}''$'\r\n'".format(xf)
+        print(xforward)
 
     if 'cookie' in urlDict:
         cookieurl = urlDict['cookie']
