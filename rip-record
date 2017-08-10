@@ -112,5 +112,8 @@ if __name__ == "__main__":
 
     if 'url' in urlDict:
         url = urlDict['url']
-        
-    print(url)
+        print(url)
+
+    if 'user-agent' in urlDict:
+        useragent = urlDict['user-agent']
+        print(useragent)
