@@ -132,4 +132,8 @@ if __name__ == "__main__":
     nltid = re.findall('nltid=[a-zA-Z0-9&%_*=]*', url) # nltid cookie in url
 
     if nltid:
-        print('nltid')
+        cd = re.search('(http|https)://[a-zA-Z0-9.-]*[^/]', url) # cookie domain name
+        cookiedomain = cd.group()
+        cookieurl = nltid[0]
+        cookie = '-cookies {0}; path=/; {1};'.format(cookieurl, cookiedomain)
+        print(repr(cookie))
