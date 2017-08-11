@@ -123,8 +123,10 @@ if __name__ == "__main__":
         print(xforward)
 
     if 'cookie' in urlDict:
-        cookieurl = urlDict['cookie']
         cd = re.search('(http|https)://[a-zA-Z0-9.-]*[^/]', url) # cookie domain name
         cookiedomain = cd.group()
+        cookieurl = urlDict['cookie']
         cookie = '-cookies {0}; path=/; {1};'.format(cookieurl, cookiedomain)
         print(repr(cookie))
+
+        #nltid = re.findall('nltid=[a-zA-Z0-9&%_*=]*', url) # nltid cookie
