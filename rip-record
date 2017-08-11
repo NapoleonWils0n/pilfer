@@ -108,8 +108,13 @@ if __name__ == "__main__":
     # the entire url dictionary
     print(urlDict)
 
+    # ffmpeg dictionary to hold url and ffmpeg options
+    ffmpegDict = {}
+
+
     if 'url' in urlDict:
         url = urlDict['url']
+        ffmpegDict['url'] = url
         print(url)
 
     if 'user-agent' in urlDict:
@@ -137,3 +142,6 @@ if __name__ == "__main__":
         cookieurl = nltid[0]
         cookie = '-cookies {0}; path=/; {1};'.format(cookieurl, cookiedomain)
         print(repr(cookie))
+
+
+    print(ffmpegDict)
