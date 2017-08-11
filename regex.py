@@ -32,8 +32,8 @@ def splitUrl(urldata):
         ud_split = urldata.split(r'|')
         ud_split_a = ud_split[0] # url before |
         ud_split_b = ud_split[1] # url after |
-        data = splitEquals(master(ud_split_b))
-        data['url'] = ud_split_a
+        data = splitEquals(master(ud_split_b)) # create the url dictionary
+        data['url'] = ud_split_a # add the url to the dictionary
         return data
     elif rtmp.match(urldata):
         data = {'url': urldata}

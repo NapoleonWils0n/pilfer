@@ -124,7 +124,7 @@ if __name__ == "__main__":
 
     if 'cookie' in urlDict:
         cookieurl = urlDict['cookie']
-        cd = re.search('(http|https)://[a-zA-Z0-9.-]*[^/]', url)
+        cd = re.search('(http|https)://[a-zA-Z0-9.-]*[^/]', url) # cookie domain name
         cookiedomain = cd.group()
         cookie = '-cookies {0}; path=/; {1};'.format(cookieurl, cookiedomain)
         print(repr(cookie))
