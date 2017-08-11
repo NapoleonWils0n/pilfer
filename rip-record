@@ -130,7 +130,7 @@ if __name__ == "__main__":
         cookiedomain = cd.group()
         cookieurl = urlDict['cookie']
         cookie = '-cookies {0}; path=/; {1};'.format(cookieurl, cookiedomain)
-        print(repr(cookie))
+        ffmpegDict['cookie'] = cookie
 
     nltid = re.findall('nltid=[a-zA-Z0-9&%_*=]*', url) # nltid cookie in url
 
