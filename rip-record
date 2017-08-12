@@ -106,7 +106,7 @@ if __name__ == "__main__":
     urlDict = dict((k.lower() if isinstance(k, str) else k, v.lower() if isinstance(v, str) else v) for k,v in theUrl.items())
     
     # the entire url dictionary
-    print(urlDict)
+    #print(urlDict)
 
     # ffmpeg dictionary to hold url and ffmpeg options
     ffmpegDict = {}
