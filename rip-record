@@ -1,8 +1,7 @@
 #!/usr/bin/env python3 
 
 # import modules
-import validate
-import regex
+import validate, regex, record
 import sys, re, getopt, os.path, mimetypes
 from urllib.parse import unquote
 
@@ -142,4 +141,11 @@ if __name__ == "__main__":
         ffmpegDict['nltid'] = cookie
 
 
-    print(ffmpegDict)
+    #print(ffmpegDict)
+
+    print(url)
+
+    v = list(ffmpegDict.values())
+    urlslice = v[1:]
+    strtuple = ' '.join(urlslice)
+    print(repr(strtuple))
