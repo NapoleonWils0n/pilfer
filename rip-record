@@ -96,7 +96,8 @@ if __name__ == "__main__":
         urlDecoded = unquote(unquote(checkurl(argv[1])))
     elif len(argv) == 4:
         urlDecoded = unquote(unquote(checkurl(argv[1])))
-        time = durationValidated(argv[3])
+        tflag = "-t"
+        duration = durationValidated(argv[3])
     
     # the url stored in a dictionary
     theUrl = splitUrl(urlDecoded)
@@ -146,8 +147,9 @@ if __name__ == "__main__":
 
     v = list(ffmpegDict.values())
     urlslice = v[1:]
-    strtuple = ' '.join(urlslice)
-    print(repr(strtuple))
+    options = ' '.join(urlslice)
+    #print(repr(strtuple))
 
-    #ffrec = record.record(url, strtuple)
-    #print(ffrec)
+    ffrec = record.ffmpeg(url, options)
+    print(ffrec)
+
