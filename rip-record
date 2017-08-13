@@ -152,7 +152,13 @@ if __name__ == "__main__":
 
 
     if len(argv) == 2:
-        ffrec = record.ffmpeg(url, options)
+        if options:
+            ffrec = record.ffmpeg(url, options)
+        else:
+            ffrec = record.ffmpeg(url)
     elif len(argv) == 4:
-        ffrec = record.ffmpeg(url, options, tflag, duration)
+        if options:
+            ffrec = record.ffmpeg(url, options, tflag, duration)
+        else:
+            ffrec = record.ffmpeg(url, tflag, duration)
         
