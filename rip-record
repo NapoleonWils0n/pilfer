@@ -143,8 +143,6 @@ if __name__ == "__main__":
         ffmpegDict['nltid'] = cookie
 
 
-    #print(ffmpegDict)
-
     # create list from dictionary then slice off the first item which is the url
     v = list(ffmpegDict.values())
     urlslice = v[1:]
