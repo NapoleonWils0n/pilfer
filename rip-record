@@ -115,19 +115,19 @@ if __name__ == "__main__":
 
     if 'user-agent' in urlDict:
         ua = urlDict['user-agent']
-        useragent = "-user-agent {0}".format(ua)
+        useragent = "'-user-agent' '{0}'".format(ua)
         ffmpegDict['user-agent'] = useragent
 
     if 'x-forward-for' in urlDict:
         xf = urlDict['x-forward-for'] 
-        xforward = "-headers 'X-Forwarded-For: '{0}''$'\r\n'".format(xf)
+        xforward = "'-headers' ''X-Forwarded-For: '{0}''$'\r\n''".format(xf)
         ffmpegDict['x-forward-for'] = xforward
 
     if 'cookie' in urlDict:
         cd = re.search('(http|https)://[a-zA-Z0-9.-]*[^/]', url) # cookie domain name
         cookiedomain = cd.group()
         cookieurl = urlDict['cookie']
-        cookie = '-cookies {0}; path=/; {1};'.format(cookieurl, cookiedomain)
+        cookie = "'-cookies' '{0}; path=/; {1};'".format(cookieurl, cookiedomain)
         ffmpegDict['cookie'] = cookie
 
     nltid = re.findall('nltid=[a-zA-Z0-9&%_*=]*', url) # nltid cookie in url
@@ -136,7 +136,7 @@ if __name__ == "__main__":
         cd = re.search('(http|https)://[a-zA-Z0-9.-]*[^/]', url) # cookie domain name
         cookiedomain = cd.group()
         cookieurl = nltid[0]
-        cookie = '-cookies {0}; path=/; {1};'.format(cookieurl, cookiedomain)
+        cookie = "'-cookies' '{0}; path=/; {1};'".format(cookieurl, cookiedomain)
         ffmpegDict['nltid'] = cookie
 
 
