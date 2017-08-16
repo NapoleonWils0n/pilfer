@@ -151,8 +151,11 @@ if __name__ == "__main__":
         else:
             ffrec = record.ffmpeg(url)
     elif len(argv) == 4:
+        ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
+        ffmpegDict['duration'] = duration
         if options:
             ffrec = record.ffmpeg(url, options, tflag, duration)
         else:
             ffrec = record.ffmpeg(url, tflag, duration)
         
+    print(ffmpegDict)
