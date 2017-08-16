@@ -106,9 +106,6 @@ if __name__ == "__main__":
     # url dictionary keys lowercased for searching
     urlDict = dict((k.lower() if isinstance(k, str) else k, v.lower() if isinstance(v, str) else v) for k,v in theUrl.items())
     
-    # the entire url dictionary
-    #print(urlDict)
-
     # ffmpeg dictionary to hold url and ffmpeg options
     ffmpegDict = {}
 
@@ -147,7 +144,6 @@ if __name__ == "__main__":
     v = list(ffmpegDict.values())
     urlslice = v[1:]
     options = ' '.join(urlslice)
-
 
     if len(argv) == 2:
         if options:
