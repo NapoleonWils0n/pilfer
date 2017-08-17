@@ -11,9 +11,11 @@ def ffmpeg(**kwargs):
     values = list(kwargs.values())
     # url from kwargs which is the dictionary passed to the function
     url = kwargs['url']
-    # dict minus first time which is the url
-    options = values[1:]
-    options_join = ' '.join(options)
+
+    if 'user-agent' or 'referer' or 'cookie' or 'x-forward' in kwargs:
+        # dict minus first time which is the url
+        options = values[1:]
+        options_join = ' '.join(options)
     
     if 'duration' in kwargs:
         tflag = kwargs['tflag']
