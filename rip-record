@@ -115,19 +115,24 @@ if __name__ == "__main__":
 
     if 'user-agent' in urlDict:
         ua = urlDict['user-agent']
-        useragent = "'-user-agent' '{0}'".format(ua)
+        useragent = '-user-agent ' '{0}'.format(ua)
         ffmpegDict['user-agent'] = useragent
+
+    if 'referer' in urlDict:
+        rf = urlDict['referer']
+        referer = "-headers 'Referer: '{0}''$'\r\n'".format(rf)
+        ffmpegDict['referer'] = referer
 
     if 'x-forward-for' in urlDict:
         xf = urlDict['x-forward-for'] 
-        xforward = "'-headers' ''X-Forwarded-For: '{0}''$'\r\n''".format(xf)
+        xforward = "-headers 'X-Forwarded-For: '{0}''$'\r\n'".format(xf)
         ffmpegDict['x-forward-for'] = xforward
 
     if 'cookie' in urlDict:
         cd = re.search('(http|https)://[a-zA-Z0-9.-]*[^/]', url) # cookie domain name
         cookiedomain = cd.group()
         cookieurl = urlDict['cookie']
-        cookie = "'-cookies' '{0}; path=/; {1};'".format(cookieurl, cookiedomain)
+        cookie = '-cookies ' '{0}; path=/; {1};'.format(cookieurl, cookiedomain)
         ffmpegDict['cookie'] = cookie
 
     nltid = re.findall('nltid=[a-zA-Z0-9&%_*=]*', url) # nltid cookie in url
@@ -136,26 +141,15 @@ if __name__ == "__main__":
         cd = re.search('(http|https)://[a-zA-Z0-9.-]*[^/]', url) # cookie domain name
         cookiedomain = cd.group()
         cookieurl = nltid[0]
-        cookie = "'-cookies' '{0}; path=/; {1};'".format(cookieurl, cookiedomain)
+        cookie = '-cookies ' '{0}; path=/; {1};'.format(cookieurl, cookiedomain)
         ffmpegDict['nltid'] = cookie
 
-
-    # create list from dictionary then slice off the first item which is the url
-    v = list(ffmpegDict.values())
-    urlslice = v[1:]
-    options = ' '.join(urlslice)
-
     if len(argv) == 2:
-        if options:
-            ffrec = record.ffmpeg(url, options)
-        else:
-            ffrec = record.ffmpeg(url)
+        ffrec = record.ffmpeg(**ffmpegDict)
     elif len(argv) == 4:
         ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
         ffmpegDict['duration'] = duration
-        if options:
-            ffrec = record.ffmpeg(url, options, tflag, duration)
-        else:
-            ffrec = record.ffmpeg(url, tflag, duration)
-        
-    print(ffmpegDict)
+        ffrec = record.ffmpeg(**ffmpegDict)
+ 
+#    print(ffmpegDict)
+
