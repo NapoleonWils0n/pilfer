@@ -12,12 +12,14 @@ def ffmpeg(**kwargs):
     # url from kwargs which is the dictionary passed to the function
     url = kwargs['url']
     # dict minus first time which is the url, and minus the last 2 items tflag and duration
-    options = values[1:-2]
+    options = values[1:]
     options_join = ' '.join(options)
     
     if 'duration' in kwargs:
         tflag = kwargs['tflag']
         duration = kwargs['duration']
+        options = values[1:-2]
+        options_join = ' '.join(options)
         print(tflag)
         print(duration)
     
