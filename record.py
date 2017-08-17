@@ -3,9 +3,11 @@
 import shlex
 import pipes
 from subprocess import check_call
+import datetime 
 
 def ffmpeg(**kwargs):
     recordingfile = 'recordingfile' 
+    time = datetime.datetime.now()
     
     # get the values from the dictionary passed to the function
     values = list(kwargs.values())
@@ -29,3 +31,4 @@ def ffmpeg(**kwargs):
     
 
     print(shlex.split(ffcmd))
+    print(time)
