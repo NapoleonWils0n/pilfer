@@ -1,9 +1,9 @@
 #!/usr/bin/env python3 
 
 import shlex
-import pipes
+#import pipes
 import os
-import subprocess 
+from subprocess import Popen, PIPE
 from datetime import datetime 
 
 def ffmpeg(**kwargs):
@@ -41,7 +41,9 @@ def ffmpeg(**kwargs):
     ffsplit = shlex.split(ffcmd)
     print(ffsplit)
 
-    #subpop = subprocess.Popen(ffsplit, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT)
+    #process = Popen(ffsplit, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT)
+    #process.communicate()[0].decode()
+    #exit_code = process.wait()
     #output = subpop.communicate()[0].decode()
     #if output.returncode != 0:
     #    print("there was an error")
