@@ -37,8 +37,11 @@ def ffmpeg(**kwargs):
         ffcmd = "ffmpeg -hide_banner -stats -v panic {1} -i {0} -c:v copy -c:a copy {2} {3} {4}".format(url, options_join, tflag, duration, recordingfile)
     
 
+    # split the ffmpeg command for subprocess
     ffsplit = shlex.split(ffcmd)
     print(ffsplit)
 
-    #subpop = subprocess.Popen(ffcmd, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT)
+    #subpop = subprocess.Popen(ffsplit, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT)
     #output = subpop.communicate()[0].decode()
+    #if output.returncode != 0:
+    #    print("there was an error")
