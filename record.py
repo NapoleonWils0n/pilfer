@@ -40,5 +40,5 @@ def ffmpeg(**kwargs):
     ffsplit = shlex.split(ffcmd)
     print(ffsplit)
 
-    #subpop = subprocess.Popen(ffcmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    #subpop = subprocess.Popen(ffcmd, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT)
     #output = subpop.communicate()[0].decode()
