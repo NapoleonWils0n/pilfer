@@ -37,5 +37,5 @@ def ffmpeg(**kwargs):
         ffcmd = "ffmpeg -hide_banner -stats -v panic {1} -i {0} -c:v copy -c:a copy {2} {3} {4}".format(url, options_join, tflag, duration, recordingfile)
     
 
-    #print(repr(ffcmd))
-    print(shlex.split(ffcmd))
+    ffsplit = shlex.split(ffcmd)
+    print(ffsplit)
