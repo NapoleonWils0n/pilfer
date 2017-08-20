@@ -3,7 +3,7 @@
 import shlex
 #import pipes
 import os
-from subprocess import Popen, PIPE
+import subprocess
 from datetime import datetime 
 
 def ffmpeg(**kwargs):
