@@ -2,13 +2,16 @@
 
 import shlex
 import pipes
+import os
 from subprocess import check_call
 from datetime import datetime 
 
 def ffmpeg(**kwargs):
+    home = os.path.expanduser('~')
+    desktop = '/Desktop/'
     time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     ext = '.mkv'
-    recordingfile = 'video-' + time + ext
+    recordingfile = home + desktop + 'video-' + time + ext
     
     # get the values from the dictionary passed to the function
     values = list(kwargs.values())
