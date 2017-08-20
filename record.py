@@ -3,7 +3,7 @@
 import shlex
 import pipes
 import os
-from subprocess import check_call
+import subprocess 
 from datetime import datetime 
 
 def ffmpeg(**kwargs):
@@ -39,3 +39,5 @@ def ffmpeg(**kwargs):
 
     ffsplit = shlex.split(ffcmd)
     print(ffsplit)
+
+    #proc = subprocess.Popen(ffcmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
