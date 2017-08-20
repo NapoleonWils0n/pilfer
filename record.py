@@ -20,7 +20,8 @@ def ffmpeg(**kwargs):
     if 'user-agent' or 'referer' or 'cookie' or 'x-forward' in kwargs:
         # dict minus first time which is the url
         options = values[1:]
-        options_join = ' '.join(options)
+        remove_bracket = str(options)[1:-1]
+        options_join = ''.join(remove_bracket)
         ffcmd = "ffmpeg -hide_banner -stats -v panic {1} -i {0} -c:v copy -c:a copy {2}".format(url, options_join, recordingfile)
     
     if 'duration' in kwargs:
@@ -28,7 +29,8 @@ def ffmpeg(**kwargs):
         duration = kwargs['duration']
         # dict minus first time which is the url, and minus the last 2 items tflag and duration
         options = values[1:-2]
-        options_join = ' '.join(options)
+        remove_bracket = str(options)[1:-1]
+        options_join = ''.join(remove_bracket)
         ffcmd = "ffmpeg -hide_banner -stats -v panic {1} -i {0} -c:v copy -c:a copy {2} {3} {4}".format(url, options_join, tflag, duration, recordingfile)
     
 
