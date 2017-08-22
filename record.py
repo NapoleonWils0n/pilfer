@@ -40,8 +40,4 @@ def ffmpeg(**kwargs):
     # split the ffmpeg command for subprocess
     ffsplit = shlex.split(ffcmd)
     process = subprocess.Popen(ffsplit, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT)
-    stdout, stdin, stderr = process.communicate()[0]
-
-    #process.communicate()[0].decode()
-    #if exit_code.returncode != 0:
-    #    print("there was an error")
+    stdout, stdin, stderr = process.communicate()
