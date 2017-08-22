@@ -39,6 +39,4 @@ def ffmpeg(**kwargs):
 
     # split the ffmpeg command for subprocess
     ffsplit = shlex.split(ffcmd)
-    process = subprocess.Popen(ffsplit, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT)
-    stdout, stderr = process.communicate()
-
+    process = subprocess.run(ffsplit)
