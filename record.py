@@ -45,4 +45,4 @@ def ffmpeg(**kwargs):
     try:
         process = subprocess.run(ffsplit)
     except KeyboardInterrupt:
-        print("keyboard interupt")
+        print("recording stopped by user")
