@@ -40,7 +40,7 @@ def ffmpeg(**kwargs):
     # split the ffmpeg command for subprocess
     ffsplit = shlex.split(ffcmd)
 
-    print("waiting for server:")
+    print("waiting for response from server:")
 
     try:
         process = subprocess.run(ffsplit)

@@ -100,6 +100,7 @@ if __name__ == "__main__":
         tflag = "-t"
         duration = durationValidated(argv[3])
     
+
     # the url stored in a dictionary
     theUrl = splitUrl(urlDecoded)
     
