@@ -41,4 +41,8 @@ def ffmpeg(**kwargs):
     ffsplit = shlex.split(ffcmd)
 
     print("waiting for server:")
-    process = subprocess.run(ffsplit)
+
+    try:
+        process = subprocess.run(ffsplit)
+    except KeyboardInterrupt:
+        print("keyboard interupt")
