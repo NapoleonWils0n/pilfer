@@ -39,4 +39,6 @@ def ffmpeg(**kwargs):
 
     # split the ffmpeg command for subprocess
     ffsplit = shlex.split(ffcmd)
+
+    print("waiting for server:")
     process = subprocess.run(ffsplit)
