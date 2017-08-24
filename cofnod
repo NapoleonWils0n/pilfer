@@ -116,14 +116,14 @@ if __name__ == "__main__":
 
     if 'user-agent' in urlDict:
         ua = urlDict['user-agent']
-        useragent = "-user-agent '{0}'".format(ua).rstip()
-        ffmpegDict['user-agent'] = useragent
+        useragent = "-user-agent '{0}'".format(ua)
+        ffmpegDict['user-agent'] = useragent.rstrip()
 
     if 'referer' in urlDict:
         rf = urlDict['referer']
         #referer = "-headers 'Referer: '{0}''$'\r\n'".format(rf)
-        referer = "-headers 'Referer: {0}'".format(rf).rstrip()
-        ffmpegDict['referer'] = referer
+        referer = "-headers 'Referer: {0}'".format(rf)
+        ffmpegDict['referer'] = referer.rstrip()
 
     if 'cookie' in urlDict:
         cd = re.search('(http|https)://[a-zA-Z0-9.-]*[^/]', url) # cookie domain name
