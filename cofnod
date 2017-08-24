@@ -116,8 +116,8 @@ if __name__ == "__main__":
 
     if 'user-agent' in urlDict:
         ua = urlDict['user-agent']
-        useragent = "-user-agent '{0}'".format(ua)
-        ffmpegDict['user-agent'] = useragent.rstrip()
+        useragent = "-user-agent '{0}'".format(ua).rstip()
+        ffmpegDict['user-agent'] = useragent
 
     if 'referer' in urlDict:
         rf = urlDict['referer']
