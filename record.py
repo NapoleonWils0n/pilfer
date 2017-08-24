@@ -19,7 +19,7 @@ def ffmpeg(**kwargs):
 
     ffcmd = "ffmpeg -hide_banner -stats -v panic -i {0} -c:v copy -c:a copy {1}".format(url, recordingfile)
 
-    if 'user-agent' or 'referer' or 'cookie' or 'x-forward' in kwargs:
+    if 'user-agent' or 'referer' or 'cookie' in kwargs:
         # dict minus first time which is the url
         options = values[1:]
         remove_bracket = str(options)[1:-1]
@@ -40,7 +40,7 @@ def ffmpeg(**kwargs):
     ffsplit = shlex.split(ffcmd)
 
     print("running ffmpeg command:")
-
+ 
     # try ffmpeg function except keyboard interupt if user quits script with control c
     try:
         process = subprocess.run(ffsplit)

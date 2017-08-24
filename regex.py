@@ -45,7 +45,6 @@ def splitUrl(urldata):
 patterns = {
            'user-agent': '[uU]ser-[aA]gent=[a-zA-Z0-9/.()\s,:;%+_-]+',
            'referer': '[rR]eferer=[a-zA-Z0-9/.()\s,:;%+_-]+',
-           'x-forward': 'X-Forwarded-For=[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}',
            'cookie': '[cC]ookie=[a-zA-Z0-9/&%_*~;=_\s]+'
            }
 
