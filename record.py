@@ -39,7 +39,8 @@ def ffmpeg(**kwargs):
     # split the ffmpeg command for subprocess
     ffsplit = shlex.split(ffcmd)
 
-    print(ffsplit)
+#    print(ffcmd)
+#    print(ffsplit)
     print("running ffmpeg command:")
  
     # try ffmpeg function except keyboard interupt if user quits script with control c
