@@ -145,6 +145,7 @@ if __name__ == "__main__":
         cookie = '-cookies {0}; path=/; {1};'.format(cookieurl, cookiedomain)
         ffmpegDict['nltid'] = cookie
 
+    # pass dictionary to ffmpeg function
     if len(argv) == 2:
         ffrec = record.ffmpeg(**ffmpegDict)
     elif len(argv) == 4:

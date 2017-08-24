@@ -42,6 +42,7 @@ def ffmpeg(**kwargs):
 
     print("running ffmpeg command:")
 
+    # try ffmpeg function except keyboard interupt if user quits script with control c
     try:
         process = subprocess.run(ffsplit)
     except KeyboardInterrupt:
