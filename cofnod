@@ -117,11 +117,13 @@ if __name__ == "__main__":
     if 'user-agent' in urlDict:
         ua = urlDict['user-agent']
         useragent = "-user-agent '{0}'".format(ua)
+        #useragent = '{0}'.format(ua)
         ffmpegDict['user-agent'] = useragent
 
     if 'referer' in urlDict:
         rf = urlDict['referer']
         referer = "-headers 'Referer: {0}'".format(rf)
+        #referer = 'Referer: {0}'.format(rf)
         ffmpegDict['referer'] = referer
 
     if 'cookie' in urlDict:
