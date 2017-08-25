@@ -105,8 +105,8 @@ if __name__ == "__main__":
     theUrl = splitUrl(urlDecoded)
     
     # url dictionary keys lowercased for searching
-    urlDict = dict((k.lower() if isinstance(k, str) else k, v.lower() if isinstance(v, str) else v) for k,v in theUrl.items())
-    
+    urlDict = {k.lower(): v for k, v in theUrl.items()}
+
     # ffmpeg dictionary to hold url and ffmpeg options
     ffmpegDict = {}
 
