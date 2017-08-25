@@ -42,7 +42,6 @@ def ffmpeg(**kwargs):
     print(ffcmd)
     print("---------------------------------------")
     print(ffsplit)
-    print("---------------------------------------")
     print("running ffmpeg command:")
  
     # try ffmpeg function except keyboard interupt if user quits script with control c
