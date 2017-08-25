@@ -23,7 +23,7 @@ def ffmpeg(**kwargs):
         # dict minus first time which is the url
         options = values[1:]
         remove_bracket = str(options)[1:-1]
-        options_join = ''.join(remove_bracket)
+        options_join = ''.join(remove_bracket).replace('"', '')
         ffcmd = "ffmpeg -hide_banner -stats -v panic {1} -i {0} -c:v copy -c:a copy {2}".format(url, options_join, recordingfile)
     
     if 'duration' in kwargs:
