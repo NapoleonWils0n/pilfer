@@ -1,7 +1,7 @@
 #!/usr/bin/env python3 
 
 import re
-from urllib.parse import unquote
+#from urllib.parse import unquote
 
 #=================================================#
 # split url
@@ -31,8 +31,8 @@ def splitUrl(urldata):
         ud_split = urldata.split(r'|')
         ud_split_a = ud_split[0] # url before |
         ud_split_b = ud_split[1] # url after |
-        ud_decode = unquote(unquote(ud_split_b))
-        data = splitEquals(master(ud_decode)) # create the url dictionary
+        #ud_decode = unquote(unquote(ud_split_b))
+        data = splitEquals(master(ud_split_b)) # create the url dictionary
         data['url'] = ud_split_a # add the url to the dictionary
         return data
     elif rtmp.match(urldata):
