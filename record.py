@@ -4,6 +4,7 @@ import shlex
 import sys, os
 import subprocess
 from datetime import datetime 
+from urllib.parse import unquote
 
 def ffmpeg(**kwargs):
     home = os.path.expanduser('~')
