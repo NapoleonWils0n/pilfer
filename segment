@@ -94,9 +94,11 @@ if __name__ == "__main__":
 
     # check if 1 or 3 args are passed to the script
     if len(argv) == 2:
-        urlDecoded = unquote(unquote(checkurl(argv[1])))
+        #urlDecoded = unquote(unquote(checkurl(argv[1])))
+        urlDecoded = checkurl(argv[1])
     elif len(argv) == 4:
-        urlDecoded = unquote(unquote(checkurl(argv[1])))
+        #urlDecoded = unquote(unquote(checkurl(argv[1])))
+        urlDecoded = checkurl(argv[1])
         tflag = "-t"
         duration = durationValidated(argv[3])
     
@@ -111,8 +113,8 @@ if __name__ == "__main__":
     ffmpegDict = {}
 
     if 'url' in urlDict:
-        u = urlDict['url']
-        url = "'{0}'".format(u)
+        ul = urlDict['url']
+        url = 
         ffmpegDict['url'] = url
 
     if 'user-agent' in urlDict:
