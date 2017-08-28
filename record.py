@@ -25,6 +25,7 @@ def ffmpeg(**kwargs):
         options = values[1:]
         remove_bracket = str(options)[1:-1]
         options_join = ''.join(remove_bracket).replace('"', '')
+        options_join = unquote(unquote(options_join))
         ffcmd = "ffmpeg -hide_banner -stats -v panic {1} -i {0} -c:v copy -c:a copy {2}".format(url, options_join, recordingfile)
     
     if 'duration' in kwargs:
@@ -34,6 +35,7 @@ def ffmpeg(**kwargs):
         options = values[1:-2]
         remove_bracket = str(options)[1:-1]
         options_join = ''.join(remove_bracket).replace('"', '')
+        options_join = unquote(unquote(options_join))
         ffcmd = "ffmpeg -hide_banner -stats -v panic {1} -i {0} -c:v copy -c:a copy {2} {3} {4}".format(url, options_join, tflag, duration, recordingfile)
     
 
