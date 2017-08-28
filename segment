@@ -94,10 +94,8 @@ if __name__ == "__main__":
 
     # check if 1 or 3 args are passed to the script
     if len(argv) == 2:
-        #urlDecoded = unquote(unquote(checkurl(argv[1])))
         urlDecoded = checkurl(argv[1])
     elif len(argv) == 4:
-        #urlDecoded = unquote(unquote(checkurl(argv[1])))
         urlDecoded = checkurl(argv[1])
         tflag = "-t"
         duration = durationValidated(argv[3])
