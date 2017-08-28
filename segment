@@ -111,7 +111,8 @@ if __name__ == "__main__":
     ffmpegDict = {}
 
     if 'url' in urlDict:
-        url = urlDict['url']
+        u = urlDict['url']
+        url = "'{0}'".format(u)
         ffmpegDict['url'] = url
 
     if 'user-agent' in urlDict:
