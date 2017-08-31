@@ -26,7 +26,6 @@ def splitUrl(urldata):
     
     split url on slash or ampersand
     '''
-    rtmp = re.compile(r'^(rtmp|rtmpe)://')
     if '|' in urldata:
         ud_split = urldata.split(r'|')
         ud_split_a = ud_split[0] # url before |
@@ -34,9 +33,6 @@ def splitUrl(urldata):
         ud_decode = unquote(unquote(ud_split_b))
         data = splitEquals(master(ud_decode)) # create the url dictionary
         data['url'] = ud_split_a # add the url to the dictionary
-        return data
-    elif rtmp.match(urldata):
-        data = {'url': urldata}
         return data
     else:
         data = {'url': urldata}
