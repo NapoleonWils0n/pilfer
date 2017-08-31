@@ -58,17 +58,17 @@ def rtmp(**kwargs):
     # url from kwargs which is the dictionary passed to the function
     url = kwargs['url']
 
-    rtmpcmd = "rtmpdump -q -i {0} | ffmpeg -hide_banner -stats -v panic -i - -c:v copy -c:a copy {1}".format(url, recordingfile)
+    rtmpcmd = "rtmpdump -q -i '{0}' | ffmpeg -hide_banner -stats -v panic -i - -c:v copy -c:a copy {1}".format(url, recordingfile)
 
     if 'duration' in kwargs:
         tflag = kwargs['tflag']
         duration = kwargs['duration']
         rtmpcmd = "rtmpdump -q -i {0} | ffmpeg -hide_banner -stats -v panic -i - -c:v copy -c:a copy {1} {2} {3}".format(url, tflag, duration, recordingfile)
-    
 
     # split the ffmpeg command for subprocess
     rtmpsplit = shlex.split(rtmpcmd)
 
+    print(rtmpsplit)
     print("running ffmpeg command:")
  
     # try ffmpeg function except keyboard interupt if user quits script with control c
