@@ -59,13 +59,14 @@ def rtmp(**kwargs):
     
     # url from kwargs which is the dictionary passed to the function
     url = kwargs['url']
-
+    # rtmpdump command
     rtmpcmd = "rtmpdump -i '{0}' -o {1}".format(url, recordingfile)
 
     if 'duration' in kwargs:
         tflag = kwargs['tflag']
         duration = kwargs['duration']
-        rtmpcmd = "rtmpdump -q -i {0} | ffmpeg -hide_banner -stats -v panic -i - -c:v copy -c:a copy {1} {2} {3}".format(url, tflag, duration, recordingfile)
+        rtmpcmd = "rtmpdump -i '{0}'".format(url)
+        #rtmpcmd = "rtmpdump -q -i {0} | ffmpeg -hide_banner -stats -v panic -i - -c:v copy -c:a copy {1} {2} {3}".format(url, tflag, duration, recordingfile)
 
     # split the ffmpeg command for subprocess
     rtmpsplit = shlex.split(rtmpcmd)
