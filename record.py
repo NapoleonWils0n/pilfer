@@ -59,18 +59,13 @@ def rtmp(**kwargs):
     
     # url from kwargs which is the dictionary passed to the function
     url = kwargs['url']
-    # rtmpdump command
+
     rtmpcmd = "rtmpdump -i '{0}' -o {1}".format(url, recordingfile)
 
     if 'duration' in kwargs:
         tflag = kwargs['tflag']
         duration = kwargs['duration']
-        timestr = duration
-        ftr = [3600,60,1]
-        B = sum([a*b for a,b in zip(ftr, map(int,timestr.split(':')))])
-        rtmpcmd = "rtmpdump -R -i '{0}' -B {1} -o {2}".format(url, B, recordingfile)
-
-        #rtmpcmd = "rtmpdump -q -i {0} | ffmpeg -hide_banner -stats -v panic -i - -c:v copy -c:a copy {1} {2} {3}".format(url, tflag, duration, recordingfile)
+        rtmpcmd = "rtmpdump -q -i '{0}' | ffmpeg -hide_banner -stats -v panic -i - -c:v copy -c:a copy {1} {2} {3}".format(url, tflag, duration, recordingfile)
 
     # split the ffmpeg command for subprocess
     rtmpsplit = shlex.split(rtmpcmd)
@@ -80,6 +75,6 @@ def rtmp(**kwargs):
  
     # try ffmpeg function except keyboard interupt if user quits script with control c
     try:
-        process = subprocess.run(rtmpsplit)
+        process = subprocess.run(rtmpcmd, shell=True)
     except KeyboardInterrupt:
         print("recording stopped by user")
