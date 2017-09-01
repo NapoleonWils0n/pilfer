@@ -4,6 +4,7 @@ import shlex
 import sys, os
 import subprocess
 from datetime import datetime 
+import time
 
 def ffmpeg(**kwargs):
     home = os.path.expanduser('~')
@@ -39,6 +40,7 @@ def ffmpeg(**kwargs):
     # split the ffmpeg command for subprocess
     ffsplit = shlex.split(ffcmd)
 
+    print(ffcmd)
     print("running ffmpeg command:")
  
     # try ffmpeg function except keyboard interupt if user quits script with control c
@@ -58,7 +60,7 @@ def rtmp(**kwargs):
     # url from kwargs which is the dictionary passed to the function
     url = kwargs['url']
 
-    rtmpcmd = "rtmpdump -q -i '{0}' | ffmpeg -hide_banner -stats -v panic -i - -c:v copy -c:a copy {1}".format(url, recordingfile)
+    rtmpcmd = "rtmpdump -i '{0}' -o {1}".format(url, recordingfile)
 
     if 'duration' in kwargs:
         tflag = kwargs['tflag']
@@ -69,7 +71,7 @@ def rtmp(**kwargs):
     rtmpsplit = shlex.split(rtmpcmd)
 
     print(rtmpsplit)
-    print("running ffmpeg command:")
+    print("running rtmp command:")
  
     # try ffmpeg function except keyboard interupt if user quits script with control c
     try:

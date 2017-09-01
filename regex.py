@@ -24,7 +24,7 @@ def splitEquals(tosplit):
 def splitUrl(urldata):
     ''' split url
     
-    split url on slash or ampersand
+    split url on slash
     '''
     if '|' in urldata:
         ud_split = urldata.split(r'|')

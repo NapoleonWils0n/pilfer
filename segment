@@ -144,10 +144,15 @@ if __name__ == "__main__":
     http = re.compile(r'^(http|https)://')
     rtmp = re.compile(r'^(rtmp|rtmpe)://')
 
-#    if http.match(url):
-#    elif rtmp.match(url):
-      
-    # pass dictionary to ffmpeg function
+#    # pass dictionary to ffmpeg function
+#    if len(argv) == 2:
+#        ffrec = record.ffmpeg(**ffmpegDict)
+#    elif len(argv) == 4:
+#        ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
+#        ffmpegDict['duration'] = duration
+#        ffrec = record.ffmpeg(**ffmpegDict)
+
+
     if len(argv) == 2:
         if http.match(url):
             ffrec = record.ffmpeg(**ffmpegDict)
