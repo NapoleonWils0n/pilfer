@@ -65,7 +65,11 @@ def rtmp(**kwargs):
     if 'duration' in kwargs:
         tflag = kwargs['tflag']
         duration = kwargs['duration']
-        rtmpcmd = "rtmpdump -i '{0}'".format(url)
+        timestr = duration
+        ftr = [3600,60,1]
+        B = sum([a*b for a,b in zip(ftr, map(int,timestr.split(':')))])
+        rtmpcmd = "rtmpdump -R -i '{0}' -B {1} -o {2}".format(url, B, recordingfile)
+
         #rtmpcmd = "rtmpdump -q -i {0} | ffmpeg -hide_banner -stats -v panic -i - -c:v copy -c:a copy {1} {2} {3}".format(url, tflag, duration, recordingfile)
 
     # split the ffmpeg command for subprocess
