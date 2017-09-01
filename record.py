@@ -4,9 +4,12 @@ import shlex
 import sys, os
 import subprocess
 from datetime import datetime 
-import time
 
 def ffmpeg(**kwargs):
+    ''' ffmpeg function
+
+    ffmpeg recording function
+    '''
     home = os.path.expanduser('~')
     desktop = '/Desktop/'
     time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
@@ -51,6 +54,10 @@ def ffmpeg(**kwargs):
 
 
 def rtmp(**kwargs):
+    ''' rtmpdump function
+
+    rtmpdump recording function
+    '''
     home = os.path.expanduser('~')
     desktop = '/Desktop/'
     time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")

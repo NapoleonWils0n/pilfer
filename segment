@@ -141,18 +141,12 @@ if __name__ == "__main__":
         ffmpegDict['nltid'] = cookie
 
 
+    # http and rtmp regexes
     http = re.compile(r'^(http|https)://')
     rtmp = re.compile(r'^(rtmp|rtmpe)://')
 
-#    # pass dictionary to ffmpeg function
-#    if len(argv) == 2:
-#        ffrec = record.ffmpeg(**ffmpegDict)
-#    elif len(argv) == 4:
-#        ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
-#        ffmpegDict['duration'] = duration
-#        ffrec = record.ffmpeg(**ffmpegDict)
 
-
+    # check number of args passed to script
     if len(argv) == 2:
         if http.match(url):
             ffrec = record.ffmpeg(**ffmpegDict)
