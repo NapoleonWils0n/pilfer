@@ -1,10 +1,7 @@
-#!/usr/bin/env python3
-
-from distutils.core import setup, find_packages
+from setuptools import setup, find_packages
 
 setup(
     name='segment',
-    packages=['segment'],
     version='0.0.1',
     description='tool to record videos from Kodi on the command line or from within Kodi',
     author='NapoleonWils0n',
