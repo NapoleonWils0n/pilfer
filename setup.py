@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from distutils.core import setup
+from distutils.core import setup, find_packages
 
 setup(
     name='segment',
