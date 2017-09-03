@@ -16,7 +16,7 @@ setup(
     zip_safe=False,
     entry_points={
           'console_scripts': [
-              'segment=segment:main'
+              'segment=segment.__main__:main'
           ]
     }
 
