@@ -22,7 +22,7 @@ setup(
     zip_safe=False,
     entry_points={
         'console_scripts': [
-            'pilfer = pilfer:main'
+            'pilfer = pilfer'
         ]
     }
 )
