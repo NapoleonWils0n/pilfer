@@ -1,16 +1,11 @@
-"""The main routine of my_project."""
-# http://go.chriswarrick.com/entry_points
-
 import sys
-
-
 def main(args=None):
     """The main routine."""
     if args is None:
         args = sys.argv[1:]
-
-    print("This is the main routine.")
-    print("It should do something interesting.")
+    import pilfer
+    print("pilfer is imported.")
+    print("usage command line >>>>  pilfer file_name.txt -t 00:00:00")
 
     # Do argument parsing here (eg. with argparse) and anything else
     # you want your project to do.
