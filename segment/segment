@@ -1,7 +1,7 @@
 #!/usr/bin/env python3 
 
 # import modules
-import segment.validate, segment.regex, segment.record
+import validate, regex, record
 import sys, re, getopt, os.path, mimetypes
 
 #=================================================#
