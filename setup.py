@@ -20,5 +20,5 @@ setup(
     license='GPL',
     packages=['pilfer'],
     zip_safe=False,
-    scripts=['pilfer']
+    scripts=['pilfer.pilfer']
 )
