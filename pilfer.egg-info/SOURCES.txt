@@ -2,6 +2,7 @@ MANIFEST.in
 README.md
 setup.cfg
 setup.py
+pilfer/__main__.py
 pilfer/record.py
 pilfer/regex.py
 pilfer/pilfer
