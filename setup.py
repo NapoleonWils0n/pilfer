@@ -20,5 +20,9 @@ setup(
     license='GPL',
     packages=['pilfer'],
     zip_safe=False,
-    scripts=['pilfer/pilfer']
+    entry_points={
+        'console_scripts': [
+            'pilfer = pilfer.pilfer:main'
+        ]
+    }
 )
