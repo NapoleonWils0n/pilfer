@@ -1,4 +1,13 @@
-from setuptools import setup, find_packages
+import os
+import sys
+
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
+
+
+
 
 setup(
     name='pilfer',
@@ -9,7 +18,7 @@ setup(
     keywords=['ffmpeg', 'rtmpdump', 'kodi'],
     long_description='long description goes here',
     license='GPL',
-    packages=find_packages(),
+    packages=['pilfer'],
     zip_safe=False,
     scripts=['pilfer/pilfer']
 )
