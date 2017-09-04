@@ -1,15 +1,15 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='segment',
+    name='pilfer',
     version='0.0.1',
     description='tool to record videos from Kodi on the command line or from within Kodi',
     author='NapoleonWils0n',
-    url='https://github.com/NapoleonWils0n/segment',
+    url='https://github.com/NapoleonWils0n/pilfer',
     keywords=['ffmpeg', 'rtmpdump', 'kodi'],
     long_description='long description goes here',
     license='GPL',
     packages=find_packages(),
     zip_safe=False,
-    scripts=['segment/segment']
+    scripts=['pilfer/pilfer']
 )
