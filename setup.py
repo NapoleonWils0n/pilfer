@@ -11,5 +11,5 @@ setup(
     license='GPL',
     packages=find_packages(),
     zip_safe=False,
-    scripts=['segemnt/segment']
+    scripts=['segment/segment']
 )
