@@ -11,5 +11,10 @@ setup(
     license='GPL',
     packages=find_packages(),
     zip_safe=False,
-    scripts=['segment/segment']
+    entry_points={
+          'console_scripts': [
+              'segment=segment.segment:main'
+          ]
+    }
+
 )
