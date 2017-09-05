@@ -1,9 +1,7 @@
 #!/usr/bin/env python3 
 
 # import modules
-from pilfer.validate import validate
-from pilfer.regex import regex
-from pilfer.record import record
+import validate, regex, record
 import sys, re, getopt, os.path, mimetypes
 
 #=================================================#
