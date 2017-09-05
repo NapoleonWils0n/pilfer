@@ -15,4 +15,4 @@ def main(args=None):
     # you want your project to do.
 
 if __name__ == '__main__':
-    pilfer.main()
+    main()
