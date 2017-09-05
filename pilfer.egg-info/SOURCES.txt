@@ -4,7 +4,7 @@ setup.cfg
 setup.py
 pilfer/record.py
 pilfer/regex.py
-pilfer/pilfer
+pilfer/pilfer.py
 pilfer/validate.py
 pilfer.egg-info/PKG-INFO
 pilfer.egg-info/SOURCES.txt
