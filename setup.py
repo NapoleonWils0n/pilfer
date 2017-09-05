@@ -31,7 +31,7 @@ setup(
 
     entry_points={
         'console_scripts': [
-            'pilfer=pilfer:main',
+            'pilfer=pilfer.pilfer:main',
         ],
 },
 )
