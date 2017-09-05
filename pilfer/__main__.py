@@ -9,4 +9,4 @@ def main(args=None):
     import pilfer
 
 if __name__ == '__main__':
-    main()
+    pilfer.main()
