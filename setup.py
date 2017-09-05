@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name='pilfer',
@@ -8,7 +8,7 @@ setup(
     author='NapoleonWils0n',
     author_email='',
     license='GPL',
-    keywords='sample setuptools development',
+    keywords='ffmpeg rtmpdump kodi',
     packages=['pilfer'],
     zip_safe=False
 )
