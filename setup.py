@@ -11,7 +11,7 @@ setup(
     keywords='ffmpeg rtmpdump kodi',
     packages=['pilfer'],
     entry_points={
-        'console_scripts': ['pilfer=pilfer.__main__:main'],
+        'console_scripts': ['pilfer=pilfer.__main__'],
     },
     zip_safe=False
 )
