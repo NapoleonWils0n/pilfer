@@ -1,3 +1,4 @@
+import sys
 from setuptools import setup, find_packages
 
 # Get the long description from the README file
@@ -31,7 +32,7 @@ setup(
 
     entry_points={
         'console_scripts': [
-            'pilfer=pilfer.pilfer:main(argv)',
+            'pilfer=pilfer.pilfer:main(sys.argv[1:])',
         ],
 },
 )
