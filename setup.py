@@ -1,6 +1,8 @@
 import sys
 from setuptools import setup, find_packages
 
+argv = sys.argv[1:]
+
 # Get the long description from the README file
 #with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 #    long_description = f.read()
@@ -32,7 +34,7 @@ setup(
 
     entry_points={
         'console_scripts': [
-            'pilfer=pilfer.pilfer:main(sys.argv[1:])',
+            'pilfer=pilfer.pilfer:main(argv)',
         ],
 },
 )
