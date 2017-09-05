@@ -27,9 +27,9 @@ setup(
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
     #packages=find_packages(),
-    packages=['pilfer'],
+#    packages=['pilfer'],
 
-    scripts=['pilfer.py']
+    scripts=['pilfer/pilfer']
 #    entry_points={
 #        'console_scripts': [
 #            'pilfer=pilfer.pilfer:main',
