@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 # Get the long description from the README file
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
-    long_description = f.read()
+#with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+#    long_description = f.read()
 
 setup(
     name='pilfer',
@@ -13,7 +13,7 @@ setup(
     version='1.0.0',
 
     description='pilfer command line tool to record videos from Kodi',
-    long_description=long_description,
+    #long_description=long_description,
 
     # The project's main homepage.
     url='https://github.com/NapoleonWils0n/pilfer',
