@@ -29,7 +29,8 @@ setup(
     #packages=find_packages(),
     packages=['pilfer'],
 
-    scripts=['pilfer/pilfer'],
+    scripts=['pilfer/pilfer']
+
  #   entry_points={
  #       'console_scripts': [
  #           'pilfer=pilfer.__main__:main',
