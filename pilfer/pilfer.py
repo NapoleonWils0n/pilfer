@@ -1,10 +1,7 @@
 #!/usr/bin/env python3 
 
 # import modules
-from .validate import validate
-from .regex import regex
-from .record import record
-
+import validate, regex, record
 import sys, re, getopt, os.path, mimetypes
 
 #=================================================#
