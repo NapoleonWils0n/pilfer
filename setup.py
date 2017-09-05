@@ -1,7 +1,8 @@
 import sys
 from setuptools import setup, find_packages
 
-argv = sys.argv[1:]
+sys.path.insert(0, './piler/')
+import pilfer
 
 # Get the long description from the README file
 #with open(path.join(here, 'README.md'), encoding='utf-8') as f:
