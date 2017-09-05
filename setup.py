@@ -32,11 +32,9 @@ setup(
     # simple. Or you can use find_packages().
     packages=find_packages(),
 
-    scripts=['pilfer']
-    
-#    entry_points={
-#        'console_scripts': [
-#            'pilfer=pilfer:main',
-#        ],
-    #},
+    entry_points={
+        'console_scripts': [
+            'pilfer=pilfer:main',
+        ],
+},
 )
