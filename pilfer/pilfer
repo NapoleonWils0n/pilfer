@@ -3,9 +3,9 @@
 # import modules
 #import validate, regex, record
 
-from .validate import validate
-from .regex import regex
-from .record import record
+from .validate import *
+from .regex import *
+from .record import *
 import sys, re, getopt, os.path, mimetypes
 
 #=================================================#
