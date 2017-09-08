@@ -23,7 +23,7 @@ def ffmpeg(**kwargs):
 
     ffcmd = "ffmpeg -hide_banner -stats -v panic -i {0} -c:v copy -c:a copy {1}".format(url, recordingfile)
 
-    if 'user-agent' or 'referer' or 'cookie' in kwargs:
+    if any(word in kwargs for word in ('user-agent', 'referer', 'cookie')):                 
         # dict minus first time which is the url
         options = values[1:]
         remove_bracket = str(options)[1:-1]
