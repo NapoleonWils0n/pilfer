@@ -50,6 +50,8 @@ def ffmpeg(**kwargs):
         process = subprocess.run(ffsplit)
     except KeyboardInterrupt:
         print("recording stopped by user")
+    except IOError:
+        print("input outpur error, is ffmpeg installed")
 
 
 def rtmp(**kwargs):
@@ -80,3 +82,5 @@ def rtmp(**kwargs):
         process = subprocess.run(rtmpcmd, shell=True)
     except KeyboardInterrupt:
         print("recording stopped by user")
+    except IOError:
+        print("input outpur error, is rtmpdump or ffmpeg installed")
