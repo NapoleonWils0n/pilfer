@@ -1,4 +1,4 @@
-#!/usr/bin/env python3 
+#!/usr/local/bin/python3 
 
 # import modules
 from pilfer import validate, regex, record
@@ -66,7 +66,7 @@ def main(argv):
             sys.exit()
         elif opt == ("-i") and len(argv) == 2:
             # -i and url or text file - argv length 2, valid options and args
-            checkurl(argv[1]) # checkurl function
+            break
         elif opt == ("-t") and len(argv) == 2:
             # -t option on its own - invalid
             print("the -t option must be used after the -i option")
@@ -80,8 +80,7 @@ def main(argv):
                 sys.exit()
             else:
                 # -i url followed by -t 00:00:00 = valid
-                checkurl(argv[1]) # checkurl function
-                durationValidated(argv[3])
+                break
         else:
             assert False, "unhandled option"
 

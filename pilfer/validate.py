@@ -62,7 +62,6 @@ def checkurl(url):
             file.close()          
             return url
     x = re.compile(r'^(http|https|rtmp|rtmpe)://.*$')
-    #x = re.compile(r'^(http|https|rtmp|rtmpe)://[a-zA-Z0-9./]+[./]+[a-zA-Z]+/[a-zA-Z0-9]+.*$')
     if not x.match(url):
         usage()    # display script usage
         sys.exit() # exit
