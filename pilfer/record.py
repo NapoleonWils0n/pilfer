@@ -11,10 +11,10 @@ def ffmpeg(**kwargs):
     ffmpeg recording function
     '''
     home = os.path.expanduser('~')
-    desktop = '/Desktop/'
+    desktop = 'Desktop'
     time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-    ext = '.mkv'
-    recordingfile = home + desktop + 'video-' + time + ext
+    ext = 'mkv'
+    recordingfile = os.path.join(home, desktop, 'video-{}.{}'.format(time, ext))
     
     # get the values from the dictionary passed to the function
     values = list(kwargs.values())
@@ -60,10 +60,10 @@ def rtmp(**kwargs):
     rtmpdump recording function
     '''
     home = os.path.expanduser('~')
-    desktop = '/Desktop/'
+    desktop = 'Desktop'
     time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-    ext = '.mkv'
-    recordingfile = home + desktop + 'video-' + time + ext
+    ext = 'mkv'
+    recordingfile = os.path.join(home, desktop, 'video-{}.{}'.format(time, ext))
     
     # url from kwargs which is the dictionary passed to the function
     url = kwargs['url']
