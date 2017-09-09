@@ -16,6 +16,13 @@ def ffmpeg(**kwargs):
     ext = 'mkv'
     recordingfile = os.path.join(home, desktop, 'video-{}.{}'.format(time, ext))
     
+    if sys.platform.startswith('win32'):
+        home = os.path.expanduser('~').replace('\\', '//')
+        desktop = '//Desktop//'
+        time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+        ext = '.mkv'
+        recordingfile = home + desktop + 'video-' + time + ext
+    
     # get the values from the dictionary passed to the function
     values = list(kwargs.values())
     # url from kwargs which is the dictionary passed to the function
@@ -65,6 +72,13 @@ def rtmp(**kwargs):
     ext = 'mkv'
     recordingfile = os.path.join(home, desktop, 'video-{}.{}'.format(time, ext))
     
+    if sys.platform.startswith('win32'):
+        home = os.path.expanduser('~').replace('\\', '//')
+        desktop = '//Desktop//'
+        time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+        ext = '.mkv'
+        recordingfile = home + desktop + 'video-' + time + ext
+
     # url from kwargs which is the dictionary passed to the function
     url = kwargs['url']
 
