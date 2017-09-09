@@ -17,7 +17,7 @@ def ffmpeg(**kwargs):
     recordingfile = os.path.join(home, desktop, 'video-{}.{}'.format(time, ext))
     
     if sys.platform.startswith('win32'):
-        home = os.path.expanduser('~').replace('\\', '//')
+        home = os.path.expanduser('~').replace('\\', '/')
         desktop = '//Desktop//'
         time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
         ext = '.mkv'
@@ -73,7 +73,7 @@ def rtmp(**kwargs):
     recordingfile = os.path.join(home, desktop, 'video-{}.{}'.format(time, ext))
     
     if sys.platform.startswith('win32'):
-        home = os.path.expanduser('~').replace('\\', '//')
+        home = os.path.expanduser('~').replace('\\', '/')
         desktop = '//Desktop//'
         time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
         ext = '.mkv'
