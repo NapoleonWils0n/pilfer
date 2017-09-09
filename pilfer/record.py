@@ -14,8 +14,7 @@ def ffmpeg(**kwargs):
     desktop = 'Desktop'
     time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     ext = 'mkv'
-    rfile = os.path.join(home, desktop, 'video-{}.{}'.format(time, ext))
-    recordingfile = os.path.relpath(rfile)
+    recordingfile = os.path.join(home, desktop, 'video-{}.{}'.format(time, ext))
     
     # get the values from the dictionary passed to the function
     values = list(kwargs.values())
@@ -64,8 +63,7 @@ def rtmp(**kwargs):
     desktop = 'Desktop'
     time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     ext = 'mkv'
-    rfile = os.path.join(home, desktop, 'video-{}.{}'.format(time, ext))
-    recordingfile = os.path.relpath(rfile)
+    recordingfile = os.path.join(home, desktop, 'video-{}.{}'.format(time, ext))
     
     # url from kwargs which is the dictionary passed to the function
     url = kwargs['url']
