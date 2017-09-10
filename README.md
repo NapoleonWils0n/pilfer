@@ -2,6 +2,14 @@
 
 Python command line tool to record videos from within Kodi or on the command line
 
+requirements:
+
+* python 3.5 
+* python 3.5 pip
+* git
+* ffmpeg
+* rtmpdump
+
 ## Linux set up
 
 ### Ubuntu
