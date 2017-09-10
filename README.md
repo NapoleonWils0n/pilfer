@@ -133,6 +133,8 @@ brew install rtmpdump
 sudo pkg install python36 py36-pip git ffmpeg rtmpdump
 ```
 
+You can also use ports to install the required software
+
 * install scripts with pip
 
 ```
