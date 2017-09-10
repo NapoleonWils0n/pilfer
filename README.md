@@ -10,8 +10,16 @@ Script requirements:
 * ffmpeg 3.0 and above
 * rtmpdump 2.4
 
-You also need to install the playercorefacory.xml for your operating system,
+You also need to install the playercorefacory.xml for your operating system,  
 into the kodi userdata directory
+
+* kodi playercorefactory.xml download links 
+
+Location of kodi userdata directory
+
+* Linux ~/.kodi/userdata/
+* Mac /Users/<your_user_name>/Library/Application Support/Kodi/userdata/
+* Windows Start - type %APPDATA%\kodi\userdata - press return
 
 ## Linux set up
 
