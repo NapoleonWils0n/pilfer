@@ -24,6 +24,10 @@ sudo apt install -y python3 python3-pip git-core ffmpeg rtmpdump
 sudo pacman -S python python-pip git ffmpeg rtmpdump
 ```
 
+# Windows set up
+
+* See t3rmin8tor repo
+
 # Mac set up
 
 ## ffmpeg install
@@ -108,10 +112,6 @@ https://git-scm.com/download/mac
 https://www.python.org/downloads/mac-osx/
 
 https://www.python.org/downloads/release/python-362/
-
-# Windows set up
-
-* See t3rmin8tor repo
 
 # Freebsd set up
 
