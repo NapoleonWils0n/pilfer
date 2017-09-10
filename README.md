@@ -10,6 +10,9 @@ Script requirements:
 * ffmpeg 3.0 and above
 * rtmpdump 2.4
 
+You also need to install the playercorefacory.xml for your operating system,
+into the kodi userdata directory
+
 ## Linux set up
 
 ### Ubuntu
