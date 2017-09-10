@@ -44,7 +44,7 @@ sudo pacman -S python python-pip git ffmpeg rtmpdump
 
 ### ffmpeg install
 
-https://evermeet.cx/ffmpeg/
+[ffmpeg download](https://evermeet.cx/ffmpeg/)
 
 * install ffmpeg
 
@@ -115,15 +115,15 @@ brew install rtmpdump
 
 * git download
 
-https://git-scm.com/download/mac
+[git download](https://git-scm.com/download/mac)
 
 ### python install
 
 * python download link
 
-https://www.python.org/downloads/mac-osx/
+[python](https://www.python.org/downloads/mac-osx/)
 
-https://www.python.org/downloads/release/python-362/
+[python 3.6 download](https://www.python.org/downloads/release/python-362/)
 
 ## Freebsd set up
 
