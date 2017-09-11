@@ -81,6 +81,10 @@ pilfer -i 'video-url.txt' -t 00:30:00
 pilfer -i 'video-url.txt' -t 01:00:00
 ```
 
+## Windows set up
+
+* See t3rmin8tor repo
+
 ## Linux set up
 
 ### Ubuntu
@@ -141,10 +145,6 @@ Finally source your ~/.bashrc
 ```
 . ~/.bashrc
 ```
-
-## Windows set up
-
-* See t3rmin8tor repo
 
 ## Mac set up
 
