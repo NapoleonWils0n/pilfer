@@ -103,7 +103,7 @@ create a folder called bin in your home folder, /Users/your-username/bin
 mkdir -p ~/bin
 ```
 
-copy the ffmpeg
+copy ffmpeg into the ~/bin directory
 
 if you have ffmpeg installed to another location create a symbolic link to $HOME/bin/ffmpeg the same applies to ffplay and ffprobe
 
