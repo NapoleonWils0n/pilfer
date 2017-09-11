@@ -29,10 +29,22 @@ Location of kodi userdata directory
 pilfer -i 'http://example.com/video.m3u8'
 ```
 
+* text file containing url
+
+```
+pilfer -i 'video-url.txt'
+```
+
 * recording with duration, 00:00:00 = hours:minutes:seconds
 
 ```
 pilfer -i 'http://example.com/video.m3u8' -t 00:30:00
+```
+
+* text file containing url, recording with duration, 00:00:00 = hours:minutes:seconds
+
+```
+pilfer -i 'video-url.txt' -t 00:30:00
 ```
 
 ## Linux set up
