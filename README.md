@@ -21,6 +21,20 @@ Location of kodi userdata directory
 * Mac /Users/<your_user_name>/Library/Application Support/Kodi/userdata/
 * Windows Start - type %APPDATA%\kodi\userdata - press return
 
+Script usage on the command line
+
+* video url surrounded by single quotes
+
+```
+pilfer -i 'http://example.com/video.m3u8'
+```
+
+* recording with duration, 00:00:00 = hours:minutes:seconds
+
+```
+pilfer -i 'http://example.com/video.m3u8' -t 00:30:00
+```
+
 ## Linux set up
 
 ### Ubuntu
