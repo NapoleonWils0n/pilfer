@@ -27,7 +27,7 @@ You need to install the playercorefactory.xml into your Kodi userdata folder,
 and restart Kodi for the menu to show up.
 
 Press y on the keyboard while a video is playing in Kodi to bring up the contextual menu,  
-from the menu you can then choose several recording options.
+from the menu you can then choose from the following recording options.
 
 ## Script usage on the command line
 
@@ -45,11 +45,15 @@ pilfer -i 'video-url.txt'
 
 * recording with duration, 00:00:00 = hours:minutes:seconds
 
+Record for 30 minutes
+
 ```
 pilfer -i 'http://example.com/video.m3u8' -t 00:30:00
 ```
 
 * text file containing url, recording with duration, 00:00:00 = hours:minutes:seconds
+
+Record for 30 minutes
 
 ```
 pilfer -i 'video-url.txt' -t 00:30:00
