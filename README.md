@@ -19,8 +19,9 @@ into the kodi userdata directory
 Location of kodi userdata directory
 
 * Linux ~/.kodi/userdata/
-* Mac /Users/<your_user_name>/Library/Application Support/Kodi/userdata/
 * Windows Start - type %APPDATA%\kodi\userdata - press return
+* Mac /Users/<your_user_name>/Library/Application Support/Kodi/userdata/
+* Freebsd ~/.kodi/userdata/
 
 ## Recording from within Kodi
 
