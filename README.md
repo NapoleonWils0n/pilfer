@@ -31,32 +31,44 @@ from the menu you can then choose from the following recording options.
 
 ## Script usage on the command line
 
-* video url surrounded by single quotes
+* Video url surrounded by single quotes
 
 ```
 pilfer -i 'http://example.com/video.m3u8'
 ```
 
-* text file containing url
+* Text file containing url
 
 ```
 pilfer -i 'video-url.txt'
 ```
 
-* recording with duration, 00:00:00 = hours:minutes:seconds
+Recording with duration, 00:00:00 = hours:minutes:seconds
 
-Record for 30 minutes
+* Record for 30 minutes
 
 ```
 pilfer -i 'http://example.com/video.m3u8' -t 00:30:00
 ```
 
-* text file containing url, recording with duration, 00:00:00 = hours:minutes:seconds
+* Record for 1 hour
 
-Record for 30 minutes
+```
+pilfer -i 'http://example.com/video.m3u8' -t 01:00:00
+```
+
+Text file containing url, recording with duration, 00:00:00 = hours:minutes:seconds
+
+* Record for 30 minutes
 
 ```
 pilfer -i 'video-url.txt' -t 00:30:00
+```
+
+* Record for 1 hour
+
+```
+pilfer -i 'video-url.txt' -t 01:00:00
 ```
 
 ## Linux set up
