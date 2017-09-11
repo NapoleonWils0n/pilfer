@@ -73,6 +73,18 @@ sudo apt install -y python3 python3-pip git-core ffmpeg rtmpdump
 sudo pacman -S python python-pip git ffmpeg rtmpdump
 ```
 
+#### install scripts with pip
+
+```
+pip3.5 install --user git+https://github.com/NapoleonWils0n/pilfer.git
+```
+
+* upgrade scripts with pip
+
+```
+pip3.5 install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
+```
+
 ## Windows set up
 
 * See t3rmin8tor repo
@@ -162,6 +174,18 @@ brew install rtmpdump
 
 [python 3.6 download](https://www.python.org/downloads/release/python-362/)
 
+#### install scripts with pip
+
+```
+pip3.5 install git+https://github.com/NapoleonWils0n/pilfer.git
+```
+
+* upgrade scripts with pip
+
+```
+pip3.5 install --upgrade git+https://github.com/NapoleonWils0n/pilfer.git
+```
+
 ## Freebsd set up
 
 * Install python 3.6, python3.6 pip, git, ffmpeg, rtmpdump
@@ -172,7 +196,7 @@ sudo pkg install python36 py36-pip git ffmpeg rtmpdump
 
 You can also use ports to install the required software
 
-* install scripts with pip
+#### install scripts with pip
 
 ```
 pip3.5 install --user git+https://github.com/NapoleonWils0n/pilfer.git
