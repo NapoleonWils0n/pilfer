@@ -21,6 +21,11 @@ Location of kodi userdata directory
 * Mac /Users/<your_user_name>/Library/Application Support/Kodi/userdata/
 * Windows Start - type %APPDATA%\kodi\userdata - press return
 
+## Recording from within Kodi
+
+Press y on the keyboard while a video is playing in Kodi to bring up the contextual menu,  
+from the menu you can then choose several recording options.
+
 ## Script usage on the command line
 
 * video url surrounded by single quotes
