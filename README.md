@@ -136,7 +136,7 @@ Finally source your ~/.bashrc
 
 #### Install scripts with pip
 
-Note if you only have python 3.6 install the pip command will be pip and not pip3
+Note if you only have python 3.6 install the pip command will be pip and not pip3  
 The pip command may also be called pip3.6 on different linux distribution
 
 The quickest way to find to find the name of the pip command on linux is to type pip in the terminal  
