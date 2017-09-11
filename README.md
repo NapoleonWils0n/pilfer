@@ -166,7 +166,7 @@ mkdir -p ~/bin
 
 Double click the ffmpeg.dmg file and copy ffmpeg into the ~/bin directory
 
-If you have ffmpeg installed to another location create a symbolic link to $HOME/bin/ffmpeg the same applies to ffplay and ffprobe
+If you have ffmpeg installed to another location create a symbolic link to $HOME/bin/ffmpeg  
 
 Then edit your ~/.bash_profile, for example with nano
 
