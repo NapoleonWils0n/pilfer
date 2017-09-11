@@ -150,9 +150,7 @@ Finally source your ~/.bashrc
 
 ### ffmpeg install
 
-[ffmpeg download](https://evermeet.cx/ffmpeg/)
-
-* Install ffmpeg
+* Download ffmpeg - [ffmpeg download](https://evermeet.cx/ffmpeg/)
 
 Create a folder called bin in your home folder, /Users/your-username/bin
 
@@ -160,7 +158,7 @@ Create a folder called bin in your home folder, /Users/your-username/bin
 mkdir -p ~/bin
 ```
 
-Copy ffmpeg into the ~/bin directory
+Double click the ffmpeg.dmg file and copy ffmpeg into the ~/bin directory
 
 If you have ffmpeg installed to another location create a symbolic link to $HOME/bin/ffmpeg the same applies to ffplay and ffprobe
 
@@ -219,9 +217,9 @@ brew install rtmpdump
 
 ### Git install
 
-* Git download
+Git download - [git download](https://git-scm.com/download/mac)
 
-[git download](https://git-scm.com/download/mac)
+Download git and then run the installer
 
 ### Python install
 
