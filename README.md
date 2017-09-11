@@ -223,11 +223,9 @@ Download git and then run the installer
 
 ### Python install
 
-* Python download link
+Python download - [python](https://www.python.org/downloads/mac-osx/)
 
-[python](https://www.python.org/downloads/mac-osx/)
-
-[python 3.6 download](https://www.python.org/downloads/release/python-362/)
+Download and install python
 
 #### Install scripts with pip
 
