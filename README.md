@@ -236,13 +236,13 @@ Download and install python
 #### Install scripts with pip
 
 ```
-pip3.5 install git+https://github.com/NapoleonWils0n/pilfer.git
+pip3.6 install git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
 * Upgrade scripts with pip
 
 ```
-pip3.5 install --upgrade git+https://github.com/NapoleonWils0n/pilfer.git
+pip3.6 install --upgrade git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
 ## Freebsd set up
