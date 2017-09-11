@@ -113,7 +113,7 @@ sudo pacman -S python python-pip git ffmpeg rtmpdump
 
 #### Add path to python script to ~/.bashrc
 
-Edit your ~/.bashrc with your favourite text editor
+Edit your ~/.bashrc with your favourite text editor  
 For example to edit your ~/.bashrc with nano run the following command
 
 ```
@@ -168,7 +168,7 @@ Then edit your ~/.bash_profile, for example with nano
 nano ~/.bash_profile
 ```
 
-And add the code below to your ~/.bash_profile,
+And add the code below to your ~/.bash_profile,  
 which will add any binaries in ~/bin to your bash path
 
 ```
@@ -251,7 +251,7 @@ You can also use ports to install the required software
 
 #### Add path to python script to ~/.bashrc
 
-Edit your ~/.bashrc with your favourite text editor
+Edit your ~/.bashrc with your favourite text editor  
 For example to edit your ~/.bashrc with nano run the following command
 
 ```
