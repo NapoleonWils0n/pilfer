@@ -21,7 +21,7 @@ Location of kodi userdata directory
 * Mac /Users/<your_user_name>/Library/Application Support/Kodi/userdata/
 * Windows Start - type %APPDATA%\kodi\userdata - press return
 
-Script usage on the command line
+## Script usage on the command line
 
 * video url surrounded by single quotes
 
