@@ -6,8 +6,8 @@ Works on Linux, Windows, Mac, Freebsd
 Script requirements:
 
 * git
-* python 3.5 
-* python 3.5 pip
+* python 3.6 
+* python 3.6 pip
 * ffmpeg 3.0 and above
 * rtmpdump 2.4
 
