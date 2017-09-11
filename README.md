@@ -136,14 +136,20 @@ Finally source your ~/.bashrc
 
 #### Install scripts with pip
 
+Note if you only have python 3.6 install the pip command will be pip and not pip3
+The pip command may also be called pip3.6 on different linux distribution
+
+The quickest way to find to find the name of the pip command on linux is to type pip in the terminal  
+and then press the tab key and it will show you a list of the pip commands.
+
 ```
-pip3.5 install --user git+https://github.com/NapoleonWils0n/pilfer.git
+pip3 install --user git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
 * Upgrade scripts with pip
 
 ```
-pip3.5 install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
+pip3 install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
 ## Mac set up
@@ -275,12 +281,12 @@ Finally source your ~/.bashrc
 #### Install scripts with pip
 
 ```
-pip3.5 install --user git+https://github.com/NapoleonWils0n/pilfer.git
+pip-3.6 install --user git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
 * Upgrade scripts with pip
 
 ```
-pip3.5 install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
+pip-3.6 install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
