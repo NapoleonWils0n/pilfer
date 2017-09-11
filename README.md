@@ -14,7 +14,7 @@ Script requirements:
 You also need to install the playercorefacory.xml for your operating system,  
 into the kodi userdata directory
 
-* kodi playercorefactory.xml download links 
+* Kodi playercorefactory.xml download links 
 
 Location of kodi userdata directory
 
@@ -111,7 +111,7 @@ sudo apt install -y python3 python3-pip git-core ffmpeg rtmpdump
 sudo pacman -S python python-pip git ffmpeg rtmpdump
 ```
 
-#### install scripts with pip
+#### Install scripts with pip
 
 ```
 pip3.5 install --user git+https://github.com/NapoleonWils0n/pilfer.git
@@ -189,7 +189,7 @@ Then source your ~/.bash_profile
 
 Install rtmpdump with homebrew
 
-### install xcode command line tools
+### Install xcode command line tools
 
 * Open a terminal and type
 
@@ -197,7 +197,7 @@ Install rtmpdump with homebrew
 xcode-select --install
 ```
 
-### homebrew install
+### Homebrew install
 
 * Open a terminal and paste in the code below
 
@@ -217,13 +217,13 @@ brew doctor
 brew install rtmpdump
 ```
 
-### git install
+### Git install
 
 * Git download
 
 [git download](https://git-scm.com/download/mac)
 
-### python install
+### Python install
 
 * Python download link
 
@@ -231,7 +231,7 @@ brew install rtmpdump
 
 [python 3.6 download](https://www.python.org/downloads/release/python-362/)
 
-#### install scripts with pip
+#### Install scripts with pip
 
 ```
 pip3.5 install git+https://github.com/NapoleonWils0n/pilfer.git
@@ -253,7 +253,7 @@ sudo pkg install python36 py36-pip git ffmpeg rtmpdump
 
 You can also use ports to install the required software
 
-#### install scripts with pip
+#### Install scripts with pip
 
 ```
 pip3.5 install --user git+https://github.com/NapoleonWils0n/pilfer.git
@@ -335,7 +335,7 @@ Then source your ~/.bash_profile
 
 Install rtmpdump with homebrew
 
-### install xcode command line tools
+### Install xcode command line tools
 
 * Open a terminal and type
 
@@ -343,7 +343,7 @@ Install rtmpdump with homebrew
 xcode-select --install
 ```
 
-### homebrew install
+### Homebrew install
 
 * Open a terminal and paste in the code below
 
@@ -363,13 +363,13 @@ brew doctor
 brew install rtmpdump
 ```
 
-### git install
+### Git install
 
 * Git download
 
 [git download](https://git-scm.com/download/mac)
 
-### python install
+### Python install
 
 * Python download link
 
@@ -377,7 +377,7 @@ brew install rtmpdump
 
 [python 3.6 download](https://www.python.org/downloads/release/python-362/)
 
-#### install scripts with pip
+#### Install scripts with pip
 
 ```
 pip3.5 install git+https://github.com/NapoleonWils0n/pilfer.git
@@ -399,7 +399,7 @@ sudo pkg install python36 py36-pip git ffmpeg rtmpdump
 
 You can also use ports to install the required software
 
-#### install scripts with pip
+#### Install scripts with pip
 
 ```
 pip3.5 install --user git+https://github.com/NapoleonWils0n/pilfer.git
