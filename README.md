@@ -23,6 +23,9 @@ Location of kodi userdata directory
 
 ## Recording from within Kodi
 
+You need to install the playercorefactory.xml into your Kodi userdata folder,  
+and restart Kodi for the menu to show up.
+
 Press y on the keyboard while a video is playing in Kodi to bring up the contextual menu,  
 from the menu you can then choose several recording options.
 
