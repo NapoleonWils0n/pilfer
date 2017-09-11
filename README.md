@@ -113,7 +113,7 @@ sudo pacman -S python python-pip git ffmpeg rtmpdump
 pip3.5 install --user git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
-* upgrade scripts with pip
+* Upgrade scripts with pip
 
 ```
 pip3.5 install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
@@ -129,25 +129,25 @@ pip3.5 install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
 
 [ffmpeg download](https://evermeet.cx/ffmpeg/)
 
-* install ffmpeg
+* Install ffmpeg
 
-create a folder called bin in your home folder, /Users/your-username/bin
+Create a folder called bin in your home folder, /Users/your-username/bin
 
 ```
 mkdir -p ~/bin
 ```
 
-copy ffmpeg into the ~/bin directory
+Copy ffmpeg into the ~/bin directory
 
-if you have ffmpeg installed to another location create a symbolic link to $HOME/bin/ffmpeg the same applies to ffplay and ffprobe
+If you have ffmpeg installed to another location create a symbolic link to $HOME/bin/ffmpeg the same applies to ffplay and ffprobe
 
-then edit your ~/.bash_profile, for example with nano
+Then edit your ~/.bash_profile, for example with nano
 
 ```
 nano ~/.bash_profile
 ```
 
-and add the code below to your ~/.bash_profile,
+And add the code below to your ~/.bash_profile,
 which will add any binaries in ~/bin to your bash path
 
 ```
@@ -164,11 +164,11 @@ Then source your ~/.bash_profile
 
 ### rtmpdump install
 
-install rtmpdump with homebrew
+Install rtmpdump with homebrew
 
 ### install xcode command line tools
 
-* open a terminal and type
+* Open a terminal and type
 
 ```
 xcode-select --install
@@ -176,13 +176,13 @@ xcode-select --install
 
 ### homebrew install
 
-* open a terminal and paste in the code below
+* Open a terminal and paste in the code below
 
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-* check brew install
+* Check brew install
 
 ```
 brew doctor
@@ -196,13 +196,13 @@ brew install rtmpdump
 
 ### git install
 
-* git download
+* Git download
 
 [git download](https://git-scm.com/download/mac)
 
 ### python install
 
-* python download link
+* Python download link
 
 [python](https://www.python.org/downloads/mac-osx/)
 
@@ -214,7 +214,7 @@ brew install rtmpdump
 pip3.5 install git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
-* upgrade scripts with pip
+* Upgrade scripts with pip
 
 ```
 pip3.5 install --upgrade git+https://github.com/NapoleonWils0n/pilfer.git
@@ -236,7 +236,7 @@ You can also use ports to install the required software
 pip3.5 install --user git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
-* upgrade scripts with pip
+* Upgrade scripts with pip
 
 ```
 pip3.5 install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
