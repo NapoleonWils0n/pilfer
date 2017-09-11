@@ -1,6 +1,6 @@
 # Pilfer
 
-Python command line tool to record videos from within Kodi or on the command line
+Python command line tool to record videos from within Kodi or on the command line.  
 Works on Linux, Windows, Mac, Freebsd
 
 Script requirements:
