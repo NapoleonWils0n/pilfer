@@ -61,7 +61,7 @@ pilfer -i 'http://example.com/video.m3u8'
 * Text file containing url
 
 ```
-pilfer -i 'video-url.txt'
+pilfer -i video-url.txt
 ```
 
 Recording with duration, 00:00:00 = hours:minutes:seconds
@@ -83,13 +83,13 @@ Text file containing url, recording with duration, 00:00:00 = hours:minutes:seco
 * Record for 30 minutes
 
 ```
-pilfer -i 'video-url.txt' -t 00:30:00
+pilfer -i video-url.txt -t 00:30:00
 ```
 
 * Record for 1 hour
 
 ```
-pilfer -i 'video-url.txt' -t 01:00:00
+pilfer -i video-url.txt -t 01:00:00
 ```
 
 ## Windows set up
