@@ -40,6 +40,16 @@ from the menu you can then choose from the following recording options.
 You can also edit the playercorefactory.xml file and add your own menu entrys,  
 to create more recording durations.
 
+Videos will be saved to the Desktop with current date and time in the filename,  
+so that each recording has a unique name and isnt overwritten by another recording
+
+It isnt possible to get the videos title from the url which is why we add the date and time to the filename
+
+The recording will be saved to your Desktop with the following filename
+
+video-{date}-{time}.mkv
+
+
 ## Script usage on the command line
 
 * Video url surrounded by single quotes
