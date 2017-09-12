@@ -20,9 +20,10 @@ into the kodi userdata directory
 [Windows - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/windows/playercorefactory.xml)  
 [Mac - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/mac/playercorefactory.xml)  
 
-Open the link and right click on the webpage and select save as to save the file
+Open the link for your operating system and right click on the webpage and select save as to save the file  
+Then move the playercorefactory.xml file into the kodi userdata folder for your operating system listed below.  
 
-Location of kodi userdata directory
+Location of kodi userdata folder
 
 * Linux ~/.kodi/userdata/
 * Windows Start - type %APPDATA%\kodi\userdata - press return
