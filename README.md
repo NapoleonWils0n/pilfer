@@ -16,9 +16,9 @@ into the kodi userdata directory
 
 * Kodi playercorefactory.xml download links 
 
-Kodi playercorefactory.xml for [Linux - Freebsd](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/linux-unix/playercorefactory.xml)  
-Kodi playercorefactory.xml for [Windows](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/windows/playercorefactory.xml)  
-Kodi playercorefactory.xml for [Mac](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/mac/playercorefactory.xml)  
+[Linux, Freebsd - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/linux-unix/playercorefactory.xml)  
+[Windows - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/windows/playercorefactory.xml)  
+[Mac - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/mac/playercorefactory.xml)  
 
 Open the link and right click on the webpage and select save as to save the file
 
