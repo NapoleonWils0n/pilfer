@@ -25,7 +25,7 @@ def usage():
 -i 'video url'
 -t '00:00:00'
 
-rip-record -i <video-url> -t <00:00:00>
+pilfer -i <video-url> -t <00:00:00>
     """
     print(usage)
 
