@@ -22,7 +22,7 @@ def usage():
     '''
     usage = """
 -h --help display help
--i 'video url' ot text file
+-i 'video url' or text file
 -t '00:00:00'
 
 pilfer -i <video-url> -t <00:00:00>
