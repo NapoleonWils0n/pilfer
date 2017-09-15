@@ -1,8 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3 
 
 import re
-#from urllib.parse import unquote
-from urllib import unquote
+from urllib.parse import unquote
 
 #=================================================#
 # split url

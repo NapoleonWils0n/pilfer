@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3 
 
 import shlex
 import sys, os
@@ -54,7 +54,7 @@ def ffmpeg(**kwargs):
  
     # try ffmpeg function except keyboard interupt if user quits script with control c
     try:
-        process = subprocess.check_call(ffsplit)
+        process = subprocess.run(ffsplit)
     except KeyboardInterrupt:
         print("recording stopped by user")
     except IOError:
@@ -93,7 +93,7 @@ def rtmp(**kwargs):
  
     # try ffmpeg function except keyboard interupt if user quits script with control c
     try:
-        process = subprocess.check_call(rtmpcmd, shell=True)
+        process = subprocess.run(rtmpcmd, shell=True)
     except KeyboardInterrupt:
         print("recording stopped by user")
     except IOError:
