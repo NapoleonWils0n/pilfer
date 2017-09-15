@@ -6,8 +6,8 @@ Works on Linux, Windows, Mac, Freebsd
 Script requirements:
 
 * git
-* python 2.7
-* python 2.7 pip
+* python 3.6 
+* python 3.6 pip
 * ffmpeg 3.0 and above
 * rtmpdump 2.4
 
@@ -161,13 +161,13 @@ The quickest way to find to find the name of the pip command on linux is to type
 and then press the tab key and it will show you a list of the pip commands.
 
 ```
-pip install --user git+https://github.com/NapoleonWils0n/pilfer.git
+pip3 install --user git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
 * Upgrade scripts with pip
 
 ```
-pip install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
+pip3 install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
 ## Mac set up
@@ -247,18 +247,20 @@ Download git and then run the installer
 
 ### Python install
 
-Python 2.7 is preinstalled on the mac
+Python download - [python](https://www.python.org/downloads/mac-osx/)
+
+Download and install python
 
 #### Install scripts with pip
 
 ```
-pip install git+https://github.com/NapoleonWils0n/pilfer.git
+pip3.6 install git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
 * Upgrade scripts with pip
 
 ```
-pip install --upgrade git+https://github.com/NapoleonWils0n/pilfer.git
+pip3.6 install --upgrade git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
 ## Freebsd set up
@@ -305,4 +307,3 @@ pip-3.6 install --user git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 pip-3.6 install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
 ```
-
