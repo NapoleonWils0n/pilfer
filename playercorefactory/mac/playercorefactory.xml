@@ -1,0 +1,24 @@
+<playercorefactory>
+ <players>
+   <player name="save video url" type="ExternalPlayer" audio="false" video="true">
+		<filename>printf</filename>
+     <args>"%s\n" "{0}" > "$HOME/Desktop/video-url-$(date +"%Y-%m-%d-%H-%M-%S").txt"</args>
+     <hidexbmc>false</hidexbmc>
+   </player>
+   <player name="record" type="ExternalPlayer" audio="false" video="true">
+ 	<filename>/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6</filename>
+      <args>-E "$HOME/Library/Python/3.6/bin/pilfer" -i "{0}" -t 00:01:00 &</args>
+      <hidexbmc>false</hidexbmc>
+    </player>
+ </players>
+ <rules action="overwrite">
+   <rule protocols="nfs|smb" player="dvdplayer"></rule>
+
+   <!-- change the default player below -->
+
+   <!-- uncomment to make record the default player
+   <rule video="true" player="record"></rule>
+    -->
+   
+ </rules>
+</playercorefactory>
