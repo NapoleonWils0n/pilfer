@@ -26,7 +26,7 @@ def ffmpeg(**kwargs):
         time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
         ext = '.mkv'
         recordingfile = home + desktop + 'video-' + time + ext
-        ffmpeg = 'C:\pilfer\system\bin\ffmpeg'
+        ffmpeg = 'C:/pilfer/system/bin/ffmpeg'
     elif sys.platform.startswith('darwin'):
         bin = 'bin'
         ffmpeg = os.path.join(home, bin, 'ffmpeg')
@@ -95,8 +95,8 @@ def rtmp(**kwargs):
         time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
         ext = '.mkv'
         recordingfile = home + desktop + 'video-' + time + ext
-        ffmpeg = 'C:\pilfer\system\bin\ffmpeg'
-        rtmpdump = 'C:\pilfer\system\bin\rtmpdump'
+        ffmpeg = 'C:/pilfer/system/bin/ffmpeg'
+        rtmpdump = 'C:/pilfer/system/bin/rtmpdump'
     elif sys.platform.startswith('darwin'):
         bin = 'bin'
         ffmpeg = os.path.join(home, bin, 'ffmpeg')
