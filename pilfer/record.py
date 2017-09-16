@@ -15,10 +15,14 @@ def ffmpeg(**kwargs):
     time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     ext = 'mkv'
     recordingfile = os.path.join(home, desktop, 'video-{}.{}'.format(time, ext))
-    ffmpeg = 'ffmpeg'
-    rtmpdump = 'rtmpdump'
     
-    if sys.platform.startswith('win32'):
+    if sys.platform.startswith('linux'):
+        ffmpeg = 'ffmpeg'
+        rtmpdump = 'rtmpdump'
+    elif sys.platform.startswith('freebsd'):
+        ffmpeg = 'ffmpeg'
+        rtmpdump = 'rtmpdump'
+    elif sys.platform.startswith('win32'):
         home = os.path.expanduser('~').replace('\\', '/')
         desktop = '//Desktop//'
         time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
@@ -79,10 +83,14 @@ def rtmp(**kwargs):
     time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     ext = 'mkv'
     recordingfile = os.path.join(home, desktop, 'video-{}.{}'.format(time, ext))
-    ffmpeg = 'ffmpeg'
-    rtmpdump = 'rtmpdump'
     
-    if sys.platform.startswith('win32'):
+    if sys.platform.startswith('linux'):
+        ffmpeg = 'ffmpeg'
+        rtmpdump = 'rtmpdump'
+    elif sys.platform.startswith('freebsd'):
+        ffmpeg = 'ffmpeg'
+        rtmpdump = 'rtmpdump'
+    elif sys.platform.startswith('win32'):
         home = os.path.expanduser('~').replace('\\', '/')
         desktop = '//Desktop//'
         time = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
