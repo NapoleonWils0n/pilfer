@@ -110,7 +110,7 @@ def rtmp(**kwargs):
     if 'duration' in kwargs:
         tflag = kwargs['tflag']
         duration = kwargs['duration']
-        rtmpcmd = "{0} -q -i '{1}' | {2} -hide_banner -stats -v panic -i - -c:v copy -c:a copy {3} {4} {5}".format(rtmpdump, ffmpeg, url, tflag, duration, recordingfile)
+        rtmpcmd = "{0} -q -i '{1}' | {2} -hide_banner -stats -v panic -i - -c:v copy -c:a copy {3} {4} {5}".format(rtmpdump, url, ffmpeg, tflag, duration, recordingfile)
 
     print("running rtmp command:")
  
