@@ -101,7 +101,6 @@ def rtmp(**kwargs):
         ffmpeg = os.path.join(home, bin, 'ffmpeg')
         rtmpdump = '/usr/local/bin/rtmpdump'
 
-
     # url from kwargs which is the dictionary passed to the function
     url = kwargs['url']
 
