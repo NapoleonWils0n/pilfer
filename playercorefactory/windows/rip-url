@@ -3,7 +3,6 @@
 import sys, os
 from datetime import datetime
 
-#home = os.path.expanduser('~').replace('\\', '/')
 home = os.path.expanduser('~')
 now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 arg = str(sys.argv[1])
