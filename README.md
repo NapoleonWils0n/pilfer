@@ -170,6 +170,22 @@ pip3 install --user git+https://github.com/NapoleonWils0n/pilfer.git
 pip3 install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
+#### Install playercorefactory.xml file
+
+You also need to install the playercorefacory.xml for your operating system,  
+into the kodi userdata directory
+
+* Kodi playercorefactory.xml download links 
+
+[Linux, Freebsd - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/linux-unix/playercorefactory.xml)  
+
+Open the link for your operating system and right click on the webpage and select save as to save the file  
+Then move the playercorefactory.xml file into the kodi userdata folder for your operating system listed below.  
+
+Location of kodi userdata folder
+
+* Linux ~/.kodi/userdata/
+
 ## Mac set up
 
 ### ffmpeg install
@@ -263,6 +279,22 @@ pip3.6 install --user git+https://github.com/NapoleonWils0n/pilfer.git
 pip3.6 install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
+#### Install playercorefactory.xml file
+
+You also need to install the playercorefacory.xml for your operating system,  
+into the kodi userdata directory
+
+* Kodi playercorefactory.xml download links 
+
+[Mac - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/mac/playercorefactory.xml)  
+
+Open the link for your operating system and right click on the webpage and select save as to save the file  
+Then move the playercorefactory.xml file into the kodi userdata folder for your operating system listed below.  
+
+Location of kodi userdata folder
+
+* Mac /Users/<your_user_name>/Library/Application Support/Kodi/userdata/
+
 ## Freebsd set up
 
 * Install python 3.6, python3.6 pip, git, ffmpeg, rtmpdump
@@ -307,3 +339,19 @@ pip-3.6 install --user git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 pip-3.6 install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
 ```
+#### Install playercorefactory.xml file
+
+You also need to install the playercorefacory.xml for your operating system,  
+into the kodi userdata directory
+
+* Kodi playercorefactory.xml download links 
+
+[Linux, Freebsd - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/linux-unix/playercorefactory.xml)  
+
+Open the link for your operating system and right click on the webpage and select save as to save the file  
+Then move the playercorefactory.xml file into the kodi userdata folder for your operating system listed below.  
+
+Location of kodi userdata folder
+
+* Freebsd ~/.kodi/userdata/
+
