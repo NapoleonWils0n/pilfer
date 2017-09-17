@@ -17,7 +17,6 @@ into the kodi userdata directory
 * Kodi playercorefactory.xml download links 
 
 [Linux, Freebsd - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/linux-unix/playercorefactory.xml)  
-[Windows - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/windows/playercorefactory.xml)  
 [Mac - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/mac/playercorefactory.xml)  
 
 Open the link for your operating system and right click on the webpage and select save as to save the file  
@@ -26,9 +25,11 @@ Then move the playercorefactory.xml file into the kodi userdata folder for your 
 Location of kodi userdata folder
 
 * Linux ~/.kodi/userdata/
-* Windows Start - type %APPDATA%\kodi\userdata - press return
 * Mac /Users/<your_user_name>/Library/Application Support/Kodi/userdata/
 * Freebsd ~/.kodi/userdata/
+
+Windows users can use the pilfer installer by the t3rmin8tor which will install all the software,  
+scripts and playercorefactory.xml
 
 ## Recording from within Kodi
 
