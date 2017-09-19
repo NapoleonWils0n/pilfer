@@ -25,7 +25,6 @@ def main(argv):
     
     check number of arguments passed to script
     '''
-    
     if len(argv) == 0: # no arguments passed to script
         print("No arguments passed to script")
         usage()    # display script usage
@@ -67,7 +66,6 @@ def main(argv):
                 sys.exit()
         else:
             assert False, "unhandled option"
-
 
 #=================================================#
 # slice off script name from arguments
