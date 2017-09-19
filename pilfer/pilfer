@@ -1,18 +1,8 @@
 #!/usr/bin/env python3
 
-# import modules
-from pilfer import validate, regex, record
-
+#from pilfer import validate, regex, record
+import validate, regex, record
 import sys, re, getopt, os.path, mimetypes
-
-#=================================================#
-# sys       = system access to open files
-# re        = regular expressions
-# getopt    = check script arguments and options
-# os.path   = check if first argument is a file
-# mimetypes = check if file is a text file
-# unquote   = decode urls
-#=================================================#
 
 # argv
 argv = sys.argv[1:]
@@ -21,9 +11,11 @@ argv = sys.argv[1:]
 usage = validate.usage
 checkurl = validate.checkurl
 durationValidated = validate.durationValidated
-argLength = validate.argLength
 splitUrl = regex.splitUrl
 splitEquals = regex.splitEquals
+
+# url and duration
+result = []
 
 #=================================================#
 # main function
@@ -35,22 +27,14 @@ def main(argv):
     check number of arguments passed to script
     '''
     
-#=================================================#
-# check number of arguments passed to script
-#=================================================#
-
-# if script is run with no arguments or more than 4 arguments
-# display script usage and exit
-
-    argLength(argv)
-
-#=================================================#
-# check options and arguments
-#=================================================#
-
-# h = help
-# i: = url, the : means i requires an argument which would be the url
-# t: = time, the : means t requires an argument which would be the time in 00:00:00 format
+    if len(argv) == 0: # no arguments passed to script
+        print("No arguments passed to script")
+        usage()    # display script usage
+        sys.exit() # exit
+    elif len(argv) > 4: # too many arguments passed to script
+        print("Too many arguments passed to script")
+        usage()    # display script usage
+        sys.exit() # exit
 
     try:
         opts, args = getopt.getopt(argv, "hi:t:", ["help", "url", "time"])
@@ -64,25 +48,31 @@ def main(argv):
             # -h or --help = display help
             usage()
             sys.exit()
+            
         elif opt == ("-i") and len(argv) == 2:
-            # -i and url or text file - argv length 2, valid options and args
-            break
+            # -i and url or text file
+            result.append(checkurl(argv[1]))
+            return result
+
         elif opt == ("-t") and len(argv) == 2:
-            # -t option on its own - invalid
+            # -t option on its own
             print("the -t option must be used after the -i option")
             usage()
             sys.exit()
+
         elif opt in ("-i", "-t") and len(argv) == 4:
+            result.append(checkurl(argv[1]))
+            result.append(durationValidated(argv[3]))
+            return result
+
             if "-t" in opts[0]:
-                # -t option used before -i option - invalid
+                # -t option used before -r option - invalid
                 print("the -t option must be used after the -i option")
                 usage()
                 sys.exit()
-            else:
-                # -i url followed by -t 00:00:00 = valid
-                break
         else:
             assert False, "unhandled option"
+
 
 #=================================================#
 # slice off script name from arguments
@@ -91,17 +81,11 @@ def main(argv):
 if __name__ == "__main__":
     main(sys.argv[1:])
 
-    # check if 1 or 3 args are passed to the script
-    if len(argv) == 2:
-        urlDecoded = checkurl(argv[1])
-    elif len(argv) == 4:
-        urlDecoded = checkurl(argv[1])
-        tflag = "-t"
-        duration = durationValidated(argv[3])
-    
+    # the validated url
+    url = result[0]
 
     # the url stored in a dictionary
-    theUrl = splitUrl(urlDecoded)
+    theUrl = splitUrl(url)
     
     # url dictionary keys lowercased for searching
     urlDict = {k.lower(): v for k, v in theUrl.items()}
@@ -154,7 +138,7 @@ if __name__ == "__main__":
             rtmprec = record.rtmp(**ffmpegDict)
     elif len(argv) == 4:
         ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
-        ffmpegDict['duration'] = duration
+        ffmpegDict['duration'] = result[0]
         if http.match(url):
             ffrec = record.ffmpeg(**ffmpegDict)
         elif rtmp.match(url):
