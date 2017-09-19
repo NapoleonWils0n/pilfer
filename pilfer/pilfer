@@ -129,7 +129,7 @@ if __name__ == "__main__":
             rtmprec = record.rtmp(**ffmpegDict)
     elif len(argv) == 4:
         ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
-        ffmpegDict['duration'] = result[0]
+        ffmpegDict['duration'] = result[1]
         if http.match(url):
             ffrec = record.ffmpeg(**ffmpegDict)
         elif rtmp.match(url):
