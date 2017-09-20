@@ -7,7 +7,7 @@ import sys, re, getopt, os.path, mimetypes
 argv = sys.argv[1:]
 
 # shortcuts for imported functions
-usage = validate.usage
+usage = validate.usageplay
 checkurl = validate.checkurl
 splitUrl = regex.splitUrl
 splitEquals = regex.splitEquals
