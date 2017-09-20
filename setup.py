@@ -11,6 +11,6 @@ setup(
     license='GPL',
     keywords='ffmpeg rtmpdump kodi',
     packages=['pilfer'],
-    scripts=['pilfer/pilfer'],
+    scripts=['pilfer/pilfer', 'pilfer/pilfer-play'],
     zip_safe=False
 )
