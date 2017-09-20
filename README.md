@@ -1,6 +1,7 @@
 # Pilfer
 
 Python command line tool to record videos from within Kodi or on the command line.  
+And use mpv as external player with Kodi
 Works on Linux, Windows, Mac, Freebsd
 
 Script requirements:
@@ -10,6 +11,7 @@ Script requirements:
 * python 3.6 pip
 * ffmpeg 3.0 and above
 * rtmpdump 2.4
+* mpv
 
 You also need to install the playercorefacory.xml for your operating system,  
 into the kodi userdata directory
@@ -108,26 +110,26 @@ pilfer -i video-url.txt -t 01:00:00
 
 ### Ubuntu
 
-* Install python 3.6, python3.6 pip, git, ffmpeg, rtmpdump
+* Install python 3.6, python3.6 pip, git, ffmpeg, rtmpdump, mpv
 
 ```
-sudo apt install -y python3 python3-pip git ffmpeg rtmpdump
+sudo apt install -y python3 python3-pip git ffmpeg rtmpdump mpv
 ```
 
 ### Debian
 
-* Install python 3.6, python3.6 pip, git, ffmpeg, rtmpdump
+* Install python 3.6, python3.6 pip, git, ffmpeg, rtmpdump, mpv
 
 ```
-sudo apt install -y python3 python3-pip git-core ffmpeg rtmpdump
+sudo apt install -y python3 python3-pip git-core ffmpeg rtmpdump mpv
 ```
 
 ### Arch Linux
 
-* Install python 3.6, python3.6 pip, git, ffmpeg, rtmpdump
+* Install python 3.6, python3.6 pip, git, ffmpeg, rtmpdump, mpv
 
 ```
-sudo pacman -S python python-pip git ffmpeg rtmpdump
+sudo pacman -S python python-pip git ffmpeg rtmpdump mpv
 ```
 
 #### Add path to python script to ~/.bashrc
@@ -228,6 +230,14 @@ Then source your ~/.bash_profile
 
 Install rtmpdump with homebrew
 
+### mpv install
+
+Download the 64bit build from mpv.io and install to your Applications folder
+
+[mpv](https://mpv.io/installation/)
+
+[Latest build](https://laboratory.stolendata.net/~djinn/mpv_osx/mpv-latest.tar.gz)
+
 ### Install xcode command line tools
 
 * Open a terminal and type
@@ -298,10 +308,10 @@ Location of kodi userdata folder
 
 ## Freebsd set up
 
-* Install python 3.6, python3.6 pip, git, ffmpeg, rtmpdump
+* Install python 3.6, python3.6 pip, git, ffmpeg, rtmpdump, mpv
 
 ```
-sudo pkg install python36 py36-pip git ffmpeg rtmpdump
+sudo pkg install python36 py36-pip git ffmpeg rtmpdump mpv
 ```
 
 You can also use ports to install the required software
