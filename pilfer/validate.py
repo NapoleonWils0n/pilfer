@@ -21,15 +21,13 @@ def usageplay():
     
     display script usage when the -h or --help option is used
     '''
-    usage = """
+    usageplay = """
 -h --help display help
 -i 'video url' or text file
 
 pilfer-play -i <video-url>
     """
     print(usageplay)
-
-
 
 def checkurl(url):
     ''' check first argument passed to script
