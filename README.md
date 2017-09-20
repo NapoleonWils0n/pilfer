@@ -189,6 +189,20 @@ Location of kodi userdata folder
 
 * Linux ~/.kodi/userdata/
 
+You can also download the playercorefactory.xml file with wget 
+
+```
+wget https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/linux-unix/playercorefactory.xml
+```
+
+And then move the playercorefactory.xml into your ~/.kodi/userdata directory  
+If you already have a playercorefactory.xml file in your kodi userdata directory,  
+make sure to rename or move the file or it will be overwritten
+
+```
+mv playercorefactory.xml ~/.kodi/userdata/
+```
+
 ## Mac set up
 
 ### ffmpeg install
@@ -366,3 +380,16 @@ Location of kodi userdata folder
 
 * Freebsd ~/.kodi/userdata/
 
+You can also download the playercorefactory.xml file with wget 
+
+```
+wget https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/linux-unix/playercorefactory.xml
+```
+
+And then move the playercorefactory.xml into your ~/.kodi/userdata directory  
+If you already have a playercorefactory.xml file in your kodi userdata directory,  
+make sure to rename or move the file or it will be overwritten
+
+```
+mv playercorefactory.xml ~/.kodi/userdata/
+```
