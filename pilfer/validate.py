@@ -50,7 +50,7 @@ def checkurl(url):
     if not x.match(url):
         usage()    # display script usage
         sys.exit() # exit
-    return url
+    return url # return url needed to run script from kodi
     
 def durationValidated(duration):
     ''' validate user input for second argument
