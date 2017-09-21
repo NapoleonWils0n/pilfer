@@ -16,6 +16,19 @@ pilfer -i <video-url> -t <00:00:00>
     """
     print(usage)
 
+def usageplay():
+    '''script usage
+    
+    display script usage when the -h or --help option is used
+    '''
+    usageplay = """
+-h --help display help
+-i 'video url' or text file
+
+pilfer-play -i <video-url>
+    """
+    print(usageplay)
+
 def checkurl(url):
     ''' check first argument passed to script
     
