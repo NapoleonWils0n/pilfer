@@ -104,7 +104,9 @@ pilfer -i video-url.txt -t 01:00:00
 
 ## Windows set up
 
-* See t3rmin8tor repo
+Coming soon
+
+* t3rmin8tor installer
 
 ## Linux set up
 
