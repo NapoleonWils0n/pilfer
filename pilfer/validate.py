@@ -44,12 +44,13 @@ def checkurl(url):
             with open(url, 'r') as file:
                 url = file.read()
             file.close()          
-        return url
+            return url
 
     x = re.compile(r'^(http|https|rtmp|rtmpe)://.*$')
     if not x.match(url):
         usage()    # display script usage
         sys.exit() # exit
+    return url
     
 def durationValidated(duration):
     ''' validate user input for second argument
