@@ -37,7 +37,6 @@ def ffmpeg(**kwargs):
     url = kwargs['url']
 
     ffcmd = "{0} -hide_banner -stats -v panic -i {1} -c:v copy -c:a copy {2}".format(ffmpeg, url, recordingfile)
-    #ffcmd = "ffmpeg -hide_banner -stats -v panic -i {0} -c:v copy -c:a copy {1}".format(url, recordingfile)
 
     if any(word in kwargs for word in ('user-agent', 'referer', 'cookie')):                 
         # dict minus first time which is the url
