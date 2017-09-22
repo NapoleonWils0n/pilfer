@@ -104,9 +104,9 @@ pilfer -i video-url.txt -t 01:00:00
 
 ## Windows set up
 
-Coming soon
+Windows pilfer installer to install all the required software
 
-* t3rmin8tor installer
+[pilfer windows installer by the t3rmin8tor](https://github.com/t3rmin8tor/pilfer-installer)
 
 ## Linux set up
 
