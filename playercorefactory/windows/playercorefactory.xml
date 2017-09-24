@@ -2,37 +2,37 @@
  <players>
     <player name="save video url" type="ExternalPlayer" audio="false" video="true">
          <filename>C:\Windows\System32\cmd.exe</filename>
-         <args>/c %USERPROFILE%\AppData\Local\Programs\Python\Python36\python -E C:\pilfer\system\bin\rip-url "{0}"</args>
+         <args>/c %USERPROFILE%\AppData\Local\Programs\Python\Python36-32\python -E C:\pilfer\system\bin\rip-url "{0}"</args>
     <hidexbmc>false</hidexbmc>
     </player>
    <player name="play" type="ExternalPlayer" audio="false" video="true">
 	<filename>C:\Windows\System32\cmd.exe</filename>
-     <args>/c start /B %USERPROFILE%\AppData\Local\Programs\Python\Python36\python -E %USERPROFILE%\AppData\Roaming\Python\Python36\Scripts\pilfer-play -i "{0}"</args>
+     <args>/c start /B %USERPROFILE%\AppData\Local\Programs\Python\Python36-32\python -E %USERPROFILE%\AppData\Roaming\Python\Python36-32\Scripts\pilfer-play -i "{0}"</args>
      <hidexbmc>false</hidexbmc>
    </player> 
    <player name="record" type="ExternalPlayer" audio="false" video="true">
 	<filename>C:\Windows\System32\cmd.exe</filename>
-     <args>/c start /B %USERPROFILE%\AppData\Local\Programs\Python\Python36\python -E %USERPROFILE%\AppData\Roaming\Python\Python36\Scripts\pilfer -i "{0}"</args>
+     <args>/c start /B %USERPROFILE%\AppData\Local\Programs\Python\Python36-32\python -E %USERPROFILE%\AppData\Roaming\Python\Python36-32\Scripts\pilfer -i "{0}"</args>
      <hidexbmc>false</hidexbmc>
    </player> 
    <player name="record 30 minutes" type="ExternalPlayer" audio="false" video="true">
 	<filename>C:\Windows\System32\cmd.exe</filename>
-     <args>/c start /B %USERPROFILE%\AppData\Local\Programs\Python\Python36\python -E %USERPROFILE%\AppData\Roaming\Python\Python36\Scripts\pilfer -i "{0}" -t 00:30:00</args>
+     <args>/c start /B %USERPROFILE%\AppData\Local\Programs\Python\Python36-32\python -E %USERPROFILE%\AppData\Roaming\Python\Python36-32\Scripts\pilfer -i "{0}" -t 00:30:00</args>
      <hidexbmc>false</hidexbmc>
    </player>
    <player name="record 1 hour" type="ExternalPlayer" audio="false" video="true">
 	<filename>C:\Windows\System32\cmd.exe</filename>
-     <args>/c start /B %USERPROFILE%\AppData\Local\Programs\Python\Python36\python -E %USERPROFILE%\AppData\Roaming\Python\Python36\Scripts\pilfer -i "{0}" -t 01:00:00</args>
+     <args>/c start /B %USERPROFILE%\AppData\Local\Programs\Python\Python36-32\python -E %USERPROFILE%\AppData\Roaming\Python\Python36-32\Scripts\pilfer -i "{0}" -t 01:00:00</args>
      <hidexbmc>false</hidexbmc>
    </player>
    <player name="record 2 hours" type="ExternalPlayer" audio="false" video="true">
 	<filename>C:\Windows\System32\cmd.exe</filename>
-     <args>/c start /B %USERPROFILE%\AppData\Local\Programs\Python\Python36\python -E %USERPROFILE%\AppData\Roaming\Python\Python36\Scripts\pilfer -i "{0}" -t 02:00:00</args>
+     <args>/c start /B %USERPROFILE%\AppData\Local\Programs\Python\Python36-32\python -E %USERPROFILE%\AppData\Roaming\Python\Python36-32\Scripts\pilfer -i "{0}" -t 02:00:00</args>
      <hidexbmc>false</hidexbmc>
    </player>
    <player name="record 3 hours" type="ExternalPlayer" audio="false" video="true">
 	<filename>C:\Windows\System32\cmd.exe</filename>
-     <args>/c start /B %USERPROFILE%\AppData\Local\Programs\Python\Python36\python -E %USERPROFILE%\AppData\Roaming\Python\Python36\Scripts\pilfer -i "{0}" -t 03:00:00</args>
+     <args>/c start /B %USERPROFILE%\AppData\Local\Programs\Python\Python36-32\python -E %USERPROFILE%\AppData\Roaming\Python\Python36-32\Scripts\pilfer -i "{0}" -t 03:00:00</args>
      <hidexbmc>false</hidexbmc>
    </player>
  </players>
