@@ -102,12 +102,6 @@ pilfer -i video-url.txt -t 00:30:00
 pilfer -i video-url.txt -t 01:00:00
 ```
 
-## Windows set up
-
-Windows pilfer installer
-
-[pilfer windows installer by the t3rmin8tor](https://github.com/t3rmin8tor/pilfer-installer)
-
 ## Linux set up
 
 ### Ubuntu
@@ -204,6 +198,144 @@ make sure to rename or move the file or it will be overwritten
 ```
 mv playercorefactory.xml ~/.kodi/userdata/
 ```
+
+## Windows set up
+
+### Windows pilfer installer
+
+Windows installer by the t3rmin8tor to automatically install all the programs and scripts  
+
+[pilfer windows installer by the t3rmin8tor](https://github.com/t3rmin8tor/pilfer-installer)
+
+### Windows manual install
+
+Windows manual install instructions 
+
+#### Download the playercorefactory.xml file
+
+Download the 32bit or 64bit zip file depending on which version you are running  
+the zip file contains the playercorefactory.xml file and the pilfer folder 
+
+32bit zip
+64bit zip
+
+Move the pilfer folder to your C drive
+The path should look lile this
+
+```
+C:\pilfer
+```
+
+Move the playercorefactory.xml to Kodi userdata folder
+
+Open the Windows Start menu and type
+
+```
+%APPDATA%\kodi\userdata
+```
+
+This will open the Kodi userdata folder in the Windows file manager  
+Copy the playercorefactory.xml file into the kodi\userdata folder
+
+#### Install Git
+
+[git windows installer](https://git-scm.com/download/win)
+
+Download git and run the installer
+
+Adjusting your path
+
+Select 2nd option for path not git bash shell
+Use Git from the Windows Command Prompt
+
+Configuring the line endings
+
+Select the 2nd option
+Checkout as--is, commit Unix-style line endings
+
+#### Python 3 install
+
+[Python for Windows](https://www.python.org/downloads/windows/)
+
+Download and run the python 3 installer  
+Check add python to windows path
+
+#### 7zip download and install
+
+We need to download and install 7zip so we can unzip the ffmpeg download
+
+[7zip](http://www.7-zip.org/)
+
+#### ffmpeg download and install
+
+[ffmpeg windows download](http://ffmpeg.zeranoe.com/builds/)
+
+Unzip the ffmpeg.7zip file with 7zip
+
+Move the ffmpeg.exe file into C:\pilfer\system\bin
+
+#### rtmpdump download and install
+
+Download and unzip the rtmpdump.zip file
+
+[rtmpdump 2.4 windows](https://rtmpdump.mplayerhq.hu/download/rtmpdump-2.4-git-010913-windows.zip)
+
+Then move the rtmpdump.exe file into the C:\pilfer\system\bin folder
+
+#### mpv download and install
+
+[mpv site](https://mpv.io/installation/)
+
+Download the latest version of mpv for Windows below.
+
+[mpv windows download](https://mpv.srsfckn.biz/)
+
+[This script sets up file associations for mpv on Windows](https://github.com/rossy/mpv-install/blob/master/README.md)
+
+Download the mpv windows setup script below.
+
+[mpv windows set up script](https://github.com/rossy/mpv-install/archive/master.zip)
+
+Copy the .bat files and the .ico to the same directory as mpv.exe Run mpv-install.bat as administrator.
+Note: For an unattended install, use the /u switch. Use the Default Programs and AutoPlay control panels to make mpv the default player
+
+This is a fix for black screen when trying to play videos with mpv
+Open the mpv config folder by typing in the following into Search Windows dialog box
+
+```
+%APPDATA%\mpv
+```
+
+Create a text file called mpv.conf and add the following code
+
+```
+vo=direct3d
+```
+
+move the mpv.conf text file into the %APPDATA%\mpv folder
+
+#### Add pilfer bin folder to windows system path
+
+Open system properties, advanced system settings, enviormnental variables
+
+system variables, path, edit and add the code below to your windows system path  
+
+```
+C:\pilfer\system\bin
+```
+
+#### Install scripts with pip
+
+```
+pip3.6 install --user git+https://github.com/NapoleonWils0n/pilfer.git
+```
+
+#### Upgrade scripts with pip
+
+```
+pip3.6 install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
+```
+
 
 ## Mac set up
 
