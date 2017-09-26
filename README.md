@@ -257,6 +257,8 @@ Checkout as--is, commit Unix-style line endings
 
 [Python for Windows](https://www.python.org/downloads/windows/)
 
+[Python Windows installer](https://www.python.org/ftp/python/3.6.2/python-3.6.2-amd64.exe)
+
 Download and run the python 3 installer  
 Check add python to windows path
 
