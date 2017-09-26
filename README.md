@@ -28,10 +28,8 @@ Location of kodi userdata folder
 
 * Linux ~/.kodi/userdata/
 * Mac /Users/<your_user_name>/Library/Application Support/Kodi/userdata/
+* Windows Start - type %APPDATA%\kodi\userdata - press return
 * Freebsd ~/.kodi/userdata/
-
-Windows users can use the pilfer installer by the t3rmin8tor which will install all the software,  
-scripts and playercorefactory.xml
 
 ## Recording from within Kodi
 
