@@ -13,23 +13,12 @@ Script requirements:
 * rtmpdump 2.4
 * mpv
 
-You also need to install the playercorefacory.xml for your operating system,  
-into the kodi userdata directory
+Set up instructions
 
-* Kodi playercorefactory.xml download links 
-
-[Linux, Freebsd - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/linux-unix/playercorefactory.xml)  
-[Mac - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/mac/playercorefactory.xml)  
-
-Open the link for your operating system and right click on the webpage and select save as to save the file  
-Then move the playercorefactory.xml file into the kodi userdata folder for your operating system listed below.  
-
-Location of kodi userdata folder
-
-* Linux ~/.kodi/userdata/
-* Mac /Users/<your_user_name>/Library/Application Support/Kodi/userdata/
-* Windows Start - type %APPDATA%\kodi\userdata - press return
-* Freebsd ~/.kodi/userdata/
+* [Linux](https://github.com/NapoleonWils0n/pilfer#linux-set-up)
+* [Windows](https://github.com/NapoleonWils0n/pilfer#windows-set-up)
+* [Mac](https://github.com/NapoleonWils0n/pilfer#mac-set-up)
+* [Freebsd](https://github.com/NapoleonWils0n/pilfer#freebsd-set-up)
 
 ## Recording from within Kodi
 
