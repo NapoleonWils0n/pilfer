@@ -216,10 +216,10 @@ Windows manual install instructions
 Download the 32bit or 64bit zip file depending on which version you are running  
 the zip file contains the playercorefactory.xml file and the pilfer folder 
 
-32bit zip
+32bit zip  
 64bit zip
 
-Move the pilfer folder to your C drive
+Move the pilfer folder to your C drive  
 The path should look lile this
 
 ```
