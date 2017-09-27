@@ -15,6 +15,7 @@ splitEquals = regex.splitEquals
 
 # url and duration
 result = []
+tflag = 'tflag'
 
 #=================================================#
 # main function
