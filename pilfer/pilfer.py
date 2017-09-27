@@ -74,63 +74,63 @@ def main(argv):
 def entry():
     main(sys.argv[1:])
 
-# the validated url
-url = result[0]
+    # the validated url
+    url = result[0]
 
-# the url stored in a dictionary
-theUrl = splitUrl(url)
+    # the url stored in a dictionary
+    theUrl = splitUrl(url)
+    
+    # url dictionary keys lowercased for searching
+    urlDict = {k.lower(): v for k, v in theUrl.items()}
 
-# url dictionary keys lowercased for searching
-urlDict = {k.lower(): v for k, v in theUrl.items()}
+    # ffmpeg dictionary to hold url and ffmpeg options
+    ffmpegDict = {}
 
-# ffmpeg dictionary to hold url and ffmpeg options
-ffmpegDict = {}
+    if 'url' in urlDict:
+        ul = urlDict['url']
+        url = '{0}'.format(ul)
+        ffmpegDict['url'] = url
 
-if 'url' in urlDict:
-    ul = urlDict['url']
-    url = '{0}'.format(ul)
-    ffmpegDict['url'] = url
+    if 'user-agent' in urlDict:
+        ua = urlDict['user-agent']
+        useragent = "-user-agent '{0}'".format(ua)
+        ffmpegDict['user-agent'] = useragent
 
-if 'user-agent' in urlDict:
-    ua = urlDict['user-agent']
-    useragent = "-user-agent '{0}'".format(ua)
-    ffmpegDict['user-agent'] = useragent
+    if 'referer' in urlDict:
+        rf = urlDict['referer']
+        referer = "-headers 'Referer: {0}'".format(rf)
+        ffmpegDict['referer'] = referer
 
-if 'referer' in urlDict:
-    rf = urlDict['referer']
-    referer = "-headers 'Referer: {0}'".format(rf)
-    ffmpegDict['referer'] = referer
+    if 'cookie' in urlDict:
+        cd = re.search('(http|https)://[a-zA-Z0-9.-]*[^/]', url) # cookie domain name
+        cookiedomain = cd.group()
+        cookieurl = urlDict['cookie']
+        cookie = "-cookies '{0}; path=/; {1};'".format(cookieurl, cookiedomain)
+        ffmpegDict['cookie'] = cookie
 
-if 'cookie' in urlDict:
-    cd = re.search('(http|https)://[a-zA-Z0-9.-]*[^/]', url) # cookie domain name
-    cookiedomain = cd.group()
-    cookieurl = urlDict['cookie']
-    cookie = "-cookies '{0}; path=/; {1};'".format(cookieurl, cookiedomain)
-    ffmpegDict['cookie'] = cookie
+    nltid = re.findall('nltid=[a-zA-Z0-9&%_*=]*', url) # nltid cookie in url
 
-nltid = re.findall('nltid=[a-zA-Z0-9&%_*=]*', url) # nltid cookie in url
+    if nltid:
+        cd = re.search('(http|https)://[a-zA-Z0-9.-]*[^/]', url) # cookie domain name
+        cookiedomain = cd.group()
+        cookieurl = nltid[0]
+        cookie = "-cookies '{0}; path=/; {1};'".format(cookieurl, cookiedomain)
+        ffmpegDict['nltid'] = cookie
 
-if nltid:
-    cd = re.search('(http|https)://[a-zA-Z0-9.-]*[^/]', url) # cookie domain name
-    cookiedomain = cd.group()
-    cookieurl = nltid[0]
-    cookie = "-cookies '{0}; path=/; {1};'".format(cookieurl, cookiedomain)
-    ffmpegDict['nltid'] = cookie
+    # http and rtmp regexes
+    http = re.compile(r'^(http|https)://')
+    rtmp = re.compile(r'^(rtmp|rtmpe)://')
 
-# http and rtmp regexes
-http = re.compile(r'^(http|https)://')
-rtmp = re.compile(r'^(rtmp|rtmpe)://')
-
-# check number of args passed to script
-if len(argv) == 2:
-    if http.match(url):
-        ffrec = record.ffmpeg(**ffmpegDict)
-    elif rtmp.match(url):
-        rtmprec = record.rtmp(**ffmpegDict)
-elif len(argv) == 4:
-    ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
-    ffmpegDict['duration'] = result[1]
-    if http.match(url):
-        ffrec = record.ffmpeg(**ffmpegDict)
-    elif rtmp.match(url):
-        rtmprec = record.rtmp(**ffmpegDict)
+    # check number of args passed to script
+    if len(argv) == 2:
+        if http.match(url):
+            ffrec = record.ffmpeg(**ffmpegDict)
+        elif rtmp.match(url):
+            rtmprec = record.rtmp(**ffmpegDict)
+    elif len(argv) == 4:
+        ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
+        ffmpegDict['duration'] = result[1]
+        if http.match(url):
+            ffrec = record.ffmpeg(**ffmpegDict)
+        elif rtmp.match(url):
+            rtmprec = record.rtmp(**ffmpegDict)
