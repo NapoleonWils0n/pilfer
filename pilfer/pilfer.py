@@ -132,8 +132,8 @@ def main(argv):
 
 
 
-        print(len(argv[:])
-        process()
+    print(len(argv[:])
+    process()
 #=================================================#
 # slice off script name from arguments
 #=================================================#
