@@ -7,7 +7,7 @@
    </player>
    <player name="play" type="ExternalPlayer" audio="false" video="true">
  	<filename>/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6</filename>
-      <args>-E "$HOME/Library/Python/3.6/bin/pilfer-play" -i "{0}"</args>
+      <args>-E "$HOME/Library/Python/3.6/bin/pilferplay" -i "{0}"</args>
       <hidexbmc>true</hidexbmc>
     </player>
    <player name="record" type="ExternalPlayer" audio="false" video="true">

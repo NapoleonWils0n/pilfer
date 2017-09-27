@@ -6,7 +6,7 @@
      <hidexbmc>false</hidexbmc>
    </player>
    <player name="play" type="ExternalPlayer" audio="false" video="true">
-	<filename>"$HOME/.local/bin/pilfer-play"</filename>
+	<filename>"$HOME/.local/bin/pilferplay"</filename>
      <args>-i "{0}"</args>
      <hidexbmc>true</hidexbmc>
    </player>  
