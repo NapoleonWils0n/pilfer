@@ -4,8 +4,7 @@ from pilfer import validate, regex, record
 import sys, re, getopt, os.path, mimetypes
 
 # argv
-#argv = sys.argv[1:]
-argv = sys.argv[:1]
+argv = sys.argv[1:]
 
 # shortcuts for imported functions
 usage = validate.usage
@@ -73,8 +72,7 @@ def main(argv):
 #=================================================#
 
 def entry():
-    #main(sys.argv[1:])
-    main(sys.argv[:1])
+    main(sys.argv[1:])
 
     # the validated url
     url = result[0]
