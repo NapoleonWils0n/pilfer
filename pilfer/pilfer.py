@@ -15,7 +15,7 @@ splitEquals = regex.splitEquals
 
 # url and duration
 result = []
-tflag = 'tflag'
+#tflag = 'tflag'
 
 #=================================================#
 # main function
@@ -75,7 +75,7 @@ def main(argv):
 def entry():
     main(sys.argv[1:])
 
-    print(argv[1:])
+    print(argv[:])
     # the validated url
     url = result[0]
 
