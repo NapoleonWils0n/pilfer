@@ -130,6 +130,10 @@ def main(argv):
         else:
             assert False, "unhandled option"
 
+
+
+        print(len(argv[:])
+        process()
 #=================================================#
 # slice off script name from arguments
 #=================================================#
@@ -137,8 +141,6 @@ def main(argv):
 def entry():
     main(sys.argv[1:])
 
-print(len(argv[:])
-process()
     
     # the validated url
 #    url = result[0]
