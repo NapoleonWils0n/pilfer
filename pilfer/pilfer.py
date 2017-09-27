@@ -137,8 +137,8 @@ def main(argv):
 def entry():
     main(sys.argv[1:])
 
-    print(len(argv[:])
-    process()
+print(len(argv[:])
+process()
     
     # the validated url
 #    url = result[0]
