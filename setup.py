@@ -18,5 +18,4 @@ setup(
             'pilfer-play = pilfer.pilfer-play:entry',
         ],
     }
-    zip_safe=False
 )
