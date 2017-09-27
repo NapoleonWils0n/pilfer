@@ -247,7 +247,7 @@ Checkout as--is, commit Unix-style line endings
 [Python Windows installer](https://www.python.org/ftp/python/3.6.2/python-3.6.2-amd64.exe)
 
 Download and run the python 3 installer  
-Check add Python 3.6 to PATH
+Check add Python 3.6 to PATH and click Install Now
 
 #### 7zip download and install
 
