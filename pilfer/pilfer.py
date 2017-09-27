@@ -130,6 +130,7 @@ def entry():
         elif rtmp.match(url):
             rtmprec = record.rtmp(**ffmpegDict)
     elif len(argv) == 4:
+        print(ffmpegDict)
         #ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
         ffmpegDict['duration'] = result[1]
         if http.match(url):
