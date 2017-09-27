@@ -74,17 +74,17 @@ def main(argv):
 def entry():
     main(sys.argv[1:])
 
-    # the validated url
-    url = result[0]
+# the validated url
+url = result[0]
 
-    # the url stored in a dictionary
-    theUrl = splitUrl(url)
-    
-    # url dictionary keys lowercased for searching
-    urlDict = {k.lower(): v for k, v in theUrl.items()}
+# the url stored in a dictionary
+theUrl = splitUrl(url)
 
-    # ffmpeg dictionary to hold url and ffmpeg options
-    ffmpegDict = {}
+# url dictionary keys lowercased for searching
+urlDict = {k.lower(): v for k, v in theUrl.items()}
+
+# ffmpeg dictionary to hold url and ffmpeg options
+ffmpegDict = {}
 
     if 'url' in urlDict:
         ul = urlDict['url']
