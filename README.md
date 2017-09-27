@@ -251,7 +251,7 @@ Check add python to windows path
 
 #### 7zip download and install
 
-We need to download and install 7zip so we can unzip the ffmpeg download
+We need to download and install 7zip so we can unzip the mpv download
 
 [7zip](http://www.7-zip.org/)
 
@@ -259,7 +259,7 @@ We need to download and install 7zip so we can unzip the ffmpeg download
 
 [ffmpeg windows download](http://ffmpeg.zeranoe.com/builds/)
 
-Unzip the ffmpeg.7zip file with 7zip
+Unzip the ffmpeg.zip file
 
 Move the ffmpeg.exe file into C:\pilfer\system\bin
 
@@ -276,6 +276,7 @@ Then move the rtmpdump.exe file into the C:\pilfer\system\bin folder
 [mpv site](https://mpv.io/installation/)
 
 Download the latest version of mpv for Windows below.
+And unzip the mpv.7z file with 7zip
 
 [mpv windows download](https://mpv.srsfckn.biz/)
 
