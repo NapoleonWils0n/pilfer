@@ -76,8 +76,6 @@ def main(argv):
 def entry():
     main(sys.argv[1:])
 
-    print(len(argv[:]))
-    
     # the validated url
     url = result[0]
 
@@ -132,7 +130,7 @@ def entry():
         elif rtmp.match(url):
             rtmprec = record.rtmp(**ffmpegDict)
     elif len(argv) == 4:
-        ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
+        #ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
         ffmpegDict['duration'] = result[1]
         if http.match(url):
             ffrec = record.ffmpeg(**ffmpegDict)
