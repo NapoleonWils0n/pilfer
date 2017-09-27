@@ -76,8 +76,8 @@ def main(argv):
 def entry():
     main(sys.argv[1:])
 
-    print(len(argv[:])
-          
+    print(len(argv[:]))
+    
     # the validated url
     url = result[0]
 
