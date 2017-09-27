@@ -122,30 +122,15 @@ def entry():
     rtmp = re.compile(r'^(rtmp|rtmpe)://')
 
     # check number of args passed to script
-#    if len(argv) == 2:
-#        if http.match(url):
-#            ffrec = record.ffmpeg(**ffmpegDict)
-#        elif rtmp.match(url):
-#            rtmprec = record.rtmp(**ffmpegDict)
-#    elif len(argv) == 4:
-#        ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
-#        ffmpegDict['duration'] = result[1]
-#        if http.match(url):
-#            ffrec = record.ffmpeg(**ffmpegDict)
-#        elif rtmp.match(url):
-#            rtmprec = record.rtmp(**ffmpegDict)
-
-
-    # check number of args passed to script
     if len(argv) == 2:
         if http.match(url):
-            record.ffmpeg(**ffmpegDict)
+            ffrec = record.ffmpeg(**ffmpegDict)
         elif rtmp.match(url):
-            record.rtmp(**ffmpegDict)
+            rtmprec = record.rtmp(**ffmpegDict)
     elif len(argv) == 4:
         ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
         ffmpegDict['duration'] = result[1]
         if http.match(url):
-            record.ffmpeg(**ffmpegDict)
+            ffrec = record.ffmpeg(**ffmpegDict)
         elif rtmp.match(url):
-            record.rtmp(**ffmpegDict)
+            rtmprec = record.rtmp(**ffmpegDict)
