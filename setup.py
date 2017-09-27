@@ -14,7 +14,8 @@ setup(
     #scripts=['pilfer/pilfer', 'pilfer/pilfer-play'],
     entry_points={
         'console_scripts': [
-            'pilfer = pilfer.pilfer:entry'
+            'pilfer = pilfer.pilfer:entry',
+            'pilfer-play = pilfer.pilfer-play:entry'
     ]
     },
     zip_safe=False
