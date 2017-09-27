@@ -109,6 +109,6 @@ def entryplay():
 
     # check if http or rtmp link
     if http.match(url):
-        play = play.play(**playDict)
+        play.play(**playDict)
     elif rtmp.match(url):
-        rtmpplay = play.rtmpplay(**playDict)
+        play.rtmpplay(**playDict)
