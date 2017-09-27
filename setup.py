@@ -15,7 +15,7 @@ setup(
     entry_points={
         'console_scripts': [
             'pilfer = pilfer.pilfer:entry',
-            'pilfer-play = pilfer.pilfer-play:entry'
+            'pilfer-play = pilfer.pilfer-play:entryplay'
     ]
     },
     zip_safe=False

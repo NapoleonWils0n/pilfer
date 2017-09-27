@@ -57,7 +57,7 @@ def main(argv):
 #=================================================#
 
 #if __name__ == "__main__":
-def entry():
+def entryplay():
     main(sys.argv[1:])
 
     # the validated url
