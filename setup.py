@@ -16,7 +16,7 @@ setup(
         'console_scripts': [
             'pilfer = pilfer.pilfer:entry',
             'pilfer-play = pilfer.pilfer-play:entry',
-    ]
-    },
+        ],
+    }
     zip_safe=False
 )
