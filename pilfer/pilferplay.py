@@ -56,7 +56,6 @@ def main(argv):
 # slice off script name from arguments
 #=================================================#
 
-#if __name__ == "__main__":
 def entryplay():
     main(sys.argv[1:])
 
