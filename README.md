@@ -280,8 +280,15 @@ And unzip the mpv.7z file with 7zip
 
 [mpv windows download](https://mpv.srsfckn.biz/)
 
-Then copy the mpv.exe file into the C:\pilfer\system\bin folder
+Then copy the following files from the mpv folder into the C:\pilfer\system\bin folder
+
+* mpv.exe
+* d3dcompiler_43.dll
+* libaacs.dll
+* libbdplus.dll
+
 You may need to hold down control to copy the mpv file into the folder
+The dll files are needed because otherwise you get a blue screen with mpv and no video
 
 [This script sets up file associations for mpv on Windows](https://github.com/rossy/mpv-install/blob/master/README.md)
 
