@@ -280,6 +280,9 @@ And unzip the mpv.7z file with 7zip
 
 [mpv windows download](https://mpv.srsfckn.biz/)
 
+Then copy the mpv.exe file into the C:\pilfer\system\bin folder
+You may need to hold down control to copy the mpv file into the folder
+
 [This script sets up file associations for mpv on Windows](https://github.com/rossy/mpv-install/blob/master/README.md)
 
 Download the mpv windows setup script below.
