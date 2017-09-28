@@ -110,9 +110,9 @@ def entry():
         cookie = "-cookies '{0}; path=/; {1};'".format(cookieurl, cookiedomain)
         ffmpegDict['cookie'] = cookie
 
-#    if 'duration' in urlDict:
-#        ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
-#        ffmpegDict['duration'] = result[1]
+    if 'duration' in urlDict:
+        ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
+        ffmpegDict['duration'] = result[1]
 
     nltid = re.findall('nltid=[a-zA-Z0-9&%_*=]*', url) # nltid cookie in url
 
@@ -142,17 +142,7 @@ def entry():
 #            rtmprec = record.rtmp(**ffmpegDict)
 
     # check number of args passed to script
-    if len(argv) == 2:
-        if http.match(url):
-            record.ffmpeg(**ffmpegDict)
-        elif rtmp.match(url):
-            record.rtmp(**ffmpegDict)
-    elif len(argv) == 4:
-        if 'duration' in urlDict:
-            ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
-            ffmpegDict['duration'] = result[1]
-            print(ffmpegDict)
-        if http.match(url):
-            record.ffmpeg(**ffmpegDict)
-        elif rtmp.match(url):
-            record.rtmp(**ffmpegDict)
+    if http.match(url):
+        record.ffmpeg(**ffmpegDict)
+    elif rtmp.match(url):
+        record.rtmp(**ffmpegDict)
