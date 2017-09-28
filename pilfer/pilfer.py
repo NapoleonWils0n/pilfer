@@ -125,6 +125,7 @@ def entry():
     http = re.compile(r'^(http|https)://')
     rtmp = re.compile(r'^(rtmp|rtmpe)://')
 
+    print(ffmpegDict)
 #    # check number of args passed to script
 #    if len(argv) == 2:
 #        if http.match(url):
@@ -142,13 +143,11 @@ def entry():
 
     # check number of args passed to script
     if len(argv) == 2:
-        print('2 args')
         if http.match(url):
             ffrec = record.ffmpeg(**ffmpegDict)
         elif rtmp.match(url):
             rtmprec = record.rtmp(**ffmpegDict)
     elif len(argv) == 4:
-        print('4 args')
         if http.match(url):
             ffrec = record.ffmpeg(**ffmpegDict)
         elif rtmp.match(url):
