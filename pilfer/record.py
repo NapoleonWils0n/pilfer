@@ -47,6 +47,7 @@ def ffmpeg(**kwargs):
 
     #if 'duration' in kwargs:
     if any(word in kwargs for word in ('tflag', 'duration')):                 
+        print('yes')
         tflag = kwargs['tflag']
         duration = kwargs['duration']
         # dict minus first time which is the url, and minus the last 2 items tflag and duration
