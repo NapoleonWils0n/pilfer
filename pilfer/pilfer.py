@@ -151,6 +151,7 @@ def entry():
         if 'duration' in urlDict:
             ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
             ffmpegDict['duration'] = result[1]
+            print(ffmpegDict)
         if http.match(url):
             record.ffmpeg(**ffmpegDict)
         elif rtmp.match(url):
