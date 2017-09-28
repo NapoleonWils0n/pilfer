@@ -48,6 +48,8 @@ def ffmpeg(**kwargs):
     if 'duration' in kwargs:
         tflag = kwargs['tflag']
         duration = kwargs['duration']
+        print(duration)
+        print(tflag)
         # dict minus first time which is the url, and minus the last 2 items tflag and duration
         options = values[1:-2]
         remove_bracket = str(options)[1:-1]
