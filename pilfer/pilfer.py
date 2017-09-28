@@ -125,22 +125,6 @@ def entry():
     http = re.compile(r'^(http|https)://')
     rtmp = re.compile(r'^(rtmp|rtmpe)://')
 
-    print(ffmpegDict)
-#    # check number of args passed to script
-#    if len(argv) == 2:
-#        if http.match(url):
-#            ffrec = record.ffmpeg(**ffmpegDict)
-#        elif rtmp.match(url):
-#            rtmprec = record.rtmp(**ffmpegDict)
-#    elif len(argv) == 4:
-#        ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
-#        ffmpegDict['duration'] = result[1]
-#        if http.match(url):
-#            ffrec = record.ffmpeg(**ffmpegDict)
-#        elif rtmp.match(url):
-#            rtmprec = record.rtmp(**ffmpegDict)
-
-
     # check number of args passed to script
     if len(argv) == 2:
         if http.match(url):
@@ -148,13 +132,23 @@ def entry():
         elif rtmp.match(url):
             rtmprec = record.rtmp(**ffmpegDict)
     elif len(argv) == 4:
+        ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
+        ffmpegDict['duration'] = result[1]
+        print(ffmpegDict)
         if http.match(url):
             ffrec = record.ffmpeg(**ffmpegDict)
         elif rtmp.match(url):
             rtmprec = record.rtmp(**ffmpegDict)
 
+
 #    # check number of args passed to script
-#    if http.match(url):
-#        record.ffmpeg(**ffmpegDict)
-#    elif rtmp.match(url):
-#        record.rtmp(**ffmpegDict)
+#    if len(argv) == 2:
+#        if http.match(url):
+#            ffrec = record.ffmpeg(**ffmpegDict)
+#        elif rtmp.match(url):
+#            rtmprec = record.rtmp(**ffmpegDict)
+#    elif len(argv) == 4:
+#        if http.match(url):
+#            ffrec = record.ffmpeg(**ffmpegDict)
+#        elif rtmp.match(url):
+#            rtmprec = record.rtmp(**ffmpegDict)
