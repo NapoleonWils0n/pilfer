@@ -152,7 +152,6 @@ def main(argv):
         else:
             assert False, "unhandled option"
 
-process()
 
 #=================================================#
 # slice off script name from arguments
@@ -161,4 +160,4 @@ process()
 def entry():
     main(sys.argv[1:])
 
-
+process()
