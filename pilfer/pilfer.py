@@ -109,10 +109,6 @@ def entry():
         cookie = "-cookies '{0}; path=/; {1};'".format(cookieurl, cookiedomain)
         ffmpegDict['cookie'] = cookie
 
-#    if 'duration' in urlDict:
-#        ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
-#        ffmpegDict['duration'] = result[1]
-
     nltid = re.findall('nltid=[a-zA-Z0-9&%_*=]*', url) # nltid cookie in url
 
     if nltid:
