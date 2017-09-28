@@ -16,66 +16,7 @@ splitEquals = regex.splitEquals
 # url and duration
 result = []
 
-#=================================================#
-# main function
-#=================================================#
-
-def main(argv):
-    ''' main function
-    
-    check number of arguments passed to script
-    '''
-    if len(argv) == 0: # no arguments passed to script
-        print("No arguments passed to script")
-        usage()    # display script usage
-        sys.exit() # exit
-    elif len(argv) > 4: # too many arguments passed to script
-        print("Too many arguments passed to script")
-        usage()    # display script usage
-        sys.exit() # exit
-
-    try:
-        opts, args = getopt.getopt(argv, "hi:t:", ["help", "url", "time"])
-    except getopt.GetoptError as err: 
-        print(err)  # will print something like "option -x not recognized"
-        usage()     # display script usage
-        sys.exit(2) # exit
-
-    for opt, arg in opts:
-        if opt in ("-h", "--help"):
-            # -h or --help = display help
-            usage()
-            sys.exit()
-        elif opt == ("-i") and len(argv) == 2:
-            # -i and url or text file
-            result.append(checkurl(argv[1]))
-            return result
-        elif opt == ("-t") and len(argv) == 2:
-            # -t option on its own
-            print("the -t option must be used after the -i option")
-            usage()
-            sys.exit()
-        elif opt in ("-i", "-t") and len(argv) == 4:
-            result.append(checkurl(argv[1]))
-            result.append(durationValidated(argv[3]))
-            return result
-            if "-t" in opts[0]:
-                # -t option used before -r option - invalid
-                print("the -t option must be used after the -i option")
-                usage()
-                sys.exit()
-        else:
-            assert False, "unhandled option"
-
-
-
-#=================================================#
-# slice off script name from arguments
-#=================================================#
-
-def entry():
-    main(sys.argv[1:])
-
+def process():
     # the validated url
     url = result[0]
 
@@ -127,6 +68,19 @@ def entry():
     http = re.compile(r'^(http|https)://')
     rtmp = re.compile(r'^(rtmp|rtmpe)://')
 
+
+    # check number of args passed to script
+    if len(argv) == 2:
+        if http.match(url):
+            ffrec = record.ffmpeg(**ffmpegDict)
+        elif rtmp.match(url):
+            rtmprec = record.rtmp(**ffmpegDict)
+    elif len(argv) == 4:
+        if http.match(url):
+            ffrec = record.ffmpeg(**ffmpegDict)
+        elif rtmp.match(url):
+            rtmprec = record.rtmp(**ffmpegDict)
+
 #    # check number of args passed to script
 #    if len(argv) == 2:
 #        if http.match(url):
@@ -141,8 +95,70 @@ def entry():
 #        elif rtmp.match(url):
 #            rtmprec = record.rtmp(**ffmpegDict)
 
-    # check number of args passed to script
-    if http.match(url):
-        record.ffmpeg(**ffmpegDict)
-    elif rtmp.match(url):
-        record.rtmp(**ffmpegDict)
+#    # check number of args passed to script
+#    if http.match(url):
+#        record.ffmpeg(**ffmpegDict)
+#    elif rtmp.match(url):
+#        record.rtmp(**ffmpegDict)
+
+#=================================================#
+# main function
+#=================================================#
+
+def main(argv):
+    ''' main function
+    
+    check number of arguments passed to script
+    '''
+    if len(argv) == 0: # no arguments passed to script
+        print("No arguments passed to script")
+        usage()    # display script usage
+        sys.exit() # exit
+    elif len(argv) > 4: # too many arguments passed to script
+        print("Too many arguments passed to script")
+        usage()    # display script usage
+        sys.exit() # exit
+
+    try:
+        opts, args = getopt.getopt(argv, "hi:t:", ["help", "url", "time"])
+    except getopt.GetoptError as err: 
+        print(err)  # will print something like "option -x not recognized"
+        usage()     # display script usage
+        sys.exit(2) # exit
+
+    for opt, arg in opts:
+        if opt in ("-h", "--help"):
+            # -h or --help = display help
+            usage()
+            sys.exit()
+        elif opt == ("-i") and len(argv) == 2:
+            # -i and url or text file
+            result.append(checkurl(argv[1]))
+            return result
+        elif opt == ("-t") and len(argv) == 2:
+            # -t option on its own
+            print("the -t option must be used after the -i option")
+            usage()
+            sys.exit()
+        elif opt in ("-i", "-t") and len(argv) == 4:
+            result.append(checkurl(argv[1]))
+            result.append(durationValidated(argv[3]))
+            return result
+            if "-t" in opts[0]:
+                # -t option used before -r option - invalid
+                print("the -t option must be used after the -i option")
+                usage()
+                sys.exit()
+        else:
+            assert False, "unhandled option"
+
+process()
+
+#=================================================#
+# slice off script name from arguments
+#=================================================#
+
+def entry():
+    main(sys.argv[1:])
+
+
