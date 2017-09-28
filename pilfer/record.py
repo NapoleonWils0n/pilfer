@@ -36,7 +36,7 @@ def ffmpeg(**kwargs):
     # url from kwargs which is the dictionary passed to the function
     url = kwargs['url']
 
-    ffcmd = "{0} -hide_banner -stats -v panic -i {1} -c:v copy -c:a copy {2}".format(ffmpeg, url, recordingfile)
+    #ffcmd = "{0} -hide_banner -stats -v panic -i {1} -c:v copy -c:a copy {2}".format(ffmpeg, url, recordingfile)
 
     if any(word in kwargs for word in ('user-agent', 'referer', 'cookie')):                 
         # dict minus first time which is the url
@@ -46,7 +46,7 @@ def ffmpeg(**kwargs):
         ffcmd = "{0} -hide_banner -stats -v panic {2} -i {1} -c:v copy -c:a copy {3}".format(ffmpeg, url, options_join, recordingfile)
 
     if 'duration' in kwargs:
-        print('yes')
+        print('duration')
         tflag = kwargs['tflag']
         duration = kwargs['duration']
         # dict minus first time which is the url, and minus the last 2 items tflag and duration
@@ -55,6 +55,8 @@ def ffmpeg(**kwargs):
         options_join = ''.join(remove_bracket).replace('"', '')
         ffcmd = "{0} -hide_banner -stats -v panic {2} -i {1} -c:v copy -c:a copy {3} {4} {5}".format(ffmpeg, url, options_join, tflag, duration, recordingfile)
 
+    print('drop')
+    ffcmd = "{0} -hide_banner -stats -v panic -i {1} -c:v copy -c:a copy {2}".format(ffmpeg, url, recordingfile)
 
     # split the ffmpeg command for subprocess
     ffsplit = shlex.split(ffcmd)
