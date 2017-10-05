@@ -26,8 +26,10 @@ You need to install the playercorefactory.xml into your Kodi userdata folder,
 and restart Kodi for the menu to show up.
 
 Press y on the keyboard while a video is playing in Kodi to bring up the contextual menu,  
-from the menu you can then choose from the following recording options.
+from the menu you can then choose from the following options.
 
+* Save url
+* Play
 * Record
 * Record 30 minutes
 * Record 1 hour
