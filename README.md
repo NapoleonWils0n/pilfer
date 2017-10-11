@@ -190,6 +190,12 @@ mv playercorefactory.xml ~/.kodi/userdata/
 
 ## Windows set up
 
+### Windows pilfer installer
+
+Windows installer by the t3rmin8tor to automatically install all the programs and scripts  
+
+[pilfer windows installer by the t3rmin8tor](https://github.com/t3rmin8tor/pilfer-installer)
+
 ### Windows install
 
 Windows install instructions 
