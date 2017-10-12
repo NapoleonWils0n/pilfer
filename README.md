@@ -4,6 +4,8 @@ Python command line tool to record videos from within Kodi or on the command lin
 And use mpv as external player with Kodi
 Works on Linux, Windows, Mac, Freebsd
 
+* [pilfer youtube videos](https://www.youtube.com/watch?v=uKRU74Uqj1s&list=PL7hhhG5qUoXmtylBpTV4AdjFkYOj2soEB)
+
 Script requirements:
 
 * git
