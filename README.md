@@ -376,7 +376,7 @@ Then we need to add the path to the python scripts as well
 
 ```
 if [ -d "$HOME/Library/Python/3.6/bin" ] ; then
-        PATH="$HOME/Library/Python/3.6/bin"
+        PATH="$HOME/Library/Python/3.6/bin:$PATH"
 fi
 ```
 
