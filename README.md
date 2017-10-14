@@ -372,6 +372,14 @@ if [ -d "$HOME/bin" ] ; then
 fi
 ```
 
+Then we need to add the path to the python scripts as well  
+
+```
+if [ -d "$HOME/Library/Python/3.6/bin" ] ; then
+        PATH="$HOME/Library/Python/3.6/bin"
+fi
+```
+
 Then source your ~/.bash_profile
 
 ```
