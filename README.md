@@ -139,7 +139,7 @@ fi
 Finally source your ~/.bashrc
 
 ```
-. ~/.bashrc
+source ~/.bashrc
 ```
 
 #### Install scripts with pip
