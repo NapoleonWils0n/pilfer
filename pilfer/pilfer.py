@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from pilfer import validate, regex, record
+from pilfer import validate, regex, record, audio
 import sys, re, getopt, os.path, mimetypes
 
 # argv
@@ -16,6 +16,9 @@ splitEquals = regex.splitEquals
 # url and duration
 result = []
 tflag = '-t'
+
+# options passed to script
+options = []
 
 #=================================================#
 # main function
@@ -36,19 +39,24 @@ def main(argv):
         sys.exit() # exit
 
     try:
-        opts, args = getopt.getopt(argv, "hi:t:", ["help", "url", "time"])
+        opts, args = getopt.getopt(argv, "hi:a:t:", ["help", "url", "audiourl", "time"])
     except getopt.GetoptError as err: 
         print(err)  # will print something like "option -x not recognized"
         usage()     # display script usage
         sys.exit(2) # exit
 
     for opt, arg in opts:
+        options.append(opt) # store options for later
         if opt in ("-h", "--help"):
             # -h or --help = display help
             usage()
             sys.exit()
         elif opt == ("-i") and len(argv) == 2:
             # -i and url or text file
+            result.append(checkurl(argv[1]))
+            return result
+        elif opt == ("-a") and len(argv) == 2:
+            # -a and url or text file
             result.append(checkurl(argv[1]))
             return result
         elif opt == ("-t") and len(argv) == 2:
@@ -61,10 +69,20 @@ def main(argv):
             result.append(durationValidated(argv[3]))
             return result
             if "-t" in opts[0]:
-                # -t option used before -r option - invalid
+                # -t option used before -i option - invalid
                 print("the -t option must be used after the -i option")
                 usage()
                 sys.exit()
+        elif opt in ("-a", "-t") and len(argv) == 4:
+            result.append(checkurl(argv[1]))
+            result.append(durationValidated(argv[3]))
+            return result
+            if "-t" in opts[0]:
+                # -t option used before -a option - invalid
+                print("the -t option must be used after the -a option")
+                usage()
+                sys.exit()
+
         else:
             assert False, "unhandled option"
 
@@ -125,13 +143,25 @@ def entry():
     # check number of args passed to script
     if len(argv) == 2:
         if http.match(url):
-            ffrec = record.ffmpeg(**ffmpegDict)
+            if options[0] == "-i":
+                ffrec = record.ffmpeg(**ffmpegDict)
+            elif options[0] == "-a":
+                ffrec = audio.ffmpegaudio(**ffmpegDict)
         elif rtmp.match(url):
-            rtmprec = record.rtmp(**ffmpegDict)
+            if options[0] == "-i":
+                rtmprec = record.rtmp(**ffmpegDict)
+            elif options[0] == "-a":
+                rtmprec = audio.rtmpaudio(**ffmpegDict)
     elif len(argv) == 4:
         ffmpegDict['tflag'] = tflag # add tflag and duration to ffmpegDict
         ffmpegDict['duration'] = result[1]
         if http.match(url):
-            ffrec = record.ffmpeg(**ffmpegDict)
+            if options[0] == "-i":
+                ffrec = record.ffmpeg(**ffmpegDict)
+            elif options[0] == "-a":
+                ffrec = audio.ffmpegaudio(**ffmpegDict)
         elif rtmp.match(url):
-            rtmprec = record.rtmp(**ffmpegDict)
+            if options[0] == "-i":
+                rtmprec = record.rtmp(**ffmpegDict)
+            elif options[0] == "-a":
+                rtmprec = audio.rtmpaudio(**ffmpegDict)

@@ -9,10 +9,11 @@ def usage():
     '''
     usage = """
 -h --help display help
--i 'video url' or text file
+-i 'url' or text file - record video
+-a 'url' or text file - record audio
 -t '00:00:00'
 
-pilfer -i <video-url> -t <00:00:00>
+pilfer -i/-a <url> -t <00:00:00>
     """
     print(usage)
 
