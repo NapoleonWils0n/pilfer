@@ -3,8 +3,8 @@ from distutils.core import setup
 
 setup(
     name='pilfer',
-    version='1.0',
-    description='pilfer command line tool to record videos from Kodi',
+    version='2.0',
+    description='pilfer command line tool to record audio and video from Kodi',
     url='https://github.com/NapoleonWils0n/pilfer',
     author='NapoleonWils0n',
     maintainer='NapoleonWils0n',

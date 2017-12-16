@@ -1,6 +1,6 @@
 # Pilfer
 
-Python command line tool to record videos from within Kodi or on the command line.  
+Python command line tool to record audio and video from within Kodi or on the command line.  
 And use mpv as external player with Kodi
 Works on Linux, Windows, Mac, Freebsd
 
@@ -30,25 +30,31 @@ and restart Kodi for the menu to show up.
 Press y on the keyboard while a video is playing in Kodi to bring up the contextual menu,  
 from the menu you can then choose from the following options.
 
-* Save url
-* Play
-* Record
-* Record 30 minutes
-* Record 1 hour
-* Record 2 hours
-* Record 3 hours
+* play
+* record video
+* record video - 30 minutes
+* record video - 1 hour
+* record video - 2 hours
+* record video - 3 hours
+* save url
+* record audio
+* record audio - 30 minutes
+* record audio - 1 hour
+* record audio - 2 hours
+* record audio - 3 hours
 
 You can also edit the playercorefactory.xml file and add your own menu entrys,  
 to create more recording durations.
 
-Videos will be saved to the Desktop with current date and time in the filename,  
+Video and audio recordings will be saved to the Desktop with current date and time in the filename,  
 so that each recording has a unique name and isnt overwritten by another recording
 
 It isnt possible to get the videos title from the url which is why we add the date and time to the filename
 
 The recording will be saved to your Desktop with the following filename
 
-video-{date}-{time}.mkv
+video-{date}-{time}.mkv  
+audio-{date}-{time}.mka
 
 
 ## Script usage on the command line
