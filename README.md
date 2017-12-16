@@ -59,30 +59,62 @@ audio-{date}-{time}.mka
 
 ## Script usage on the command line
 
-* Video url surrounded by single quotes
+Record video with the -i option with a url in single quotes
+
+* url surrounded by single quotes
 
 ```
 pilfer -i 'http://example.com/video.m3u8'
 ```
 
+Record audio with the -a option
+
+* url surrounded by single quotes
+
+```
+pilfer -a 'http://example.com/video.m3u8'
+```
+
+Record with the -i option and a text file
+
 * Text file containing url
 
 ```
-pilfer -i video-url.txt
+pilfer -i url.txt
+```
+
+Record audio with the -a option and a text file
+
+* Text file containing url
+
+```
+pilfer -a url.txt
 ```
 
 Recording with duration, 00:00:00 = hours:minutes:seconds
 
-* Record for 30 minutes
+* Record video for 30 minutes
 
 ```
 pilfer -i 'http://example.com/video.m3u8' -t 00:30:00
 ```
 
-* Record for 1 hour
+* Record audio for 30 minutes
+
+```
+pilfer -a 'http://example.com/video.m3u8' -t 00:30:00
+```
+
+* Record video for 1 hour
 
 ```
 pilfer -i 'http://example.com/video.m3u8' -t 01:00:00
+```
+
+* Record audio for 1 hour
+
+```
+pilfer -a 'http://example.com/video.m3u8' -t 01:00:00
 ```
 
 Text file containing url, recording with duration, 00:00:00 = hours:minutes:seconds
