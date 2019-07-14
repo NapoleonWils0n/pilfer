@@ -495,7 +495,8 @@ into the kodi userdata directory
 
 * Kodi playercorefactory.xml download links 
 
-[Mac - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/mac/playercorefactory.xml)  
+* [Mac python 3.6 - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/mac/python-3.6/playercorefactory.xml)  
+* [Mac python 3.7 - playercorefactory.xml](https://raw.githubusercontent.com/NapoleonWils0n/pilfer/master/playercorefactory/mac/python-3.7/playercorefactory.xml)  
 
 Open the link for your operating system and right click on the webpage and select save as to save the file  
 Then move the playercorefactory.xml file into the kodi userdata folder for your operating system listed below.  
