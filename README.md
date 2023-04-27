@@ -198,6 +198,28 @@ pip3 install --user git+https://github.com/NapoleonWils0n/pilfer.git
 pip3 install --upgrade --user git+https://github.com/NapoleonWils0n/pilfer.git
 ```
 
+#### pipx for ubuntu 23.04 and debian
+
+If you are using ubuntu 23.04 or the latest version of debian you need to use pipx to install pilfer
+
+install pipx
+
+```
+sudo apt install pipx
+```
+
+ensure path
+
+```
+pipx ensurepath
+```
+
+pilfer install
+
+```
+pipx install git+https://github.com/NapoleonWils0n/pilfer.git
+```
+
 #### Install playercorefactory.xml file
 
 You also need to install the playercorefacory.xml for your operating system,  
