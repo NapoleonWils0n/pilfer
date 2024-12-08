@@ -4,6 +4,10 @@ Python command line tool to record audio and video from within Kodi or on the co
 And use mpv as external player with Kodi
 Works on Linux, Windows, Mac, Freebsd
 
+* [Pilfer-3](https://github.com/NapoleonWils0n/pilfer-3)
+
+Pilfer-3 use a pyproject.toml for python 3.9 and above
+
 * [pilfer install](https://odysee.com/@NapoleonWils0n:6/pilfer-the-new-python-script-to-record:3)
 
 Script requirements:
